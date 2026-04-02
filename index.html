@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First-Time Filer 1040 Guide</title>
-    <meta name="description" content="Complete step-by-step educational guide for first-time filers using IRS-style instructions and visuals.">
-    <meta name="keywords" content="1040 form guide, first tax filer, IRS style guide, tax instructions, daily tax tips">
+    <title>First-Time Filer 1040 Guide | Easy Step-by-Step IRS Instructions</title>
+    <meta name="description" content="Step-by-step 1040 guide for first-time filers. Learn IRS-style instructions, tips, and examples to file taxes easily.">
+    <meta name="keywords" content="1040 guide, first-time tax filer, IRS instructions, file taxes, tax tips">
+    
+    <!-- Structured Data for How-To -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "First-Time Filer 1040 Guide",
+      "description": "Step-by-step instructions for first-time filers to complete IRS Form 1040.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Determine Filing Status",
+          "text": "Select the correct filing status to calculate taxes correctly."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Report Income",
+          "text": "Include wages, interest, dividends, and other income sources on Form 1040."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Claim Deductions and Credits",
+          "text": "Use deductions and credits to reduce your tax liability legally."
+        }
+      ]
+    }
+    </script>
+
     <style>
-        /* Basic styling */
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9fafb; color: #222; line-height: 1.6; }
         header { background: #1e3c72; color: white; text-align: center; padding: 30px 15px; }
         header h1 { margin-bottom: 5px; font-size: 28px; }
         header p { font-size: 16px; margin: 0; }
         .container { max-width: 900px; margin: auto; padding: 15px; background: white; }
 
-        /* Steps */
         .step { margin: 20px 0; padding: 20px; border-radius: 10px; background: #f7f8fa; border-left: 6px solid #1e3c72; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
         .step h2 { margin-top: 0; font-size: 20px; display: flex; align-items: center; }
         .step h2 span { margin-right: 8px; font-size: 24px; }
+        .step h3 { margin-top: 10px; font-size: 16px; color: #1e3c72; }
+
         .visual { background: #fff; padding: 12px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: monospace; font-size: 14px; white-space: pre-line; }
         .tip-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 12px; margin: 10px 0; border-radius: 5px; font-size: 14px; }
-        footer { text-align: center; padding: 15px; font-size: 13px; color: #555; margin-top: 20px; }
 
         .collapsible { background-color: #f1f1f1; border: none; color: #444; padding: 10px; text-align: left; outline: none; font-size: 15px; width: 100%; cursor: pointer; border-radius: 6px; margin-top: 10px; }
+        .collapsible::after { content: ' ▼'; font-size: 12px; padding-left: 5px; }
+        .active::after { content: ' ▲'; }
         .active, .collapsible:hover { background-color: #ddd; }
         .content { padding: 0 18px; display: none; overflow: hidden; background-color: #f9f9f9; border-radius: 5px; }
+
+        footer { text-align: center; padding: 15px; font-size: 13px; color: #555; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -35,19 +66,87 @@
 </header>
 
 <div class="container">
-    <!-- Add your content here -->
-    <!-- Step 1: General information -->
+    <!-- Step 1 -->
     <div class="step">
-        <h2>Form 1040 Step-by-Step</h2>
-        <p>Here's a comprehensive, easy-to-understand guide to help you file your taxes.</p>
-        <!-- Add instructions and steps here -->
+        <h2><span>1</span> Determine Your Filing Status</h2>
+        <p>Choosing the correct filing status is critical. It determines your tax rates, deductions, and credits.</p>
+        <button class="collapsible">Learn More</button>
+        <div class="content">
+            <h3>Filing Status Options:</h3>
+            <ul>
+                <li>Single</li>
+                <li>Married Filing Jointly</li>
+                <li>Married Filing Separately</li>
+                <li>Head of Household</li>
+                <li>Qualifying Widow(er)</li>
+            </ul>
+        </div>
+        <div class="tip-box"><strong>Tip:</strong> Use IRS worksheets if you're unsure about your filing status.</div>
     </div>
-    <!-- More steps, collapsible content, and tax tips can follow here -->
+
+    <!-- Step 2 -->
+    <div class="step">
+        <h2><span>2</span> Report Your Income</h2>
+        <p>All sources of income must be reported on Form 1040, including wages, dividends, interest, and self-employment income.</p>
+        <button class="collapsible">Learn More</button>
+        <div class="content">
+            <h3>Document Checklist:</h3>
+            <ul>
+                <li>W-2 forms from employers</li>
+                <li>1099 forms for freelance work</li>
+                <li>Bank interest and dividend statements</li>
+            </ul>
+            <div class="visual">Wages: $45,000
+Interest: $120
+Dividends: $200
+Total Income: $45,320</div>
+        </div>
+        <div class="tip-box"><strong>Tip:</strong> Keep digital copies of all forms for easy reference and audit protection.</div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+        <h2><span>3</span> Claim Deductions and Credits</h2>
+        <p>Deductions and credits reduce the amount of tax you owe. Make sure you understand which ones you qualify for.</p>
+        <button class="collapsible">Learn More</button>
+        <div class="content">
+            <h3>Common Deductions:</h3>
+            <ul>
+                <li>Student loan interest</li>
+                <li>Medical expenses</li>
+                <li>Charitable donations</li>
+            </ul>
+            <h3>Common Credits:</h3>
+            <ul>
+                <li>Child Tax Credit</li>
+                <li>Earned Income Credit</li>
+            </ul>
+        </div>
+        <div class="tip-box"><strong>Tip:</strong> Double-check each deduction and credit; small errors can trigger IRS questions.</div>
+    </div>
+
 </div>
 
 <footer>
-    <p>Educational purposes only. Always verify with IRS for final numbers.</p>
+    <p>Educational purposes only. Always verify with IRS for official instructions.</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
