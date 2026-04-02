@@ -4,42 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easy 1040 Tax Guide – Step by Step</title>
-<meta name="description" content="Step-by-step 1040 guide for beginners with visuals, examples, daily and weekly tips, IRS video, and live tax countdown.">
+<meta name="description" content="Step-by-step 1040 guide for beginners with visuals, examples, daily and weekly tips, IRS PDF, and live tax countdown.">
 <meta name="keywords" content="1040 form guide, IRS 1040 instructions, easy tax filing, beginner tax guide, daily tax tip, weekly tax tip, tax deadline countdown">
 
 <style>
-body { font-family:'Segoe UI', sans-serif; margin:0; background:#f5f7fa; color:#333; line-height:1.5;}
-header { background:linear-gradient(135deg,#1e3c72,#2a5298); color:white; text-align:center; padding:35px 20px;}
-header h1 { margin-bottom:5px; font-size:28px;}
-header p { font-size:16px;}
-.container { max-width:900px; margin:auto; padding:15px; background:white;}
-.step { margin:20px 0; padding:20px 15px; border-radius:10px; background:#f0f4f8; border-left:8px solid #3498db; box-shadow:0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s; font-size:15px;}
-.step:hover { transform:translateY(-2px);}
-.step:nth-child(even) { background:#fcfcfc; border-left:8px solid #27ae60;}
-.step h2 { margin-top:0; display:flex; align-items:center; font-size:20px;}
-.step h2 span { margin-right:8px; font-size:24px;}
-.visual { background:#fff; padding:12px; margin-top:8px; border-radius:8px; font-family:monospace; white-space:pre-line; border:1px solid #ccc; font-size:14px;}
+/* Base styling */
+body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#ffffff; color:#333; line-height:1.6;}
+header { background:#1a3c75; color:white; text-align:center; padding:30px 20px;}
+header h1 { margin:0 0 5px; font-size:28px;}
+header p { margin:0; font-size:16px;}
+.container { max-width:900px; margin:auto; padding:20px;}
+
+/* Steps */
+.step { border-top:1px solid #ccc; padding:20px 0; font-size:15px;}
+.step h2 { margin-top:0; font-size:18px; color:#1a3c75;}
+.step p, .step ul { margin:8px 0 0 0;}
+.step ul { padding-left:20px;}
+.visual { font-family:monospace; background:#f9f9f9; padding:8px; border:1px solid #ccc; border-left:4px solid #1a3c75; margin-top:8px; white-space:pre-line; font-size:14px;}
 .visual span.number-highlight { font-weight:bold; color:#e67e22;}
-.highlight { background:#fff3cd; padding:10px; border-left:4px solid #ffc107; margin-top:10px; border-radius:5px; font-size:14px;}
-footer { text-align:center; padding:20px; font-size:13px; color:#777;}
-iframe { width:100%; height:250px; border:1px solid #ccc; border-radius:8px; margin-top:15px;}
-.tooltip { position:relative; cursor:help; border-bottom:1px dotted #333;}
-.tooltip .tooltiptext { visibility:hidden; width:200px; background-color:#333; color:#fff; text-align:left; border-radius:6px; padding:8px; position:absolute; z-index:10; bottom:125%; left:50%; margin-left:-100px; opacity:0; transition:opacity 0.3s; font-size:13px;}
-.tooltip:hover .tooltiptext { visibility:visible; opacity:1;}
-#dailyTipBox, #weeklyTipBox { background:#fff3cd; border-left:5px solid #ffc107; padding:15px; margin:15px 0; border-radius:6px; font-weight:bold; font-size:16px;}
-#taxCountdown { background:#d1ecf1; border-left:5px solid #17a2b8; padding:15px; margin:15px 0; border-radius:6px; font-weight:bold; font-size:16px; text-align:center;}
-.floating-cta { position:fixed; right:15px; top:120px; z-index:1000; background:#27ae60; color:white; padding:14px 18px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:16px; transition:0.3s;}
-.floating-cta:hover { background:#1e874b; }
-@media (max-width:768px){ .step { padding:18px 12px; font-size:14px;} .visual { font-size:13px;} .floating-cta { right:10px; top:100px; font-size:15px; padding:12px;} iframe { height:200px; }}
-#progressBarContainer { width:100%; background:#eee; border-radius:5px; margin-bottom:15px;}
-#progressBar { width:0%; height:10px; background:#3498db; border-radius:5px;}
+.tip-box { background:#fff3cd; border-left:4px solid #ffc107; padding:12px; margin:12px 0; border-radius:4px; font-weight:bold; font-size:15px;}
+#taxCountdown { background:#d1ecf1; border-left:4px solid #17a2b8; padding:12px; margin:12px 0; border-radius:4px; font-weight:bold; font-size:15px; text-align:center;}
+
+/* Floating CTA button */
+.floating-cta { position:fixed; right:15px; top:120px; z-index:1000; background:#1a3c75; color:white; padding:12px 18px; border-radius:6px; font-weight:bold; text-decoration:none; font-size:16px;}
+.floating-cta:hover { background:#13305a; }
+
+/* Progress bar */
+#progressBarContainer { width:100%; background:#eee; border-radius:5px; height:8px; margin-bottom:15px;}
+#progressBar { width:0%; height:8px; background:#1a3c75; border-radius:5px;}
+
+/* Mobile */
+@media (max-width:768px){ .step { padding:15px 0; font-size:14px;} .visual { font-size:13px;} .floating-cta { right:10px; top:100px; font-size:15px; padding:10px;} iframe { height:250px; }}
 </style>
 </head>
 <body>
 
 <header>
 <h1>Easy 1040 Tax Guide</h1>
-<p>Step-by-step instructions – always up to date</p>
+<p>Step-by-step instructions – official style</p>
 <div id="currentDate"></div>
 </header>
 
@@ -49,13 +51,13 @@ iframe { width:100%; height:250px; border:1px solid #ccc; border-radius:8px; mar
 
 <div id="progressBarContainer"><div id="progressBar"></div></div>
 
-<div id="dailyTipBox">Loading today's tax tip...</div>
-<div id="weeklyTipBox">Loading this week's tax tip...</div>
+<div class="tip-box" id="dailyTipBox">Loading today's tax tip...</div>
+<div class="tip-box" id="weeklyTipBox">Loading this week's tax tip...</div>
 <div id="taxCountdown">Loading tax countdown...</div>
 
 <!-- Steps -->
 <div class="step" id="step1">
-<h2><span>🗂</span> Step 1: Gather Documents</h2>
+<h2>Step 1: Gather Documents</h2>
 <ul>
 <li>W-2 from your employer</li>
 <li>1099 forms</li>
@@ -65,19 +67,17 @@ iframe { width:100%; height:250px; border:1px solid #ccc; border-radius:8px; mar
 </div>
 
 <div class="step" id="step2">
-<h2><span>✏️</span> Step 2: Personal Info</h2>
+<h2>Step 2: Personal Info</h2>
 <div class="visual">
 Name: Jane Doe  
 Filing Status: Single  
 SSN: XXX-XX-0000
 </div>
-<div class="highlight tooltip">Tip: Your filing status affects taxes
-  <span class="tooltiptext">Single, Married, Head of Household – pick the one that fits.</span>
-</div>
+<div class="tip-box">Tip: Your filing status affects taxes (Single, Married, Head of Household)</div>
 </div>
 
 <div class="step" id="step3">
-<h2><span>💵</span> Step 3: Report Income</h2>
+<h2>Step 3: Report Income</h2>
 <div class="visual">
 W-2: <span class="number-highlight">$40,000</span>  
 Side Job: <span class="number-highlight">$5,000</span>  
@@ -86,7 +86,7 @@ Total: <span class="number-highlight">$45,000</span>
 </div>
 
 <div class="step" id="step4">
-<h2><span>📊</span> Step 4: Adjust Income</h2>
+<h2>Step 4: Adjust Income</h2>
 <div class="visual">
 Total Income: <span class="number-highlight">$45,000</span>  
 Adjustments: <span class="number-highlight">-$2,000</span>  
@@ -95,7 +95,7 @@ AGI: <span class="number-highlight">$43,000</span>
 </div>
 
 <div class="step" id="step5">
-<h2><span>📉</span> Step 5: Deductions</h2>
+<h2>Step 5: Deductions</h2>
 <div class="visual">
 AGI: <span class="number-highlight">$43,000</span>  
 Standard Deduction: <span class="number-highlight">-$13,850</span>  
@@ -104,7 +104,7 @@ Taxable Income: <span class="number-highlight">$29,150</span>
 </div>
 
 <div class="step" id="step6">
-<h2><span>💰</span> Step 6: Credits</h2>
+<h2>Step 6: Credits</h2>
 <div class="visual">
 Tax: <span class="number-highlight">$3,200</span>  
 Credits: <span class="number-highlight">-$1,000</span>  
@@ -113,7 +113,7 @@ New Tax: <span class="number-highlight">$2,200</span>
 </div>
 
 <div class="step" id="step7">
-<h2><span>🎉</span> Step 7: Filing & Refund</h2>
+<h2>Step 7: Filing & Refund</h2>
 <div class="visual">
 Paid: <span class="number-highlight">$3,000</span>  
 Tax Owed: <span class="number-highlight">$2,200</span>  
@@ -121,17 +121,10 @@ Refund: <span class="number-highlight">$800 🎉</span>
 </div>
 </div>
 
-<!-- IRS Video -->
-<div class="step" id="video-tutorial">
-<h2><span>🎥</span> Watch: Latest 1040 Tutorial</h2>
-<p>The video automatically updates yearly:</p>
-<iframe id="irsVideo" src="" title="Official IRS Form 1040 Tutorial" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<!-- Official IRS Instructions -->
+<!-- Embedded IRS PDF -->
 <div class="step" id="irs">
-<h2><span>📄</span> Official IRS Instructions</h2>
-<iframe src="https://www.irs.gov/forms-pubs/about-form-1040"></iframe>
+<h2>Official IRS 1040 Instructions</h2>
+<iframe src="https://www.irs.gov/pub/irs-pdf/i1040.pdf" width="100%" height="400px"></iframe>
 </div>
 
 </div>
@@ -150,16 +143,12 @@ function updateDate() {
 setInterval(updateDate,1000);
 updateDate();
 
-// Daily & weekly tax tips
+// Daily & weekly tips
 const dailyTips = ["💡 Check your W-2 for correct SSN.","💡 Contribute to an IRA before deadline.","💡 Keep receipts for deductible expenses.","💡 Review withholding to avoid surprises.","💡 Track charitable donations.","💡 File early for faster refund.","💡 Use step-by-step tax software.","💡 Confirm bank info for deposit."];
 document.getElementById('dailyTipBox').innerText = "Tip for today: " + dailyTips[new Date().getDate() % dailyTips.length];
 
 const weeklyTips = ["📌 Review last year's return for mistakes.","📌 Double-check deductions and credits.","📌 Keep records organized for audit.","📌 Check IRS updates weekly.","📌 Plan contributions to retirement accounts."];
 document.getElementById('weeklyTipBox').innerText = "Tip of the week: " + weeklyTips[new Date().getDate() % weeklyTips.length];
-
-// Auto-update IRS video yearly
-const irsPlaylistId = "PLy4NJpsoiwpOSrs0Qiboy8xVqQfs2xWJm"; 
-document.getElementById('irsVideo').src = "https://www.youtube.com/embed/videoseries?list=" + irsPlaylistId;
 
 // Progress bar
 const steps = document.querySelectorAll('.step');
@@ -170,14 +159,13 @@ window.addEventListener('scroll', ()=>{
   document.getElementById('progressBar').style.width = scrolled + '%';
 });
 
-// Countdown to regular & extension deadlines
+// Countdown timer
 function adjustForWeekendOrHoliday(date) {
-  let adjusted = new Date(date);
-  if(adjusted.getDay()===6) adjusted.setDate(adjusted.getDate()+2);
-  if(adjusted.getDay()===0) adjusted.setDate(adjusted.getDate()+1);
-  return adjusted;
+  let d = new Date(date);
+  if(d.getDay()===6) d.setDate(d.getDate()+2);
+  if(d.getDay()===0) d.setDate(d.getDate()+1);
+  return d;
 }
-
 function getNextDeadlines() {
   const year = new Date().getFullYear();
   let regular = adjustForWeekendOrHoliday(new Date(year,3,15,23,59,59));
@@ -187,7 +175,6 @@ function getNextDeadlines() {
   if(now>extension) extension = adjustForWeekendOrHoliday(new Date(year+1,9,15,23,59,59));
   return {regular, extension};
 }
-
 let showExtension = false;
 function updateTaxCountdown() {
   const deadlines = getNextDeadlines();
