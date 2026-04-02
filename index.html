@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Easy 1040 Tax Guide – Step by Step for Beginners</title>
 <meta name="description" content="Learn how to fill out IRS Form 1040 step by step. Beginner-friendly guide with visuals, examples, tips, and live daily tax tips. Always up to date with IRS instructions.">
 <meta name="keywords" content="1040 form guide, how to fill 1040, IRS 1040 instructions, easy tax filing, beginner tax guide, daily tax tip">
@@ -21,49 +20,48 @@ header {
   color: white;
   text-align: center;
   padding: 50px 20px;
+  position: relative;
 }
-header h1 {
-  margin-bottom: 10px;
-}
-header p {
-  font-size: 18px;
-}
+header h1 { margin-bottom: 10px; }
+header p { font-size: 18px; }
+
 .container {
   max-width: 950px;
   margin: auto;
   padding: 20px;
   background: white;
 }
+
+/* Step cards upgrade */
 .step {
   margin: 30px 0;
-  padding: 25px;
-  border-radius: 10px;
-  background: #eef2f7;
-  border-left: 8px solid #3498db;
+  padding: 30px 25px;
+  border-radius: 12px;
+  background: #f0f4f8;
+  border-left: 10px solid #3498db;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
 }
-.step:nth-child(even) {
-  background: #f9f9f9;
-  border-left: 8px solid #27ae60;
-}
-.step h2 {
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-}
-.step h2 span {
-  margin-right: 10px;
-  font-size: 28px;
-}
+.step:hover { transform: translateY(-3px); }
+.step:nth-child(even) { background: #fcfcfc; border-left: 10px solid #27ae60; }
+.step h2 { margin-top: 0; display: flex; align-items: center; font-size: 24px; }
+.step h2 span { margin-right: 10px; font-size: 28px; }
+
 .visual {
   background: #fff;
-  padding: 15px;
+  padding: 20px;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: monospace;
   white-space: pre-line;
   border: 1px solid #ccc;
+  font-size: 18px;
 }
+.visual span.number-highlight {
+  font-weight: bold;
+  color: #e67e22;
+}
+
 .highlight {
   background: #fff3cd;
   padding: 12px;
@@ -71,40 +69,23 @@ header p {
   margin-top: 15px;
   border-radius: 6px;
 }
-.cta {
-  display: block;
-  background: #27ae60;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  margin: 25px 0;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.cta:hover {
-  background: #1e874b;
-}
+
 footer {
   text-align: center;
   padding: 25px;
   font-size: 14px;
   color: #777;
 }
+
 iframe {
   width: 100%;
-  height: 500px;
+  height: 550px;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-top: 20px;
 }
-.tooltip {
-  position: relative;
-  cursor: help;
-  border-bottom: 1px dotted #333;
-}
+
+.tooltip { position: relative; cursor: help; border-bottom: 1px dotted #333; }
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 220px;
@@ -122,18 +103,40 @@ iframe {
   transition: opacity 0.3s;
   font-size: 14px;
 }
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
+.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+
 #dailyTipBox {
   background:#fff3cd; 
-  border-left:4px solid #ffc107; 
-  padding:15px; 
+  border-left:5px solid #ffc107; 
+  padding:20px; 
   margin:20px 0; 
-  border-radius:6px; 
+  border-radius:8px; 
   font-weight:bold;
-  font-size:16px;
+  font-size:18px;
+}
+
+/* Floating CTA button */
+.floating-cta {
+  position: fixed;
+  right: 20px;
+  top: 140px;
+  z-index: 1000;
+  background: #27ae60;
+  color: white;
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.floating-cta:hover { background: #1e874b; }
+
+/* Mobile responsive tweaks */
+@media (max-width: 768px){
+  .step { padding: 25px 15px; }
+  .visual { font-size: 16px; }
+  .floating-cta { right: 10px; top: 100px; font-size: 16px; padding: 14px; }
 }
 </style>
 </head>
@@ -142,8 +145,10 @@ iframe {
 <header>
 <h1>Easy 1040 Tax Guide</h1>
 <p>Step-by-step instructions for beginners – always up to date</p>
-<a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Start Filing Now</a>
 </header>
+
+<!-- Floating affiliate CTA -->
+<a class="floating-cta" href="https://is.gd/pbLKhS" target="_blank">👉 Start Filing Now</a>
 
 <div class="container">
 
@@ -153,7 +158,6 @@ iframe {
 <!-- Step 1 -->
 <div class="step" id="step1">
 <h2><span>🗂</span> Step 1: Gather Documents</h2>
-<p>Before starting your 1040, gather:</p>
 <ul>
 <li>W-2 from your employer</li>
 <li>1099 forms (side income)</li>
@@ -162,13 +166,11 @@ iframe {
 <div class="visual">
 [ W-2 ] + [ 1099 ] + [ SSN ] = Ready to Start
 </div>
-<a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Get Started with Your Documents</a>
 </div>
 
 <!-- Step 2 -->
 <div class="step" id="step2">
 <h2><span>✏️</span> Step 2: Personal Information</h2>
-<p>Fill in your name, address, and filing status.</p>
 <div class="visual">
 Name: Jane Doe  
 Filing Status: Single  
@@ -182,77 +184,63 @@ SSN: XXX-XX-0000
 <!-- Step 3 -->
 <div class="step" id="step3">
 <h2><span>💵</span> Step 3: Report Your Income</h2>
-<p>Add all income sources to find your total income.</p>
 <div class="visual">
-W-2 Income: $40,000  
-Side Job: $5,000  
+W-2 Income: <span class="number-highlight">$40,000</span>  
+Side Job: <span class="number-highlight">$5,000</span>  
 ------------------  
-Total Income: $45,000
+Total Income: <span class="number-highlight">$45,000</span>
 </div>
-<a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Automatically Add Your Income</a>
 </div>
 
 <!-- Step 4 -->
 <div class="step" id="step4">
 <h2><span>📊</span> Step 4: Adjust Income</h2>
-<p>Subtract adjustments like student loan interest or retirement contributions.</p>
 <div class="visual">
-Total Income: $45,000  
-Adjustments: -$2,000  
+Total Income: <span class="number-highlight">$45,000</span>  
+Adjustments: <span class="number-highlight">-$2,000</span>  
 ------------------  
-Adjusted Gross Income (<span class="tooltip">AGI<span class="tooltiptext">Your total income minus adjustments like retirement or student loans.</span></span>): $43,000
+Adjusted Gross Income (AGI): <span class="number-highlight">$43,000</span>
 </div>
 </div>
 
 <!-- Step 5 -->
 <div class="step" id="step5">
 <h2><span>📉</span> Step 5: Take Deductions</h2>
-<p>Most beginners use the standard deduction to lower taxable income.</p>
 <div class="visual">
-AGI: $43,000  
-Standard Deduction: -$13,850  
+AGI: <span class="number-highlight">$43,000</span>  
+Standard Deduction: <span class="number-highlight">-$13,850</span>  
 ------------------  
-Taxable Income: $29,150
+Taxable Income: <span class="number-highlight">$29,150</span>
 </div>
 </div>
 
 <!-- Step 6 -->
 <div class="step" id="step6">
 <h2><span>💰</span> Step 6: Apply Credits</h2>
-<p>Credits reduce the amount of tax you owe.</p>
 <div class="visual">
-Tax: $3,200  
-Credits: -$1,000  
+Tax: <span class="number-highlight">$3,200</span>  
+Credits: <span class="number-highlight">-$1,000</span>  
 ------------------  
-New Tax: $2,200
+New Tax: <span class="number-highlight">$2,200</span>
 </div>
-<a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Calculate Your Tax Easily</a>
 </div>
 
 <!-- Step 7 -->
 <div class="step" id="step7">
 <h2><span>🎉</span> Step 7: Filing & Refund</h2>
-<p>Enter taxes already paid and see if you get a refund or owe money.</p>
 <div class="visual">
-Paid: $3,000  
-Tax Owed: $2,200  
+Paid: <span class="number-highlight">$3,000</span>  
+Tax Owed: <span class="number-highlight">$2,200</span>  
 ------------------  
-Refund: $800 🎉
+Refund: <span class="number-highlight">$800 🎉</span>
 </div>
-<a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 File Your Taxes Now</a>
 </div>
 
-<!-- Dynamic IRS Tutorial Video -->
+<!-- Static IRS Tutorial Video -->
 <div class="step" id="video-tutorial">
 <h2><span>🎥</span> Watch: Latest 1040 Tutorial</h2>
-<p>The newest IRS Form 1040 video for this year will show below:</p>
-<iframe id="taxVideo" width="100%" height="400"
-    src=""
-    title="Latest IRS Form 1040 Tutorial"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
+<p>This official IRS video updates yearly:</p>
+<iframe src="https://www.youtube.com/embed/IcN7H4rM-3A" title="Official IRS Form 1040 Tutorial" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <!-- Official IRS Instructions -->
@@ -268,7 +256,6 @@ Refund: $800 🎉
 <p>Educational purposes only. Not professional tax advice. Always verify with IRS.</p>
 </footer>
 
-<!-- JavaScript -->
 <script>
 // Daily Tax Tip
 const taxTips = [
@@ -284,26 +271,6 @@ const taxTips = [
 const today = new Date();
 const tipIndex = today.getDate() % taxTips.length;
 document.getElementById('dailyTipBox').innerText = "Tip for today: " + taxTips[tipIndex];
-
-// Dynamic YouTube Video Placeholder (replace YOUR_API_KEY with your API key)
-async function loadLatestVideo() {
-  const API_KEY = "YOUR_API_KEY"; // <-- replace with your YouTube Data API key
-  const SEARCH_QUERY = "IRS Form 1040 tutorial " + new Date().getFullYear();
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&q=${encodeURIComponent(SEARCH_QUERY)}&key=${API_KEY}`;
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    const videoId = data.items[0].id.videoId;
-    if (videoId) {
-      document.getElementById("taxVideo").src = `https://www.youtube.com/embed/${videoId}`;
-    }
-  } catch (err) {
-    console.error("Error loading video:", err);
-  }
-}
-
-// Uncomment below if you have a YouTube API key
-// loadLatestVideo();
 </script>
 
 </body>
