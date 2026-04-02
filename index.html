@@ -8,14 +8,171 @@
   <meta name="keywords" content="how to file taxes, first-time tax filer, tax tips, Professor Hootington, tax guide, child tax credit, self-employment, tax refund, online tax filing">
   <meta name="author" content="Benito Palmarini">
   <title>Professor Hootington’s First-Time Tax Filing Guide</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Inline CSS -->
+  <style>
+    /* Reset and basic setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #f7f0f8, #e0f7fa);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      border-bottom: 4px solid #ff6f61;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #5d4037;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .cta-button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .cta-button:hover {
+      background-color: #ff3d00;
+      transform: scale(1.05);
+    }
+
+    /* Step sections */
+    .step {
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      background: linear-gradient(120deg, #fef9f9, #f1f8e9);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .professor-step {
+      width: 120px;
+      border-radius: 10px;
+      border: 2px solid #ff6f61;
+    }
+
+    .step h2 {
+      color: #ff6f61;
+      margin-bottom: 0.5rem;
+    }
+
+    .step ul {
+      list-style: inside disc;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    /* CTA wrapper */
+    .cta-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff3e0;
+      margin: 3rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .professor-point {
+      width: 100px;
+    }
+
+    .cta {
+      font-size: 1.2rem;
+    }
+
+    /* Daily tip */
+    .daily-tip {
+      background-color: #e0f7fa;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 1rem 2rem;
+      border-left: 6px solid #00bcd4;
+      border-radius: 10px;
+      font-style: italic;
+      color: #00796b;
+    }
+
+    /* Floating mascot */
+    .professor-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 80px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      border-top: 4px solid #ff6f61;
+    }
+
+    footer a {
+      color: #ff3d00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
     <img src="professor.png" alt="Professor Hootington smiling at desk" class="professor-img">
-    <p>Get started with your taxes: 
+    <p>Get started with your taxes:
       <a href="https://is.gd/SRCKpA" target="_blank" rel="noopener noreferrer" class="cta-button">File Your Taxes Online</a>
     </p>
     <p>Today's Date: <span id="current-date"></span></p>
@@ -73,14 +230,12 @@
       </div>
     </section>
 
-    <!-- Steps 4–9 can follow the same structure -->
-
     <!-- CTA Section -->
     <div class="cta-wrapper">
       <img src="professor-pointing.png" alt="Professor Hootington pointing at the button" class="professor-point">
       <div class="cta">
         <p>
-          Ready to file your taxes? 
+          Ready to file your taxes?
           <a href="https://is.gd/SRCKpA" target="_blank" rel="noopener noreferrer" class="cta-button">Click Here to Get Started!</a>
         </p>
       </div>
@@ -100,7 +255,20 @@
     <p>File online here: <a href="https://is.gd/SRCKpA" target="_blank" rel="noopener noreferrer" class="cta-button">Click Here to File</a></p>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- Inline JS -->
+  <script>
+    // Current date
+    const dateSpan = document.getElementById('current-date');
+    const today = new Date();
+    dateSpan.textContent = today.toDateString();
+
+    // Countdown to April 15
+    const countdownSpan = document.getElementById('countdown');
+    const taxDeadline = new Date(today.getFullYear(), 3, 15); // April 15
+    const diffTime = taxDeadline - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    countdownSpan.textContent = diffDays > 0 ? diffDays + ' days left' : 'Deadline passed!';
+  </script>
 </body>
 
 </html>
