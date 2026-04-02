@@ -3,132 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professor Hootington’s First-Time Tax Filing Guide: Step-by-step help for Form 1040, schedules, and credits.">
+  <meta name="description" content="🦉 Professor Hootington’s First-Time Tax Filing Guide: Step-by-step Form 1040 and schedules for beginners.">
   <title>🦉 Professor Hootington’s Step-by-Step 1040 Guide</title>
   <style>
-    body {font-family: Arial, sans-serif; line-height: 1.6; background: #f9f9f9; padding: 20px;}
-    h1, h2, h3 {color: #2b3e50;}
-    .line {background: #e8f4f8; padding: 12px; margin: 10px 0; border-left: 5px solid #2b3e50;}
-    .tip {background: #fff3cd; padding: 8px; margin: 5px 0 15px 0; border-left: 5px solid #ffdd57;}
-    a {color: #0077cc; text-decoration: none;}
-    a:hover {text-decoration: underline;}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #1a1a1a;
+    }
+    header {
+      background: #e6e6e6;
+      padding: 20px;
+      border-bottom: 4px solid #0072bc;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      color: #0072bc;
+    }
+    .line {
+      background: #f0f8ff;
+      padding: 12px;
+      margin: 10px 0;
+      border-left: 5px solid #0072bc;
+    }
+    .tip {
+      background: #fff3cd;
+      padding: 8px;
+      margin: 5px 0 15px 0;
+      border-left: 5px solid #ffdd57;
+    }
+    a {
+      color: #0072bc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .date-time {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .clock {
+      font-size: 1.2em;
+      background: #e6e6e6;
+      padding: 8px;
+      display: inline-block;
+      border-radius: 4px;
+    }
+    footer {
+      background: #e6e6e6;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .professor-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .professor-bubble {
+      background: #0072bc;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 75%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      font-size: 1.2em;
+    }
+    .professor-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+    .centered-url {
+      display: block;
+      margin: 30px 0;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #0072bc;
+    }
+    .centered-url a {
+      font-size: 1.3em;
+    }
   </style>
 </head>
 <body>
 
-<h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
+<header>
+  <h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
+  <p>Get started with your taxes: <a href="https://is.gd/SRCKpA" target="_blank">Click here to file your taxes online</a></p>
+  <div class="date-time">Today’s Date: <span id="currentDate"></span></div>
+  <div class="date-time">Countdown to Deadline: <span id="taxClock" class="clock"></span></div>
+</header>
 
+<!-- Step 1: Gather Your Papers -->
 <h2>Step 1 — Gather Your Papers</h2>
-<p>What you need:</p>
 <ul>
   <li>W‑2 from your job</li>
-  <li>1099 forms if you did freelance or earned interest</li>
-  <li>Receipts for deductions (like education or charity)</li>
+  <li>1099 forms for freelance or interest</li>
+  <li>Receipts for deductions (education, charity)</li>
   <li>Last year’s tax return (if you have it)</li>
 </ul>
-<div class="tip">💬 Professor Hootington says: “Think of this as collecting all your school supplies before starting a project. You can’t work without them!”</div>
+<div class="tip">💬 “Think of this as collecting all your school supplies before starting a project. You can’t work without them!”</div>
 
+<!-- Professor Hootington’s Speech Bubble -->
+<div class="professor-container">
+  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
+  <div class="professor-bubble">“Don’t worry, I’ll help you step by step! Start by gathering your W-2 and 1099 forms.”</div>
+</div>
+
+<!-- Step 2: Personal Information -->
 <h2>Step 2 — Fill in Your Personal Info</h2>
-<p>Form 1040:</p>
 <ul>
   <li>Your name, address, Social Security number</li>
-  <li>Spouse’s info (if married)</li>
+  <li>Spouse info (if married)</li>
   <li>Dependents (kids or others you care for)</li>
 </ul>
-<div class="tip">💬 Tip: “Check every letter and number—tiny mistakes can slow things down.”</div>
+<div class="tip">💬 “Check every letter and number—tiny mistakes can slow things down.”</div>
 
+<!-- Professor Hootington’s Tip -->
+<div class="professor-container">
+  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
+  <div class="professor-bubble">“Be careful when entering your info, especially your Social Security number. It’s like your tax fingerprint!”</div>
+</div>
+
+<!-- Step 3: Add Up Your Income -->
 <h2>Step 3 — Add Up Your Income (Lines 1–8)</h2>
-<ul>
-  <li>Line 1: Wages from W‑2s</li>
-  <li>Line 2: Interest from bank accounts</li>
-  <li>Line 3: Dividends from stocks</li>
-  <li>Line 4–7: Retirement money, Social Security, side jobs, prizes</li>
-  <li>Line 8: Total income = all above added together</li>
-</ul>
-<div class="tip">💬 Professor Hootington tip: “This is like counting all your allowance, gifts, and money earned in one pile.”</div>
+<!-- Income lines (example) -->
+<div class="line"><strong>Line 1a – Wages, salaries, tips</strong><br>All money earned from jobs. Copy Box 1 from your W-2 forms.</div>
+<div class="tip">💬 “Double-check all W-2s, add multiple jobs if needed, numbers must match.”</div>
 
-<h2>Step 4 — Subtract Adjustments (Schedule 1 / Line 9–10)</h2>
-<p>Things that lower your taxable income:</p>
-<ul>
-  <li>Student loan interest</li>
-  <li>IRA contributions</li>
-  <li>Educator expenses</li>
-  <li>Self-employment expenses</li>
-  <li>HSA contributions</li>
-</ul>
-<p>Line 10: Adjusted Gross Income (AGI) = Total Income – Adjustments</p>
-<div class="tip">💬 Tip: “This is your ‘clean income,’ the number the IRS really cares about.”</div>
+<!-- Professor Hootington’s Tip -->
+<div class="professor-container">
+  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
+  <div class="professor-bubble">“This is like counting all your allowance, gifts, and money earned in one pile.”</div>
+</div>
 
-<h2>Step 5 — Choose Your Deduction (Lines 11–12)</h2>
-<ul>
-  <li>Standard deduction: fixed amount everyone can take</li>
-  <li>Itemized deduction: add up things like medical, mortgage, charity</li>
-  <li>Line 12: Taxable Income = AGI – Deduction</li>
-</ul>
-<div class="tip">💬 Tip: “Pick the bigger deduction to pay less tax.”</div>
+<!-- Additional Steps and More Tips Here -->
 
-<h2>Step 6 — Calculate Tax (Lines 13–15 / Schedule 2)</h2>
-<ul>
-  <li>Line 13: Tax based on taxable income (look up IRS tables)</li>
-  <li>Schedule 2: Extra taxes (if self-employed or AMT)</li>
-  <li>Line 15: Total tax = Tax + Extra taxes</li>
-</ul>
-<div class="tip">💬 Tip: “Double-check numbers and include extra taxes if they apply.”</div>
+<!-- URL in the Center -->
+<div class="centered-url">
+  <p>Ready to file your taxes? <a href="https://is.gd/SRCKpA" target="_blank">Click here to get started!</a></p>
+</div>
 
-<h2>Step 7 — Apply Payments & Credits (Lines 16–20 / Schedule 3)</h2>
-<ul>
-  <li>Line 16: Federal tax withheld from W‑2/1099</li>
-  <li>Line 17: Estimated payments made</li>
-  <li>Schedule 3: Nonrefundable & refundable credits</li>
-  <li>Line 20: Total payments = all above</li>
-</ul>
-<div class="tip">💬 Tip: “Credits reduce your tax, sometimes giving you a refund!”</div>
+<footer>
+  <p>© <span id="currentYear"></span> Professor Hootington’s Tax Guide</p>
+  <p>For more information, visit: <a href="https://is.gd/SRCKpA" target="_blank">File Taxes Online</a></p>
+</footer>
 
-<h2>Step 8 — Find Refund or Amount Owed (Lines 21–25)</h2>
-<ul>
-  <li>Compare total tax (Line 15) vs total payments (Line 20)</li>
-  <li>If payments &gt; tax → refund</li>
-  <li>If tax &gt; payments → amount owed</li>
-  <li>Line 25: Sign and date</li>
-</ul>
-<div class="tip">💬 Tip: “Sign your tax return or it’s like turning in homework unsigned!”</div>
+<script>
+// Display current date
+const date = new Date();
+document.getElementById('currentDate').innerText = date.toLocaleDateString();
+document.getElementById('currentYear').innerText = date.getFullYear();
 
-<h2>Step 9 — Complete Supporting Schedules (If Needed)</h2>
-<ul>
-  <li>Schedule A: Itemized deductions</li>
-  <li>Schedule B: Interest & Dividends</li>
-  <li>Schedule C: Business income</li>
-  <li>Schedule D: Capital gains/losses</li>
-  <li>Schedule E: Rental/Partnership income</li>
-  <li>Schedule F: Farm income/loss</li>
-  <li>Schedule SE: Self-employment tax</li>
-  <li>Schedule 8812: Child tax credit</li>
-</ul>
-<div class="tip">💬 Tip: “These feed numbers into your 1040. Finish them first if you need them.”</div>
-
-<h2>✅ Professor Hootington’s Quick Tips for First-Time Filers</h2>
-<ul>
-  <li>Take it step by step 🦉</li>
-  <li>Use last year’s return as a guide if you have it</li>
-  <li>Keep receipts and forms handy</li>
-  <li>Double-check every number</li>
-  <li>Don’t be afraid to ask for help</li>
-</ul>
-
-<p>More detailed guidance: <a href="https://is.gd/SRCKpA" target="_blank">Professor Hootington’s Full Tax Guide</a></p>
-
-<h2>🦉 Professor Hootington’s How to File Form 1040 Line-by-Line</h2>
-
-<h3>Page 1 — Income & Adjustments (Lines 1–10)</h3>
-
-<div class="line"><strong>Line 1a – Wages, salaries, tips</strong><br>All the money you earned from jobs. Copy Box 1 from your W-2 forms.</div>
-<div class="tip"><strong>Tip 1:</strong> Double-check that you include all your W-2s.<br><strong>Tip 2:</strong> Add them up if you worked more than one job.<br><strong>Tip 3:</strong> Ensure your numbers match what your employer gave you.</div>
-
-<!-- Continue with every line explanation here as needed -->
-
-<!-- Insert more lines from the form 1040, then Schedule 1, 2, etc. below -->
-
-<p>For more detailed guidance: <a href="https://is.gd/SRCKpA" target="_blank">Professor Hootington’s Full Tax Guide</a></p>
+// Countdown Clock to Tax Deadlines
+let showExtension = false;
+function updateClock() {
+  const now = new Date();
+  const deadline = showExtension ? new Date(now.getFullYear(), 9, 15) : new Date(now.getFullYear(), 3, 15);
+  const diff = deadline - now;
+  if(diff > 0){
+    const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+    const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById('taxClock').innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else {
+    document.getElementById('taxClock').innerText = "Deadline passed!";
+  }
+}
+// Rotate every 2 minutes between normal and extension deadline
+setInterval(() => { showExtension = !showExtension; }, 120000);
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
 </body>
 </html>
