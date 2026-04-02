@@ -8,140 +8,39 @@
 <meta name="keywords" content="1040 form guide, IRS 1040 instructions, easy tax filing, beginner tax guide, daily tax tip, weekly tax tip">
 
 <style>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.5;
-}
-header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  text-align: center;
-  padding: 35px 20px;
-  position: relative;
-}
-header h1 { margin-bottom: 5px; font-size:28px; }
-header p { font-size: 16px; }
+/* Basic page styling */
+body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f5f7fa; color:#333; line-height:1.5;}
+header { background:linear-gradient(135deg,#1e3c72,#2a5298); color:white; text-align:center; padding:35px 20px;}
+header h1 { margin-bottom:5px; font-size:28px;}
+header p { font-size:16px;}
+.container { max-width:900px; margin:auto; padding:15px; background:white;}
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 15px;
-  background: white;
-}
-
-/* Smaller Step Cards */
-.step {
-  margin: 20px 0;
-  padding: 20px 15px;
-  border-radius: 10px;
-  background: #f0f4f8;
-  border-left: 8px solid #3498db;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
-  font-size: 15px;
-}
-.step:hover { transform: translateY(-2px); }
-.step:nth-child(even) { background: #fcfcfc; border-left: 8px solid #27ae60; }
-
-.step h2 { margin-top: 0; display: flex; align-items: center; font-size: 20px; }
-.step h2 span { margin-right: 8px; font-size: 24px; }
-
-.visual {
-  background: #fff;
-  padding: 12px;
-  margin-top: 8px;
-  border-radius: 8px;
-  font-family: monospace;
-  white-space: pre-line;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-.visual span.number-highlight {
-  font-weight: bold;
-  color: #e67e22;
-}
-
-.highlight {
-  background: #fff3cd;
-  padding: 10px;
-  border-left: 4px solid #ffc107;
-  margin-top: 10px;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-  color: #777;
-}
-
-iframe {
-  width: 100%;
-  height: 400px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 15px;
-}
-
-.tooltip { position: relative; cursor: help; border-bottom: 1px dotted #333; }
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  border-radius: 6px;
-  padding: 8px;
-  position: absolute;
-  z-index: 10;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -100px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 13px;
-}
-.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
-
-#dailyTipBox, #weeklyTipBox {
-  background:#fff3cd; 
-  border-left:5px solid #ffc107; 
-  padding:15px; 
-  margin:15px 0; 
-  border-radius:6px; 
-  font-weight:bold;
-  font-size:16px;
-}
+/* Step cards smaller and visual */
+.step { margin:20px 0; padding:20px 15px; border-radius:10px; background:#f0f4f8; border-left:8px solid #3498db; box-shadow:0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s; font-size:15px;}
+.step:hover { transform:translateY(-2px);}
+.step:nth-child(even) { background:#fcfcfc; border-left:8px solid #27ae60;}
+.step h2 { margin-top:0; display:flex; align-items:center; font-size:20px;}
+.step h2 span { margin-right:8px; font-size:24px;}
+.visual { background:#fff; padding:12px; margin-top:8px; border-radius:8px; font-family:monospace; white-space:pre-line; border:1px solid #ccc; font-size:14px;}
+.visual span.number-highlight { font-weight:bold; color:#e67e22;}
+.highlight { background:#fff3cd; padding:10px; border-left:4px solid #ffc107; margin-top:10px; border-radius:5px; font-size:14px;}
+footer { text-align:center; padding:20px; font-size:13px; color:#777;}
+iframe { width:100%; height:400px; border:1px solid #ccc; border-radius:8px; margin-top:15px;}
+.tooltip { position:relative; cursor:help; border-bottom:1px dotted #333;}
+.tooltip .tooltiptext { visibility:hidden; width:200px; background-color:#333; color:#fff; text-align:left; border-radius:6px; padding:8px; position:absolute; z-index:10; bottom:125%; left:50%; margin-left:-100px; opacity:0; transition:opacity 0.3s; font-size:13px;}
+.tooltip:hover .tooltiptext { visibility:visible; opacity:1;}
+#dailyTipBox, #weeklyTipBox { background:#fff3cd; border-left:5px solid #ffc107; padding:15px; margin:15px 0; border-radius:6px; font-weight:bold; font-size:16px;}
 
 /* Floating CTA button */
-.floating-cta {
-  position: fixed;
-  right: 15px;
-  top: 120px;
-  z-index: 1000;
-  background: #27ae60;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
-}
-.floating-cta:hover { background: #1e874b; }
+.floating-cta { position:fixed; right:15px; top:120px; z-index:1000; background:#27ae60; color:white; padding:14px 18px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:16px; transition:0.3s;}
+.floating-cta:hover { background:#1e874b; }
 
 /* Mobile tweaks */
-@media (max-width: 768px){
-  .step { padding: 18px 12px; font-size:14px; }
-  .visual { font-size:13px; }
-  .floating-cta { right: 10px; top: 100px; font-size:15px; padding:12px; }
-  iframe { height: 300px; }
-}
+@media (max-width:768px){ .step { padding:18px 12px; font-size:14px;} .visual { font-size:13px;} .floating-cta { right:10px; top:100px; font-size:15px; padding:12px;} iframe { height:300px; }}
+
+/* Progress bar */
+#progressBarContainer { width:100%; background:#eee; border-radius:5px; margin-bottom:15px;}
+#progressBar { width:0%; height:10px; background:#3498db; border-radius:5px;}
 </style>
 </head>
 <body>
@@ -154,6 +53,9 @@ iframe {
 <a class="floating-cta" href="https://is.gd/pbLKhS" target="_blank">👉 Start Filing Now</a>
 
 <div class="container">
+
+<!-- Progress bar -->
+<div id="progressBarContainer"><div id="progressBar"></div></div>
 
 <!-- Daily & Weekly Tips -->
 <div id="dailyTipBox">Loading today's tax tip...</div>
@@ -269,17 +171,22 @@ const weeklyTips = [
   "📌 Check IRS updates weekly.",
   "📌 Plan contributions to retirement accounts."
 ];
-document.getElementById('weeklyTipBox').innerText = "Tip of the week: " + weeklyTips[today.getWeek ? today.getWeek()%weeklyTips.length : today.getDate()%weeklyTips.length];
+document.getElementById('weeklyTipBox').innerText = "Tip of the week: " + weeklyTips[today.getDate() % weeklyTips.length];
 
 // Auto-update IRS video each year
 const currentYear = new Date().getFullYear();
-// Example: official IRS 1040 video URL pattern (replace if IRS provides yearly video IDs)
-const videoMap = {
-  2024: "IcN7H4rM-3A",
-  2025: "dQw4w9WgXcQ" // placeholder for next year
-};
+const videoMap = { 2024:"IcN7H4rM-3A", 2025:"dQw4w9WgXcQ" };
 const videoId = videoMap[currentYear] || videoMap[2024];
 document.getElementById('irsVideo').src = "https://www.youtube.com/embed/" + videoId;
+
+// Progress bar
+const steps = document.querySelectorAll('.step');
+window.addEventListener('scroll',()=>{
+  let scrollTop = window.scrollY;
+  let docHeight = document.body.scrollHeight - window.innerHeight;
+  let scrolled = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = scrolled + '%';
+});
 </script>
 
 </body>
