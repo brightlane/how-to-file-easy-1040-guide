@@ -3,185 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="🦉 Professor Hootington’s First-Time Tax Filing Guide: Step-by-step Form 1040 and schedules for beginners.">
-  <title>🦉 Professor Hootington’s Step-by-Step 1040 Guide</title>
+  <title>🦉 Professor Hootington’s First-Time Tax Filing Guide</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-      color: #1a1a1a;
-    }
-    header {
-      background: #e6e6e6;
-      padding: 20px;
-      border-bottom: 4px solid #0072bc;
-      text-align: center;
-    }
-    h1, h2, h3 {
-      color: #0072bc;
-    }
-    .line {
-      background: #f0f8ff;
-      padding: 12px;
-      margin: 10px 0;
-      border-left: 5px solid #0072bc;
-    }
-    .tip {
-      background: #fff3cd;
-      padding: 8px;
-      margin: 5px 0 15px 0;
-      border-left: 5px solid #ffdd57;
-    }
-    a {
-      color: #0072bc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .date-time {
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .clock {
-      font-size: 1.2em;
-      background: #e6e6e6;
-      padding: 8px;
-      display: inline-block;
-      border-radius: 4px;
-    }
-    footer {
-      background: #e6e6e6;
-      padding: 20px;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .professor-container {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
-    .professor-bubble {
-      background: #0072bc;
-      color: white;
-      padding: 15px;
-      border-radius: 10px;
-      width: 75%;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      font-size: 1.2em;
-    }
-    .professor-image {
-      width: 50px;
-      height: 50px;
-      margin-right: 20px;
-      border-radius: 50%;
-    }
-    .centered-url {
-      display: block;
-      margin: 30px 0;
-      text-align: center;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #0072bc;
-    }
-    .centered-url a {
-      font-size: 1.3em;
-    }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f5f5f5; color: #222; padding: 20px; }
+    h1, h2, h3 { color: #004080; }
+    .tip { background: #fffbe6; border-left: 4px solid #ffcc00; padding: 10px; margin: 10px 0; }
+    .professor-container { display: flex; align-items: flex-start; margin: 10px 0; }
+    .professor-image { width: 50px; height: 50px; margin-right: 10px; }
+    .professor-bubble { background: #e0f7fa; padding: 10px; border-radius: 8px; flex: 1; }
+    a { color: #004080; text-decoration: underline; }
+    .countdown { font-weight: bold; color: #d00000; }
+    .section { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    footer { font-size: 0.9em; text-align: center; margin-top: 40px; color: #555; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
-  <p>Get started with your taxes: <a href="https://is.gd/SRCKpA" target="_blank">Click here to file your taxes online</a></p>
-  <div class="date-time">Today’s Date: <span id="currentDate"></span></div>
-  <div class="date-time">Countdown to Deadline: <span id="taxClock" class="clock"></span></div>
-</header>
+<h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
+<p><a href="https://is.gd/SRCKpA" target="_blank">Get started: File your taxes online here</a></p>
+<p>Today’s Date: <span id="current-date"></span></p>
+<p>Countdown to Deadline: <span class="countdown" id="countdown"></span></p>
 
-<!-- Step 1: Gather Your Papers -->
-<h2>Step 1 — Gather Your Papers</h2>
-<ul>
-  <li>W‑2 from your job</li>
-  <li>1099 forms for freelance or interest</li>
-  <li>Receipts for deductions (education, charity)</li>
-  <li>Last year’s tax return (if you have it)</li>
-</ul>
-<div class="tip">💬 “Think of this as collecting all your school supplies before starting a project. You can’t work without them!”</div>
+<section class="section">
+  <h2>Step 1 — Gather Your Papers</h2>
+  <ul>
+    <li>W‑2 from your job</li>
+    <li>1099 forms for freelance or interest</li>
+    <li>Receipts for deductions (education, charity)</li>
+    <li>Last year’s tax return (if you have it)</li>
+  </ul>
+  <div class="tip">💬 “Think of this as collecting all your school supplies before starting a project. You can’t work without them!”</div>
+  <div class="professor-container">
+    <img src="https://example.com/professor-hootington-avatar.png" class="professor-image" alt="Professor Hootington">
+    <div class="professor-bubble">“Don’t worry, I’ll help you step by step! Start by gathering your W-2 and 1099 forms.”</div>
+  </div>
+</section>
 
-<!-- Professor Hootington’s Speech Bubble -->
-<div class="professor-container">
-  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
-  <div class="professor-bubble">“Don’t worry, I’ll help you step by step! Start by gathering your W-2 and 1099 forms.”</div>
-</div>
+<section class="section">
+  <h2>Step 2 — Fill in Your Personal Info</h2>
+  <ul>
+    <li>Your name, address, Social Security number</li>
+    <li>Spouse info (if married)</li>
+    <li>Dependents (kids or others you care for)</li>
+  </ul>
+  <div class="tip">💬 “Check every letter and number—tiny mistakes can slow things down.”</div>
+  <div class="professor-container">
+    <img src="https://example.com/professor-hootington-avatar.png" class="professor-image" alt="Professor Hootington">
+    <div class="professor-bubble">“Be careful when entering your info, especially your Social Security number. It’s like your tax fingerprint!”</div>
+  </div>
+</section>
 
-<!-- Step 2: Personal Information -->
-<h2>Step 2 — Fill in Your Personal Info</h2>
-<ul>
-  <li>Your name, address, Social Security number</li>
-  <li>Spouse info (if married)</li>
-  <li>Dependents (kids or others you care for)</li>
-</ul>
-<div class="tip">💬 “Check every letter and number—tiny mistakes can slow things down.”</div>
+<section class="section">
+  <h2>Step 3 — Add Up Your Income (Lines 1–8)</h2>
+  <h3>Line 1a – Wages, salaries, tips</h3>
+  <p>All money earned from jobs. Copy Box 1 from your W-2 forms.</p>
+  <div class="tip">💬 “Double-check all W-2s, add multiple jobs if needed, numbers must match.”</div>
+  <div class="professor-container">
+    <img src="https://example.com/professor-hootington-avatar.png" class="professor-image" alt="Professor Hootington">
+    <div class="professor-bubble">“This is like counting all your allowance, gifts, and money earned in one pile.”</div>
+  </div>
+</section>
 
-<!-- Professor Hootington’s Tip -->
-<div class="professor-container">
-  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
-  <div class="professor-bubble">“Be careful when entering your info, especially your Social Security number. It’s like your tax fingerprint!”</div>
-</div>
+<!-- Placeholder for all 1040 lines -->
+<section class="section">
+  <h2>📝 Form 1040 Line-by-Line Guide</h2>
+  <p>Professor Hootington will guide you through every line with tips and tricks.</p>
+  <!-- Example for Line 1b -->
+  <h3>Line 1b – Household employee wages not on W‑2</h3>
+  <p>If someone paid you for babysitting or helping at home but didn’t give you a W‑2, you put it here.</p>
+  <div class="tip">💬 “Include all money you earned—even small jobs count.”</div>
+  <div class="professor-container">
+    <img src="https://example.com/professor-hootington-avatar.png" class="professor-image" alt="Professor Hootington">
+    <div class="professor-bubble">“Think of this as reporting all extra chores you got paid for!”</div>
+  </div>
+</section>
 
-<!-- Step 3: Add Up Your Income -->
-<h2>Step 3 — Add Up Your Income (Lines 1–8)</h2>
-<!-- Income lines (example) -->
-<div class="line"><strong>Line 1a – Wages, salaries, tips</strong><br>All money earned from jobs. Copy Box 1 from your W-2 forms.</div>
-<div class="tip">💬 “Double-check all W-2s, add multiple jobs if needed, numbers must match.”</div>
-
-<!-- Professor Hootington’s Tip -->
-<div class="professor-container">
-  <img src="https://example.com/professor-hootington-avatar.png" alt="Professor Hootington" class="professor-image">
-  <div class="professor-bubble">“This is like counting all your allowance, gifts, and money earned in one pile.”</div>
-</div>
-
-<!-- Additional Steps and More Tips Here -->
-
-<!-- URL in the Center -->
-<div class="centered-url">
-  <p>Ready to file your taxes? <a href="https://is.gd/SRCKpA" target="_blank">Click here to get started!</a></p>
-</div>
+<!-- Add more lines here in the same format for 1040, Schedule 1, Schedule 2, etc. -->
 
 <footer>
-  <p>© <span id="currentYear"></span> Professor Hootington’s Tax Guide</p>
-  <p>For more information, visit: <a href="https://is.gd/SRCKpA" target="_blank">File Taxes Online</a></p>
+  <p>© 2026 Professor Hootington’s Tax Guide | <a href="https://is.gd/SRCKpA" target="_blank">File Taxes Online</a></p>
 </footer>
 
 <script>
-// Display current date
-const date = new Date();
-document.getElementById('currentDate').innerText = date.toLocaleDateString();
-document.getElementById('currentYear').innerText = date.getFullYear();
+// Current Date
+document.getElementById('current-date').textContent = new Date().toLocaleDateString();
 
-// Countdown Clock to Tax Deadlines
-let showExtension = false;
-function updateClock() {
+// Countdown Timer
+function countdownTimer() {
+  const countdownElement = document.getElementById('countdown');
   const now = new Date();
-  const deadline = showExtension ? new Date(now.getFullYear(), 9, 15) : new Date(now.getFullYear(), 3, 15);
-  const diff = deadline - now;
-  if(diff > 0){
-    const days = Math.floor(diff / 1000 / 60 / 60 / 24);
-    const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    document.getElementById('taxClock').innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  } else {
-    document.getElementById('taxClock').innerText = "Deadline passed!";
-  }
+  
+  const taxDeadline = new Date(now.getFullYear(), 3, 15, 23, 59, 59); // April 15
+  const extensionDeadline = new Date(now.getFullYear(), 9, 15, 23, 59, 59); // October 15
+  let target = taxDeadline > now ? taxDeadline : extensionDeadline;
+  
+  const diff = target - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  
+  countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
-// Rotate every 2 minutes between normal and extension deadline
-setInterval(() => { showExtension = !showExtension; }, 120000);
-setInterval(updateClock, 1000);
-updateClock();
-</script>
 
+// Update countdown every second
+setInterval(countdownTimer, 1000);
+countdownTimer();
+</script>
 </body>
 </html>
