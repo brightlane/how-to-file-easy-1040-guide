@@ -1,244 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First-Time Filer 1040 Guide – Encyclopedia-Level</title>
-<meta name="description" content="Comprehensive step-by-step educational guide for first-time filers using IRS-style instructions and visuals.">
-<meta name="keywords" content="1040 form guide, first tax filer, IRS style guide, tax instructions, daily tax tips, schedules">
-
-<style>
-body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f9fafb; color:#222; line-height:1.6; }
-header { background:#1e3c72; color:white; text-align:center; padding:30px 15px; }
-header h1 { margin-bottom:5px; font-size:28px; }
-header p { font-size:16px; margin:0; }
-#currentDate { background:#e1eaf7; color:#1e3c72; padding:10px; margin:10px auto; text-align:center; font-weight:bold; border-radius:6px; max-width:300px; }
-.container { max-width:900px; margin:auto; padding:15px; background:white; }
-.step { margin:20px 0; padding:20px; border-radius:10px; background:#f7f8fa; border-left:6px solid #1e3c72; box-shadow:0 1px 4px rgba(0,0,0,0.05); }
-.step h2 { margin-top:0; font-size:20px; display:flex; align-items:center; }
-.step h2 span { margin-right:8px; font-size:24px; }
-.visual { background:#fff; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #ccc; font-family:monospace; font-size:14px; white-space:pre-line; }
-.tip-box { background:#1e3c72; color:white; border-left:5px solid #154175; padding:12px; margin:10px 0; border-radius:5px; font-size:14px; }
-footer { text-align:center; padding:15px; font-size:13px; color:#555; margin-top:20px; }
-.floating-cta { position:fixed; right:15px; top:120px; z-index:1000; background:#27ae60; color:white; padding:14px 18px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:16px; transition:0.3s; }
-.floating-cta:hover { background:#1e874b; }
-#progressBarContainer { width:100%; background:#eee; border-radius:5px; margin-bottom:15px; }
-#progressBar { width:0%; height:10px; background:#1e3c72; border-radius:5px; }
-#dateCountdown { background:#e1eaf7; border-left:5px solid #1e3c72; padding:12px; margin:15px 0; border-radius:6px; font-size:14px; font-weight:bold; text-align:center; }
-.collapsible { background-color:#f1f1f1; border:none; color:#444; padding:10px; text-align:left; outline:none; font-size:15px; width:100%; cursor:pointer; border-radius:6px; margin-top:10px; }
-.active, .collapsible:hover { background-color:#ddd; }
-.content { padding:0 18px; display:none; overflow:hidden; background-color:#f9f9f9; border-radius:5px; }
-
-/* Mobile tweaks */
-@media(max-width:768px){ .step{padding:15px;} .floating-cta{top:100px;padding:12px;font-size:15px;} .visual{font-size:13px;} }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First-Time Filer 1040 Guide – Step by Step</title>
+    <meta name="description" content="Complete step-by-step educational guide for first-time filers using IRS-style instructions and visuals.">
+    <meta name="keywords" content="1040 form guide, first tax filer, IRS style guide, tax instructions, daily tax tips">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9fafb; color: #222; line-height: 1.6; }
+        header { background: #1e3c72; color: white; text-align: center; padding: 30px 15px; }
+        header h1 { margin-bottom: 5px; font-size: 28px; }
+        header p { font-size: 16px; margin: 0; }
+        .container { max-width: 900px; margin: auto; padding: 15px; background: white; }
+        .step { margin: 20px 0; padding: 20px; border-radius: 10px; background: #f7f8fa; border-left: 6px solid #1e3c72; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+        .collapsible { background-color: #f1f1f1; border:none; color:#444; padding:10px; text-align:left; outline:none; font-size:15px; width:100%; cursor:pointer; border-radius:6px; margin-top:10px;}
+        .active, .collapsible:hover { background-color:#ddd;}
+        .content { padding:0 18px; display:none; overflow:hidden; background-color:#f9f9f9; border-radius:5px; }
+        .visual { background:#fff; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #ccc; font-family:monospace; font-size:14px; white-space: pre-line;}
+        .tip-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 12px; margin: 10px 0; border-radius: 5px; font-size: 14px; }
+        footer { text-align: center; padding: 15px; font-size: 13px; color: #555; margin-top: 20px; }
+        .floating-cta { position: fixed; right: 15px; top: 120px; z-index: 1000; background: #27ae60; color: white; padding: 14px 18px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 16px; transition: 0.3s; }
+        .floating-cta:hover { background: #1e874b; }
+        #progressBarContainer { width: 100%; background: #eee; border-radius: 5px; margin-bottom: 15px; }
+        #progressBar { width: 0%; height: 10px; background: #1e3c72; border-radius: 5px; }
+    </style>
 </head>
 <body>
 
 <header>
-<h1>First-Time Filer 1040 Guide</h1>
-<p>Step-by-step IRS-style instructions for new taxpayers</p>
+    <h1>First-Time Filer 1040 Guide</h1>
+    <p>Step-by-step IRS-style instructions for new taxpayers</p>
 </header>
-
-<div id="currentDate">Loading current date...</div>
 
 <a class="floating-cta" href="https://is.gd/pbLKhS" target="_blank">👉 Start Filing Now</a>
 
 <div class="container">
+    <div id="progressBarContainer"><div id="progressBar"></div></div>
+    
+    <!-- Date & Countdown -->
+    <div id="dateCountdown">
+        Loading current date and tax deadlines...
+    </div>
 
-<div id="progressBarContainer"><div id="progressBar"></div></div>
+    <!-- Filing Status & Exemptions -->
+    <div class="step">
+        <h2><span>📋</span> Filing Status & Exemptions</h2>
+        <div class="visual">
+            <strong>Filing Status Options:</strong>
+            <ul>
+                <li>Single</li>
+                <li>Married Filing Jointly</li>
+                <li>Head of Household</li>
+                <li>Married Filing Separately</li>
+            </ul>
+            <strong>Example:</strong> Select **Single** if you are unmarried.
+        </div>
+        <div class="tip-box">💡 Tip: Your filing status will affect your standard deduction and tax rates.</div>
+    </div>
 
-<div id="dateCountdown">Loading tax deadlines...</div>
+    <!-- Line 7: Wages -->
+    <div class="step">
+        <h2><span>💼</span> Line 7: Wages, Salaries, Tips</h2>
+        <div class="visual">
+            <strong>Example:</strong> Wages from Employer A = $40,000
+            <br> Report all wages as shown on your W-2.
+        </div>
+        <div class="tip-box">💡 Tip: Check your W-2 for the correct amount in Box 1.</div>
+    </div>
 
-<!-- Daily & Weekly Tips -->
-<div id="dailyTipBox" class="tip-box">Loading today's tax tip...</div>
-<div id="weeklyTipBox" class="tip-box">Loading this week's tax tip...</div>
+    <!-- Line 8: Interest Income -->
+    <div class="step">
+        <h2><span>💵</span> Line 8: Interest Income</h2>
+        <div class="visual">
+            <strong>Example:</strong> Bank A Interest = $100, Bank B Interest = $50
+            <br> Total Interest = $150
+        </div>
+        <div class="tip-box">💡 Tip: Don't forget to report **tax-exempt** interest if applicable.</div>
+    </div>
 
-<!-- 1040 Lines -->
-<div class="step" id="line1">
-<h2><span>1️⃣</span> Line 1 – Wages, Salaries, Tips</h2>
-<div class="visual">
-Enter total wages from all W-2 forms.  
-Example:  
-Employer A: $30,000  
-Employer B: $10,000  
-Total: $40,000
-</div>
-<div class="tip-box">💡 Tip: Ensure your SSN and name match your Social Security card to avoid IRS errors.</div>
-</div>
+    <!-- Line 9: Dividends -->
+    <div class="step">
+        <h2><span>📈</span> Line 9: Dividends</h2>
+        <div class="visual">
+            <strong>Example:</strong> Ordinary dividends = $200, Qualified dividends = $100
+            <br> Total dividends = $300
+        </div>
+        <div class="tip-box">💡 Tip: **Qualified dividends** are taxed at a lower rate.</div>
+    </div>
 
-<div class="step" id="line2">
-<h2><span>2️⃣</span> Line 2 – Taxable Interest</h2>
-<div class="visual">
-Include taxable interest from banks or investment accounts.  
-Bank A: $50  
-Bank B: $150  
-Total: $200
-</div>
-<div class="tip-box">💡 Tip: Exclude tax-free municipal bonds.</div>
-</div>
+    <!-- Line 10: IRA, Pension, etc. -->
+    <div class="step">
+        <h2><span>🛣️</span> Line 10: IRA, Pension, and Annuities</h2>
+        <div class="visual">
+            <strong>Example:</strong> Early IRA withdrawal: $2,500
+        </div>
+        <div class="tip-box">💡 Tip: If you are under 59½, you may owe an additional 10% penalty on early IRA withdrawals.</div>
+    </div>
 
-<div class="step" id="line3">
-<h2><span>3️⃣</span> Line 3 – Dividends</h2>
-<div class="visual">
-Ordinary and qualified dividends:  
-Ordinary: $100  
-Qualified: $50  
-Total: $150
-</div>
-<div class="tip-box">💡 Tip: Qualified dividends are taxed at lower capital gains rates.</div>
-</div>
+    <!-- Line 11: Adjusted Gross Income (AGI) -->
+    <div class="step">
+        <h2><span>🔢</span> Line 11: Adjusted Gross Income (AGI)</h2>
+        <div class="visual">
+            <strong>Example:</strong> Total income = $40,000 + $150 + $300 = $40,450
+        </div>
+        <div class="tip-box">💡 Tip: Subtract deductions like student loan interest or IRA contributions here to find your AGI.</div>
+    </div>
 
-<div class="step" id="line4">
-<h2><span>4️⃣</span> Line 4 – IRA Distributions</h2>
-<div class="visual">
-Enter IRA distributions. Example:  
-Traditional IRA: $5,000  
-Roth IRA distributions (tax-free): $0
-</div>
-<div class="tip-box">💡 Tip: Only taxable amounts count. Roth withdrawals may be tax-free.</div>
-</div>
+    <!-- Deductions and Taxable Income -->
+    <button class="collapsible">Deductions & Taxable Income</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>📉</span> Deductions (Line 12 - 15)</h2>
+            <div class="visual">
+                <strong>Example:</strong> Standard Deduction for **Single** = $12,550
+                <br> Subtract this from your AGI to find **Taxable Income**.
+            </div>
+            <div class="tip-box">💡 Tip: You can choose between the **Standard Deduction** or **Itemizing** your deductions.</div>
+        </div>
+    </div>
 
-<div class="step" id="line5">
-<h2><span>5️⃣</span> Line 5 – Pensions and Annuities</h2>
-<div class="visual">
-Enter taxable pensions/annuities.  
-Example: Pension: $12,000  
-Annuity: $1,000  
-Total taxable: $13,000
-</div>
-<div class="tip-box">💡 Tip: Check 1099-R forms carefully for taxable amounts.</div>
-</div>
+    <!-- Tax, Credits, and Other Taxes -->
+    <button class="collapsible">Tax, Credits & Other Taxes</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>📊</span> Tax Liability & Credits</h2>
+            <div class="visual">
+                <strong>Example:</strong> Tax liability is calculated using IRS tax tables based on **Taxable Income**.
+                <br> Subtract any credits like the **Child Tax Credit**.
+            </div>
+            <div class="tip-box">💡 Tip: Tax credits directly reduce your **Tax Liability**.</div>
+        </div>
+    </div>
 
-<!-- Collapsible Schedules -->
-<button class="collapsible">Schedule 1: Additional Income & Adjustments</button>
-<div class="content">
-<div class="step">
-<h2><span>➕</span> Additional Income</h2>
-<p>Covers self-employment, rental, unemployment, prizes, and more. Include all IRS-defined sources of income.</p>
-</div>
-<div class="step">
-<h2><span>⚖️</span> Adjustments to Income</h2>
-<p>Student loan interest, IRA contributions, educator expenses, and other deductions reduce AGI.</p>
-</div>
-</div>
+    <!-- Refund or Amount Owed -->
+    <button class="collapsible">Refund or Amount Owed</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>💸</span> Refund or Amount Owed (Line 33 - 36)</h2>
+            <div class="visual">
+                <strong>Example:</strong> Total tax liability = $2,500, Payments made = $3,000
+                <br> Refund = $500
+            </div>
+            <div class="tip-box">💡 Tip: If you've overpaid, you'll receive a refund. If underpaid, you will owe the IRS.</div>
+        </div>
+    </div>
 
-<button class="collapsible">Schedule 2: Additional Taxes</button>
-<div class="content">
-<div class="step">
-<h2><span>💰</span> Self-Employment & AMT</h2>
-<p>Includes self-employment tax, alternative minimum tax, and other additional taxes required by the IRS.</p>
-</div>
-</div>
+    <!-- Schedule 1 (Additional Income) -->
+    <button class="collapsible">Schedule 1: Additional Income & Adjustments</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>📝</span> Schedule 1: Additional Income</h2>
+            <div class="visual">
+                <strong>Example:</strong> Include self-employment income or other sources of income not reported elsewhere.
+            </div>
+        </div>
+        <div class="step">
+            <h2><span>⚙️</span> Adjustments to Income</h2>
+            <div class="visual">
+                <strong>Example:</strong> Deduct student loan interest or IRA contributions here.
+            </div>
+        </div>
+    </div>
 
-<button class="collapsible">Schedule 3: Credits</button>
-<div class="content">
-<div class="step">
-<h2><span>🎯</span> Education, Childcare, and Other Credits</h2>
-<p>Apply applicable credits to reduce overall tax owed, following IRS rules and limits.</p>
-</div>
-</div>
+    <!-- Schedule 2 (Additional Taxes) -->
+    <button class="collapsible">Schedule 2: Additional Taxes</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>💰</span> Schedule 2: Additional Taxes</h2>
+            <div class="visual">
+                Include taxes like self-employment tax, alternative minimum tax (AMT), and others.
+            </div>
+        </div>
+    </div>
 
-<button class="collapsible">Schedule A: Itemized Deductions</button>
-<div class="content">
-<div class="step">
-<h2><span>📂</span> Itemized Deductions</h2>
-<p>Includes medical expenses, state/local taxes, mortgage interest, charitable contributions. Compare to standard deduction.</p>
-</div>
-</div>
-
-<button class="collapsible">Schedule B: Interest & Dividends</button>
-<div class="content">
-<div class="step">
-<h2><span>💵</span> Reporting Interest & Dividends</h2>
-<p>All interest and dividend income reported; attach 1099-INT and 1099-DIV as needed.</p>
-</div>
-</div>
-
-<button class="collapsible">Schedule D: Capital Gains/Losses</button>
-<div class="content">
-<div class="step">
-<h2><span>📊</span> Capital Gains & Losses</h2>
-<p>Report all sales of stocks, bonds, and other assets; calculate net gain/loss per IRS instructions.</p>
-</div>
-</div>
+    <!-- Schedule 3 (Credits) -->
+    <button class="collapsible">Schedule 3: Credits</button>
+    <div class="content">
+        <div class="step">
+            <h2><span>🏅</span> Schedule 3: Tax Credits</h2>
+            <div class="visual">
+                This includes credits like the **Education Credit**, **Child and Dependent Care Credit**, etc.
+            </div>
+        </div>
+    </div>
 
 </div>
 
 <footer>
-<p>Educational purposes only. Always verify with IRS for final numbers.</p>
+    <p>Educational purposes only. Always verify with IRS for final numbers.</p>
 </footer>
 
 <script>
-// Current date & year
-function updateCurrentDate(){
-    const now = new Date();
-    document.getElementById('currentDate').innerText = `Today: ${now.toDateString()}`;
-}
-setInterval(updateCurrentDate,1000);
-updateCurrentDate();
-
-// Countdown to deadlines
-const currentYear = new Date().getFullYear();
-const taxDeadline = new Date(currentYear,3,15); // April 15
-const extensionDeadline = new Date(currentYear,9,15); // Oct 15
-
-function updateCountdown(){
-    const now = new Date();
-    let nextDeadline = taxDeadline;
-    let label = "Tax Filing Deadline";
-    if(now > taxDeadline){
-        nextDeadline = extensionDeadline;
-        label = "Tax Extension Deadline";
-    }
-    const diff = nextDeadline - now;
-    const days = Math.ceil(diff/(1000*60*60*24));
-    const hours = Math.floor((diff/(1000*60*60))%24);
-    const minutes = Math.floor((diff/(1000*60))%60);
-    document.getElementById('dateCountdown').innerHTML = `${label}: ${nextDeadline.toDateString()}<br>${days} days, ${hours}h ${minutes}m left`;
-}
-setInterval(updateCountdown,120000); // rotate every 2 minutes
-updateCountdown();
-
-// Daily & Weekly Tips
-const dailyTips = [
-"💡 Check your W-2 for correct SSN.",
-"💡 Contribute to an IRA before deadline.",
-"💡 Keep receipts for deductible expenses.",
-"💡 Review withholding to avoid surprises.",
-"💡 Track charitable donations.",
-"💡 File early for faster refund.",
-"💡 Use step-by-step tax software.",
-"💡 Confirm bank info for deposit."
-];
-const weeklyTips = [
-"📌 Review last year's return for mistakes.",
-"📌 Double-check deductions and credits.",
-"📌 Keep records organized for audit.",
-"📌 Check IRS updates weekly.",
-"📌 Plan contributions to retirement accounts."
-];
-const today = new Date();
-document.getElementById('dailyTipBox').innerText = "Tip for today: "+dailyTips[today.getDate()%dailyTips.length];
-document.getElementById('weeklyTipBox').innerText = "Tip of the week: "+weeklyTips[today.getDate()%weeklyTips.length];
-
-// Collapsible schedules
+// Collapsible sections for detailed instructions
 const collapsibles = document.getElementsByClassName("collapsible");
-for(let i=0;i<collapsibles.length;i++){
-    collapsibles[i].addEventListener("click",function(){
+for (let i = 0; i < collapsibles.length; i++) {
+    collapsibles[i].addEventListener("click", function() {
         this.classList.toggle("active");
         const content = this.nextElementSibling;
-        content.style.display = (content.style.display==="block")?"none":"block";
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
     });
 }
 
-// Scroll progress
-window.addEventListener('scroll',()=>{
-    let scrollTop = window.scrollY;
-    let docHeight = document.body.scrollHeight - window.innerHeight;
-    let scrolled = (scrollTop/docHeight)*100;
-    document.getElementById('progressBar').style.width = scrolled + '%';
-});
+// Add progress bar or other JS logic here
+
 </script>
 
 </body>
