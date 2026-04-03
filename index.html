@@ -2,112 +2,177 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Professor Hootington's First-Time Tax Filing Guide - Learn how to file taxes step by step, get tips, and file your taxes online.">
-  <meta name="keywords"
-    content="how to file taxes, first-time tax filer, tax tips, Professor Hootington, tax guide, child tax credit, self-employment, tax refund, online tax filing">
-  <meta name="author" content="Benito Palmarini">
-  <title>Professor Hootington’s First-Time Tax Filing Guide</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Hootington’s First-Time Tax Filing Guide</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b1f3a;
+            margin: 0;
+            padding: 0;
+            color: #e6edf5;
+        }
+
+        .gov-banner {
+            background: #f1f1f1;
+            color: #000;
+            font-size: 14px;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header {
+            background-color: #0a2a5e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #1f4e8c;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #8ec5ff;
+        }
+
+        section {
+            margin-bottom: 25px;
+            background: #122b4a;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1f4e8c, #2c6ed5);
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .cta a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .countdown {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #081a2f;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <h1>🦉 Professor Hootington’s First-Time Tax Filing Guide</h1>
-    <p>Get started with your taxes: <a class="footer-link" href="https://is.gd/SRCKpA" target="_blank"
-        rel="noopener noreferrer">Click here to file your taxes online</a></p>
-    <p>Today’s Date: <span id="current-date"></span></p>
-    <p>Countdown to Tax Deadline: <span id="countdown" class="countdown"></span></p>
-  </header>
 
-  <main>
+<div class="gov-banner">
+    <span>🇺🇸 Tax Filing Resource Guide</span>
+    <span>This site is not the IRS</span>
+</div>
+
+<header>
+    <h1>🦉 Professor Hootington’s Tax Filing Guide</h1>
+    <p><a href="https://is.gd/SRCKpA" target="_blank">👉 Click here to file your taxes</a></p>
+    <p>Today: <span id="current-date"></span></p>
+    <p>Deadline: <span id="countdown"></span></p>
+</header>
+
+<main>
+
+    <!-- 1040 FIRST -->
     <section>
-      <h2>Step 1 — Gather Your Papers</h2>
-      <ul>
-        <li>W-2 from your job</li>
-        <li>1099 forms for freelance or interest</li>
-        <li>Receipts for deductions</li>
-        <li>Last year’s tax return</li>
-      </ul>
+        <h2>Form 1040 (Main Income Section)</h2>
+        <ul>
+            <li>Line 1 – Wages</li>
+            <li>Line 2 – Interest</li>
+            <li>Line 3 – Dividends</li>
+            <li>Line 4 – IRA</li>
+            <li>Line 5 – Pensions</li>
+            <li>Line 6 – Social Security</li>
+            <li>Line 7 – Other Income</li>
+            <li>Line 8 – Total Income</li>
+        </ul>
     </section>
 
     <section>
-      <h2>Step 2 — Fill in Your Personal Info</h2>
-      <ul>
-        <li>Your name, address, SSN</li>
-        <li>Spouse info (if married)</li>
-        <li>Dependents</li>
-      </ul>
+        <h2>Step 1 — Gather Papers</h2>
+        <ul>
+            <li>W-2</li>
+            <li>1099</li>
+            <li>Receipts</li>
+        </ul>
     </section>
 
     <section>
-      <h2>Step 3 — Add Up Your Income</h2>
-      <ul>
-        <li>Wages, salaries, tips</li>
-        <li>Interest & dividends</li>
-        <li>Other income</li>
-      </ul>
+        <h2>Step 2 — Personal Info</h2>
+        <ul>
+            <li>Name / SSN</li>
+            <li>Dependents</li>
+        </ul>
     </section>
 
     <section>
-      <h2>Step 4 — Adjustments</h2>
-      <ul>
-        <li>Student loan interest</li>
-        <li>IRA contributions</li>
-      </ul>
+        <h2>Step 3 — Adjustments</h2>
+        <ul>
+            <li>Student loan interest</li>
+            <li>IRA</li>
+        </ul>
     </section>
 
     <section>
-      <h2>Step 5 — Deductions</h2>
-      <ul>
-        <li>Standard or itemized</li>
-        <li>Medical, mortgage, charity</li>
-      </ul>
+        <h2>Step 4 — Deductions</h2>
     </section>
 
     <section>
-      <h2>Step 6 — Calculate Tax</h2>
-      <ul>
-        <li>Total tax amount</li>
-      </ul>
+        <h2>Step 5 — Tax</h2>
     </section>
 
     <section>
-      <h2>Step 7 — Payments & Credits</h2>
-      <ul>
-        <li>Federal tax withheld</li>
-        <li>Credits</li>
-      </ul>
+        <h2>Step 6 — Credits</h2>
     </section>
 
     <section>
-      <h2>Step 8 — Refund or Amount Owed</h2>
-      <ul>
-        <li>Compare payments vs tax</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Step 9 — Supporting Forms</h2>
-      <ul>
-        <li>Schedules A, B, C, etc.</li>
-      </ul>
+        <h2>Step 7 — Refund or Owed</h2>
     </section>
 
     <div class="cta">
-      <p>Ready to file? <a class="footer-link" href="https://is.gd/SRCKpA" target="_blank"
-          rel="noopener noreferrer">Click here to get started!</a></p>
+        <p><a href="https://is.gd/SRCKpA" target="_blank">FILE YOUR TAXES NOW</a></p>
     </div>
-  </main>
 
-  <footer>
-    <p>© 2026 Benito Palmarini</p>
-  </footer>
+</main>
 
-  <script src="script.js" defer></script>
+<footer>
+    <p>© 2026 Tax Guide</p>
+</footer>
+
+<script>
+    document.getElementById("current-date").innerHTML = new Date().toLocaleDateString();
+
+    const deadline = new Date("Apr 15, 2026").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = deadline - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerHTML = days + " days left";
+    }, 1000);
+</script>
 
 </body>
-
 </html>
