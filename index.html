@@ -21,32 +21,18 @@ p { margin-bottom:15px; }
 .tip, .extra-tip {
     background-color: #1a4d80;
     border-left: 5px solid #99ccff;
-    padding: 20px 20px 20px 75px;
-    margin: 10px 0;
-    position: relative;
+    padding: 15px 20px;
+    margin: 15px 0;
     border-radius: 8px;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    display:flex;
+    align-items:flex-start;
 }
 .tip img.professor, .extra-tip img.professor {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ffffff;
-    filter: contrast(120%) saturate(120%);
-    animation: pulseGlow 2s infinite;
-}
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 6px #cce6ff; }
-    50% { box-shadow: 0 0 14px #99ccff; }
-    100% { box-shadow: 0 0 6px #cce6ff; }
-}
-@media (max-width: 600px) {
-    .tip img.professor, .extra-tip img.professor { width:40px; height:40px; }
-    .tip, .extra-tip { padding-left: 65px; }
+    width:80px;
+    margin-right:15px;
+    transform: scaleX(-1); /* Flip so pointing right */
+    object-fit:cover;
 }
 a.button {
     background-color:#ffcc00;
@@ -63,6 +49,9 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
     font-size:1rem;
     margin-top:5px;
     color:#cce6ff;
+}
+@media (max-width: 600px) {
+    .tip img.professor, .extra-tip img.professor { width:60px; }
 }
 </style>
 </head>
@@ -82,7 +71,6 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 
 <div class="content">
 
-<!-- PART 1 -->
 <h2>✅ PART 1 — GATHERING YOUR DOCUMENTS</h2>
 
 <h3>📄 Step 1: Collect your income forms</h3>
@@ -92,8 +80,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Other income records (rental, side hustles, tips)</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Tip:</strong> Organize everything by type. Professor Hootington says: “A tidy desk is a tidy tax return!”
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Tip:</strong> Organize everything by type. Professor Hootington says: “A tidy desk is a tidy tax return!”</div>
 </div>
 
 <h3>📄 Step 2: Collect your expense & deduction records</h3>
@@ -103,8 +91,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Education expenses (tuition, books)</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Tip:</strong> Keep digital copies to avoid losing receipts.
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Tip:</strong> Keep digital copies to avoid losing receipts.</div>
 </div>
 
 <h3>📄 Step 3: Gather personal info & ID numbers</h3>
@@ -113,11 +101,10 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Bank account info for direct deposit</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Tip:</strong> Double-check all numbers—one wrong digit can delay your refund!
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Tip:</strong> Double-check all numbers—one wrong digit can delay your refund!</div>
 </div>
 
-<!-- PART 2 -->
 <h2>✅ PART 2 — STEP-BY-STEP FILING & ADVANCED TIPS</h2>
 
 <h3>🦉 How to add up your income (Lines 4–8)</h3>
@@ -129,14 +116,16 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Line 8 – Other income (gambling, freelance, tips)</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong>
-<ul>
-<li>Check each form carefully (1099-INT, 1099-DIV, etc.)</li>
-<li>Don’t forget side hustles or small jobs</li>
-<li>Add everything accurately to avoid errors</li>
-<li>Professor Hootington says: “Think of it like adding all the pieces of a puzzle—you need each piece!”</li>
-</ul>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div>
+        <strong>Extra Tips:</strong>
+        <ul>
+            <li>Check each form carefully (1099-INT, 1099-DIV, etc.)</li>
+            <li>Don’t forget side hustles or small jobs</li>
+            <li>Add everything accurately to avoid errors</li>
+            <li>Professor Hootington says: “Think of it like adding all the pieces of a puzzle—you need each piece!”</li>
+        </ul>
+    </div>
 </div>
 
 <h3>🦉 How to subtract deductions</h3>
@@ -146,8 +135,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Charitable donations</li>
 </ul>
 <div class="extra-tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Deductions lower your taxable income. Use the larger of standard or itemized deductions.
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Deductions lower your taxable income. Use the larger of standard or itemized deductions.</div>
 </div>
 
 <h3>🦉 How to apply tax credits</h3>
@@ -157,8 +146,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Education credits (e.g., American Opportunity Credit)</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Credits directly reduce your tax bill. Professor Hootington reminds: “Credits = money back in your pocket!”
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Credits directly reduce your tax bill. Professor Hootington reminds: “Credits = money back in your pocket!”</div>
 </div>
 
 <h3>🦉 How to adjust your income (Line 9)</h3>
@@ -168,19 +157,21 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Self-employment expenses</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong>
-<ul>
-<li>Adjustments lower your total income, which can reduce your tax</li>
-<li>Professor Hootington says: “Don’t skip these—they can save you money!”</li>
-</ul>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div>
+        <strong>Extra Tips:</strong>
+        <ul>
+            <li>Adjustments lower your total income, which can reduce your tax</li>
+            <li>Professor Hootington says: “Don’t skip these—they can save you money!”</li>
+        </ul>
+    </div>
 </div>
 
 <h3>🦉 Calculate your Adjusted Gross Income (AGI)</h3>
 <p>Your AGI = Total income minus adjustments.</p>
 <div class="extra-tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Keep your AGI handy—you’ll use it for deductions, credits, and taxes owed.
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Keep your AGI handy—you’ll use it for deductions, credits, and taxes owed.</div>
 </div>
 
 <h3>🦉 Choose deductions (Lines 11–12)</h3>
@@ -189,12 +180,14 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Line 12 – Taxable income = AGI minus deductions</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong>
-<ul>
-<li>Use the larger deduction to lower your tax</li>
-<li>Professor Hootington says: “Every dollar counts!”</li>
-</ul>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div>
+        <strong>Extra Tips:</strong>
+        <ul>
+            <li>Use the larger deduction to lower your tax</li>
+            <li>Professor Hootington says: “Every dollar counts!”</li>
+        </ul>
+    </div>
 </div>
 
 <h3>🦉 Calculate your tax (Lines 13–15)</h3>
@@ -204,8 +197,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Line 15 – Total tax = Tax + additional taxes</li>
 </ul>
 <div class="extra-tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Double-check calculations. Use a tax table or software for accuracy.
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Double-check calculations. Use a tax table or software for accuracy.</div>
 </div>
 
 <h3>🦉 Apply credits and payments (Lines 16–20)</h3>
@@ -216,12 +209,14 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Line 20 – Total payments and credits</li>
 </ul>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong>
-<ul>
-<li>Credits directly reduce your tax owed</li>
-<li>Professor Hootington reminds: “Check every credit you qualify for—you might get more back!”</li>
-</ul>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div>
+        <strong>Extra Tips:</strong>
+        <ul>
+            <li>Credits directly reduce your tax owed</li>
+            <li>Professor Hootington reminds: “Check every credit you qualify for—you might get more back!”</li>
+        </ul>
+    </div>
 </div>
 
 <h3>🦉 Determine refund or amount owed (Lines 21–24)</h3>
@@ -232,18 +227,21 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Line 23 – Amount you owe (if any)</li>
 </ul>
 <div class="extra-tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Double-check numbers before submitting. Professor Hootington says: “No one wants surprises!”</div>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Double-check numbers before submitting. Professor Hootington says: “No one wants surprises!”</div>
+</div>
 
 <h3>🦉 Sign and date your return (Line 25)</h3>
 <p>Line 25 – Don’t forget to sign and date your 1040 before submitting. Unsigned returns are rejected!</p>
 <div class="tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong>
-<ul>
-<li>Both spouses must sign if filing jointly</li>
-<li>Keep a copy for your records</li>
-</ul>
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div>
+        <strong>Extra Tips:</strong>
+        <ul>
+            <li>Both spouses must sign if filing jointly</li>
+            <li>Keep a copy for your records</li>
+        </ul>
+    </div>
 </div>
 
 <h3>🦉 Supporting schedules & forms</h3>
@@ -260,8 +258,8 @@ a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
 <li>Form 8880 – Retirement savings contributions credit</li>
 </ul>
 <div class="extra-tip">
-<img class="professor" src="https://example.com/professor-hoot.png" alt="Professor Hootington">
-<strong>Extra Tips:</strong> Fill out schedules first, then transfer numbers to your 1040. Professor Hootington says: “Organize your papers before crunching numbers!”
+    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
+    <div><strong>Extra Tips:</strong> Fill out schedules first, then transfer numbers to your 1040. Professor Hootington says: “Organize your papers before crunching numbers!”</div>
 </div>
 
 <!-- CTA Button -->
