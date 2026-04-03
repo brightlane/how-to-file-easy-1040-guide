@@ -2,306 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>How to File Taxes Guide</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to File Taxes with Professor Hootington</title>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #003366; /* Dark blue background */
+  body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    margin: 0; 
+    padding: 20px; 
+    background-color: #0b2f5a; 
     color: #ffffff;
-}
-header { text-align:center; }
-h1 { color:#99ccff; }
-h2 { color: #99ccff; margin-top:30px; }
-h3 { color: #cce6ff; margin-top:20px; }
-ul { margin: 10px 0 20px 20px; }
-p { margin-bottom:15px; }
-.tip, .extra-tip {
-    background-color: #1a4d80;
-    border-left: 5px solid #99ccff;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-    position:relative;
-}
-.professor {
-    position: absolute;
-    right: -140px;
-    top: 0;
-    width: 120px;
-    object-fit: cover;
-}
-a.button {
-    background-color:#ffcc00;
-    color:#003366;
-    padding:15px 25px;
-    text-decoration:none;
-    font-size:18px;
-    border-radius:8px;
-    font-weight:bold;
-    display:inline-block;
-}
-a.button:hover { background-color:#e6b800; transform:translateY(-2px); }
-.extension-clock {
-    font-size:1rem;
-    margin-top:5px;
-    color:#cce6ff;
-}
-@media (max-width: 900px) {
-    .professor { position: static; width: 100px; margin:10px auto; display:block; }
-}
+  }
+  a { color: #ffcc00; text-decoration: none; }
+  h1, h2 { color: #ffcc00; }
+  h3 { color: #ffffff; margin-top: 20px; }
+  ul { margin: 10px 0 20px 20px; }
+  .tip, .extra-tip { background-color: #1f4e79; border-left: 5px solid #ffcc00; padding: 10px; margin: 10px 0; color:#ffffff; }
+  .button { background-color: #ffcc00; color:#0b2f5a; padding:15px 25px; text-decoration:none; font-size:18px; border-radius:8px; display:inline-block; margin-top:10px; }
+  .professor { width: 100px; float: right; margin-left: 20px; }
+  .countdown { font-size: 20px; margin-top: 10px; }
+  .banner { text-align:center; margin-bottom:20px; }
+  @media (max-width:600px){ .professor{float:none; display:block; margin:auto; margin-bottom:10px;} }
 </style>
 </head>
 <body>
 
-<header>
-<h1>🦉 How to File Taxes</h1>
-<div id="currentDate"></div>
+<!-- Banner -->
 <div class="banner">
 <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
 <img src="https://7667.imgix.net/banners/54182.png" border="0" alt="E-file.com">
 <img src="https://www.linkconnector.com/tr.php?lc=007949054182005142&atid=TaxGuide&tb=1" border="0" width="1" height="1">
 </a>
 </div>
-<div class="extension-clock" id="extensionClock"></div>
-</header>
 
-<div class="content">
+<!-- Current date -->
+<p>📅 Today is: <span id="currentDate"></span></p>
 
-<h2>✅ Gather Your Documents</h2>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-    <strong>How to collect your income info:</strong>
-    <ul>
-        <li>Gather all W-2 forms from employers.</li>
-        <li>Collect 1099 forms for freelance, interest, or dividends.</li>
-        <li>Keep records of side gigs, rental income, or tips.</li>
-    </ul>
-    </div>
-</div>
+<!-- Countdown clock -->
+<p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
-<h2>✅ Understand Your W-2</h2>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-    <strong>How to read your W-2:</strong>
-    <ul>
-        <li>Box 1 – Total wages you earned.</li>
-        <li>Box 2 – Federal tax withheld.</li>
-        <li>Box 12 – Codes for retirement, deductions, or other benefits.</li>
-        <li>Compare totals with your pay stubs to ensure accuracy.</li>
-    </ul>
-    </div>
-</div>
+<!-- Page Title -->
+<h1>🦉 How to File Your Taxes with Professor Hootington</h1>
 
-<h2>✅ Track Interest & Dividends</h2>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-    <strong>How to collect interest income:</strong>
-    <ul>
-        <li>Look for 1099-INT for bank interest.</li>
-        <li>1099-DIV for dividends from stocks or mutual funds.</li>
-        <li>Include small earnings from savings or accounts to avoid underreporting.</li>
-    </ul>
-    </div>
-</div>
+<!-- Professor image -->
+<img src="https://your-image-url-here.png" alt="Professor Hootington" class="professor">
 
-<h2>✅ Organize Deductions</h2>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-    <strong>How to collect deductible expenses:</strong>
-    <ul>
-        <li>Keep receipts for charitable donations.</li>
-        <li>Track medical expenses if itemizing.</li>
-        <li>Save education or tuition receipts for credits.</li>
-    </ul>
-    </div>
-</div>
+<!-- CONTENT: TEACHABLE 1040 GUIDE -->
 
-<h2>✅ Step-by-Step 1040 Filing</h2>
-
-<h3>🦉 How to add up your income (Lines 4–8)</h3>
+<h2>Step 1: Gather Your Income Papers</h2>
+<p>Why do we need these? The government wants to know how much money you earned this year. Let's gather everything so we can start your taxes!</p>
 <ul>
-    <li>Line 4 – Add any interest you earned from banks or accounts.</li>
-    <li>Line 5 – Include dividends from stocks or other investments.</li>
-    <li>Line 6 – Report any IRA distributions or pension payments.</li>
-    <li>Line 7 – Include Social Security benefits if applicable.</li>
-    <li>Line 8 – Add other income, such as gambling winnings, freelance work, or tips.</li>
+  <li>W-2: Your boss gives this if you have a job.</li>
+  <li>1099: Shows money you made from extra work or interest from the bank.</li>
+  <li>Other income: Money from side jobs, tips, or rentals.</li>
 </ul>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong>
-        <ul>
-            <li>Check all forms carefully (1099-INT, 1099-DIV, etc.) to avoid mistakes.</li>
-            <li>Include any side jobs or occasional work, no matter how small.</li>
-            <li>Add numbers accurately to prevent delays or errors on your return.</li>
-            <li>Think of it like putting together pieces of a puzzle — you need each one!</li>
-        </ul>
-    </div>
-</div>
+<div class="tip">📝 <strong>Professor Tip:</strong> Keep these papers together in a folder so nothing gets lost!</div>
 
-<h3>🦉 How to subtract deductions</h3>
+<h2>Step 2: Gather Your Expense & Deduction Papers</h2>
+<p>These help lower your taxes. We call them deductions.</p>
 <ul>
-    <li>Choose between the standard deduction or itemized deductions.</li>
-    <li>Include eligible education expenses for deductions.</li>
-    <li>Don’t forget charitable donations.</li>
+  <li>Receipts for charity donations.</li>
+  <li>Medical expenses if you’re listing them.</li>
+  <li>Education expenses (tuition, books).</li>
 </ul>
-<div class="extra-tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong> Deductions reduce your taxable income, which can lower the amount of tax you owe. Always pick the larger option: standard or itemized.
-    </div>
-</div>
+<div class="tip">📝 <strong>Professor Tip:</strong> Scan or take photos of receipts so you never lose them.</div>
 
-<h3>🦉 How to apply tax credits</h3>
+<h2>Step 3: Collect Personal Info</h2>
 <ul>
-    <li>Claim the child tax credit if you qualify.</li>
-    <li>Include the earned income credit if eligible.</li>
-    <li>Use education credits, such as the American Opportunity Credit.</li>
+  <li>Social Security numbers for you, spouse, and dependents.</li>
+  <li>Bank info for direct deposit of your refund.</li>
 </ul>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong> Credits reduce your tax bill directly. Make sure to claim all credits you’re eligible for.
-    </div>
-</div>
+<div class="tip">📝 <strong>Professor Tip:</strong> Double-check all numbers — one wrong digit can delay your refund!</div>
 
-<h3>🦉 How to adjust your income (Line 9)</h3>
+<h2>Step 4: Read Your W-2 Easily</h2>
+<p>Let’s see what your W-2 tells us:</p>
 <ul>
-    <li>Include deductions for student loan interest.</li>
-    <li>Add contributions to an IRA.</li>
-    <li>Subtract self-employment expenses if applicable.</li>
+  <li>Box 1: All the money you earned.</li>
+  <li>Box 2: Tax already taken out by your boss.</li>
+  <li>Box 3: Social Security wages.</li>
 </ul>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong>
-        <ul>
-            <li>Adjustments reduce your total income, which can lower your taxes.</li>
-            <li>Don’t skip adjustments—they can save you money!</li>
-        </ul>
-    </div>
-</div>
+<div class="extra-tip">📌 <strong>Professor Tip:</strong> Compare these numbers with your pay stubs to make sure everything matches.</div>
 
-<h3>🦉 Calculate your Adjusted Gross Income (AGI)</h3>
-<p>Your AGI is your total income minus adjustments. Keep it handy — it’s needed for deductions, credits, and figuring taxes owed.</p>
-<div class="extra-tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong> Knowing your AGI helps you plan your deductions and estimate your tax.
-    </div>
-</div>
+<h2>Step 5: Add Up Your Income</h2>
+<p>Put all your W-2, 1099, and other income together to see how much money you made this year.</p>
+<div class="tip">📝 <strong>Professor Tip:</strong> Check each form carefully — don’t forget small jobs or interest.</div>
 
-<h3>🦉 Choose deductions (Lines 11–12)</h3>
-<ul>
-    <li>Line 11 – Choose the standard deduction or itemized deduction using Schedule A.</li>
-    <li>Line 12 – Taxable income = AGI minus deductions.</li>
-</ul>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong>
-        <ul>
-            <li>Use the larger deduction to lower your tax.</li>
-            <li>Every dollar counts — even small deductions can help!</li>
-        </ul>
-    </div>
-</div>
+<h2>Step 6: Choose Deductions</h2>
+<p>You can pick the standard deduction (easy) or itemize (list big expenses like donations).</p>
+<div class="tip">📝 <strong>Professor Tip:</strong> Use whichever lowers your tax the most.</div>
 
-<h3>🦉 Calculate your tax (Lines 13–15)</h3>
-<ul>
-    <li>Line 13 – Tax owed based on your taxable income.</li>
-    <li>Schedule 2 – Add any additional taxes, like self-employment tax or AMT.</li>
-    <li>Line 15 – Total tax = base tax + additional taxes.</li>
-</ul>
-<div class="extra-tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong> Double-check your math. Use tax tables or software to ensure accuracy.
-    </div>
-</div>
+<h2>Step 7: Apply Credits</h2>
+<p>Credits directly reduce your tax bill. Examples: Child tax credit, education credits.</p>
+<div class="tip">📝 <strong>Professor Tip:</strong> Check every credit you qualify for — it could increase your refund!</div>
 
-<h3>🦉 Apply credits and payments (Lines 16–20)</h3>
-<ul>
-    <li>Line 16 – Federal tax withheld from W-2/1099 forms.</li>
-    <li>Line 17 – Any estimated tax payments you made.</li>
-    <li>Schedule 3 – Credits like education credits, retirement savings, and child tax credit.</li>
-    <li>Line 20 – Total payments and credits.</li>
-</ul>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong>
-        <ul>
-            <li>Credits reduce your tax owed directly.</li>
-            <li>Check every credit you qualify for — it can increase your refund!</li>
-        </ul>
-    </div>
-</div>
+<h2>Step 8: Calculate Your Tax</h2>
+<p>Subtract deductions and credits from your income to see how much tax you owe.</p>
+<div class="extra-tip">📌 <strong>Professor Tip:</strong> Use tax tables or software for accuracy.</div>
 
-<h3>🦉 Determine refund or amount owed (Lines 21–24)</h3>
-<ul>
-    <li>If total payments &gt; total tax → you get a refund.</li>
-    <li>If total tax &gt; total payments → you owe money.</li>
-    <li>Line 24 – Refund amount (if any).</li>
-    <li>Line 23 – Amount you owe (if any).</li>
-</ul>
-<div class="extra-tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong> Always double-check numbers before submitting. Avoid surprises!
-    </div>
-</div>
+<h2>Step 9: Apply Payments</h2>
+<p>Add up taxes already paid (from your W-2) and any estimated payments.</p>
+<div class="tip">📝 <strong>Professor Tip:</strong> This helps us know if you get a refund or owe money.</div>
 
-<h3>🦉 Sign and date your return (Line 25)</h3>
-<p>Line 25 – Don’t forget to sign and date your 1040 before submitting. Unsigned returns are rejected.</p>
-<div class="tip">
-    <img class="professor" src="./images/professor-hoot.png" alt="Professor Hootington">
-    <div>
-        <strong>Extra Tips:</strong>
-        <ul>
-            <li>Both spouses must sign if filing jointly.</li>
-            <li>Keep a copy for your records.</li>
-        </ul>
-    </div>
-</div>
+<h2>Step 10: Determine Refund or Amount Owed</h2>
+<p>If your payments are more than your tax, you get a refund. If less, you owe money.</p>
+<div class="extra-tip">📌 <strong>Professor Tip:</strong> Double-check numbers before sending!</div>
 
-<div style="text-align:center; margin:30px 0;">
-<a href="https://is.gd/SRCKpA" target="_blank" class="button">
-Click here to file your taxes online
-</a>
-</div>
+<h2>Step 11: Sign & Submit</h2>
+<p>Don’t forget to sign your return. Unsigned forms get rejected!</p>
+<div class="tip">📝 <strong>Professor Tip:</strong> Keep a copy for your records.</div>
 
+<!-- Call to Action -->
+<div style="text-align:center; margin: 30px 0;">
+  <a href="https://is.gd/SRCKpA" target="_blank" class="button">
+    Click here to file your taxes online
+  </a>
 </div>
 
 <script>
-// Current date
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-document.getElementById("currentDate").innerText =
-    "Last Updated: " + new Date().toLocaleDateString(undefined, options);
+// Current Date
+document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
 
-// Tax extension countdown (Oct 15, 2026)
-const extensionDeadline = new Date("October 15, 2026 23:59:59").getTime();
-const extensionClock = document.getElementById("extensionClock");
+// Countdown to Tax Extension Deadline (example: October 15, 2026)
+const deadline = new Date("October 15, 2026 23:59:59").getTime();
+const countdownEl = document.getElementById("countdown");
 setInterval(() => {
     const now = new Date().getTime();
-    const distance = extensionDeadline - now;
-    if(distance < 0){
-        extensionClock.innerHTML = "⏰ Tax Extension Deadline Passed!";
+    const distance = deadline - now;
+    if(distance < 0) {
+        countdownEl.innerText = "Deadline passed!";
         return;
     }
-    const days = Math.floor(distance/(1000*60*60*24));
-    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds = Math.floor((distance%(1000*60))/1000);
-    extensionClock.innerHTML = `⏰ Time Until Tax Extension Deadline: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+    countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
 </script>
 
