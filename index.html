@@ -1087,3 +1087,46 @@
     <p>© 2026 Professor Hootington’s Tax Guide</p>
     <p>For more information, visit: <a class="footer-link" href="https://is.gd/SRCKpA" target="_blank">File Taxes Online</a></p>
 </footer>
+<!-- Current Date and Countdown Timers -->
+<header>
+    <h1>🦉 Professor Hootington’s ULTRA EASY “How to File Taxes” Guide</h1>
+    <div class="subtitle">(Perfect for First-Time Filers)</div>
+
+    <p>Today’s Date: <span id="current-date"></span></p>
+    <p>Countdown to Tax Deadline (April 15, 2026): <span id="countdown-deadline"></span></p>
+    <p>Countdown to Tax Extension Day (October 15, 2026): <span id="countdown-extension"></span></p>
+</header>
+
+<script>
+    // Display current date
+    const currentDateElement = document.getElementById("current-date");
+    currentDateElement.innerHTML = new Date().toLocaleDateString();
+
+    // Countdown timers
+    const deadlineDate = new Date("Apr 15, 2026 23:59:59").getTime();
+    const extensionDate = new Date("Oct 15, 2026 23:59:59").getTime();
+    const deadlineElement = document.getElementById("countdown-deadline");
+    const extensionElement = document.getElementById("countdown-extension");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+
+        // Tax Deadline Countdown
+        let distance = deadlineDate - now;
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        deadlineElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+        // Tax Extension Countdown
+        distance = extensionDate - now;
+        days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        extensionElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
