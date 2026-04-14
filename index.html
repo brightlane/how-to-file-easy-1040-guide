@@ -1,287 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
+    <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
+    <meta charset="UTF-8">
 
-  <title>How to Fill Out a 1040 for Beginners | Professor Owl Guide</title>
+    <title>How to File Taxes - Easy Guide</title>
 
-  <meta name="description" content="Learn how to understand the 1040 tax form in a simple, beginner-friendly way with Professor Owl. Step-by-step guide for beginners." />
-  <meta name="keywords" content="1040 guide, how to fill out 1040, beginner taxes, tax form explained, simple tax guide" />
-
-  <style>
+    <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f9ff;
-      color: #222;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #0b2f5a;
+        color: #ffffff;
     }
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      background: white;
-      padding: 30px 20px;
+    h1, h2 { color: #ffcc00; }
+    h3 { color: #ffffff; }
+
+    ul { margin: 10px 0 20px 20px; }
+
+    .tip, .extra-tip {
+        background-color: #1f4e79;
+        border-left: 5px solid #ffcc00;
+        padding: 10px;
+        margin: 10px 0;
     }
 
-    .owl {
-      width: 380px;
-      max-width: 90%;
-      transition: 0.3s ease;
-      cursor: pointer;
+    .button {
+        background-color: #ffcc00;
+        color:#0b2f5a;
+        padding:15px 25px;
+        text-decoration:none;
+        font-size:18px;
+        border-radius:8px;
+        display:inline-block;
     }
 
-    .owl:hover {
-      transform: scale(1.05);
+    .countdown {
+        font-size: 20px;
     }
 
-    h1 {
-      margin: 10px 0;
-      font-size: 28px;
+    .banner {
+        text-align:center;
+        margin-bottom:20px;
     }
 
-    .sub {
-      color: #666;
+    /* 🦉 BIG OWL HERO FIX */
+    .owl-hero {
+        width: 100%;
+        background: #0b2f5a;
+        text-align: center;
+        padding: 20px 10px;
+        margin-bottom: 20px;
     }
 
-    /* OWL MESSAGE BOX */
-    .owl-box {
-      background: #fff8dc;
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 18px;
-      border-radius: 10px;
-      font-size: 18px;
-      min-height: 60px;
+    .owl-hero img {
+        width: 100%;
+        max-width: 1100px;   /* 🔥 BIG HERO SIZE */
+        height: auto;
+        cursor: pointer;
+        border-radius: 18px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+        transition: transform 0.25s ease;
+        display: block;
+        margin: 0 auto;
     }
 
-    /* LESSON CARD */
-    .lesson-card {
-      max-width: 700px;
-      margin: 10px auto;
-      background: white;
-      padding: 20px;
-      border-left: 5px solid #4a90e2;
-      border-radius: 10px;
-      line-height: 1.5;
+    .owl-hero img:hover {
+        transform: scale(1.04);
     }
 
-    /* BUTTON */
-    .btn {
-      background: #4a90e2;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      display: block;
-      margin: 15px auto;
+    .professor {
+        width: 120px;
+        float: right;
+        margin: 0 0 10px 20px;
     }
 
-    .btn:hover {
-      background: #357bd8;
+    @media (max-width:600px){
+        .professor {
+            float:none;
+            display:block;
+            margin:auto;
+            margin-bottom:10px;
+        }
     }
-
-    /* CTA */
-    .cta-box {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .cta {
-      display: inline-block;
-      background: #28a745;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    .cta:hover {
-      background: #218838;
-    }
-
-    /* PROGRESS */
-    .progress-bar {
-      width: 80%;
-      margin: 20px auto;
-      background: #ddd;
-      height: 10px;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .progress {
-      height: 100%;
-      width: 0%;
-      background: #4a90e2;
-      transition: width 0.3s ease;
-    }
-
-    /* INTERLINKING */
-    .owl-network {
-      margin-top: 60px;
-      padding: 25px 15px;
-      background: #f9fbff;
-      text-align: center;
-      border-top: 2px solid #e6eefc;
-    }
-
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 900px;
-      margin: 20px auto 0;
-    }
-
-    .link-card {
-      display: block;
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #222;
-      border-left: 4px solid #4a90e2;
-      transition: 0.2s;
-    }
-
-    .link-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-  </style>
+    </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-
-    <a href="YOUR_AFFILIATE_LINK" target="_blank">
-      <img src="owl.png" class="owl" id="owlImage" alt="Professor Owl Guide" />
+<!-- 🦉 BIG CLICKABLE OWL HERO -->
+<div class="owl-hero">
+    <a href="https://is.gd/SRCKpA" target="_blank">
+        <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png"
+             alt="Professor Owl Tax Guide">
     </a>
+</div>
 
-    <h1>How to Fill Out a 1040 for Beginners</h1>
-    <p class="sub">A simple step-by-step guide with 🦉 Professor Owl</p>
+<!-- DATE / COUNTDOWN -->
+<p>📅 Today is: <span id="currentDate"></span></p>
+<p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
-    <a href="YOUR_AFFILIATE_LINK" target="_blank" class="cta">
-      👉 Try an easy tax filing tool
-    </a>
-  </div>
+<h1>🦉 Professor Owl’s Easy Tax Guide</h1>
 
-  <!-- OWL SPEECH -->
-  <div class="owl-box" id="owlText"></div>
+<img src="thumbnail.jfif" alt="Professor Owl" class="professor">
 
-  <!-- LESSON -->
-  <div class="lesson-card" id="lessonCard"></div>
+<h2>✅ PART 1 — Get Your Papers Ready</h2>
 
-  <!-- NEXT -->
-  <button class="btn" onclick="nextStep()">Next Step →</button>
+<h3>Step 1: Income Papers</h3>
+<ul>
+<li>W-2 = money from your job</li>
+<li>1099 = extra money (side jobs, bank interest)</li>
+<li>Other money (tips, small jobs)</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Put everything in one folder.</div>
 
-  <!-- CTA (mid-page natural placement) -->
-  <div class="cta-box">
-    <h2>Need help filing your 1040?</h2>
-    <a href="YOUR_AFFILIATE_LINK" target="_blank" class="cta">
-      👉 Use a simple tax tool
-    </a>
-  </div>
+<h3>Step 2: Deductions (Things that save money)</h3>
+<ul>
+<li>Charity donations</li>
+<li>Medical bills</li>
+<li>School costs</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Keep receipts!</div>
 
-  <!-- PROGRESS -->
-  <div class="progress-bar">
-    <div class="progress" id="progress"></div>
-  </div>
+<h3>Step 3: Personal Info</h3>
+<ul>
+<li>Social Security numbers</li>
+<li>Bank account</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Check numbers carefully.</div>
 
-  <!-- INTERLINKING -->
-  <div class="owl-network">
-    <h2>🦉 Professor Owl Learning Network</h2>
-    <p>More simple tax lessons you might like:</p>
-    <div id="owlLinks" class="link-grid"></div>
-  </div>
+<h2>✅ PART 2 — Filling Out Your Taxes</h2>
 
-  <script>
-    let step = 0;
+<h3>Step 4: Add Your Income</h3>
+<p>Combine all your income sources.</p>
 
-    const steps = [
-      {
-        owl: "🦉 Hi! I’m Professor Owl. Let’s learn the 1040 step by step.",
-        lesson: "The 1040 form is how people report their yearly income to the government."
-      },
-      {
-        owl: "🦉 Step 1: Write your name.",
-        lesson: "Your name goes at the top of the form, just like on a school paper."
-      },
-      {
-        owl: "🦉 Step 2: Add your address.",
-        lesson: "This tells the IRS where you live."
-      },
-      {
-        owl: "🦉 Step 3: Report your income.",
-        lesson: "Income is the money you earned from work or jobs."
-      },
-      {
-        owl: "🦉 Great job! You understand the basics of the 1040!",
-        lesson: "You now know the simple structure of a tax return."
-      }
-    ];
+<h3>Step 5: Adjust Your Income</h3>
+<p>Subtract eligible adjustments.</p>
 
-    function typeText(text) {
-      const el = document.getElementById("owlText");
-      el.innerHTML = "";
-      let i = 0;
+<h3>Step 6: Find Your AGI</h3>
+<p>AGI = Total income minus adjustments</p>
 
-      let typing = setInterval(() => {
-        el.innerHTML += text.charAt(i);
-        i++;
-        if (i >= text.length) clearInterval(typing);
-      }, 30);
-    }
+<h3>Step 7: Deductions</h3>
+<p>Choose standard or itemized deductions.</p>
 
-    function nextStep() {
-      if (step >= steps.length) step = 0;
+<h3>Step 8: Calculate Tax</h3>
+<p>Compute total tax owed.</p>
 
-      const current = steps[step];
+<h3>Step 9: Credits & Payments</h3>
+<p>Apply tax credits to reduce tax.</p>
 
-      typeText(current.owl);
-      document.getElementById("lessonCard").innerText = current.lesson;
+<h3>Step 10: Refund or Owe</h3>
+<p>Determine refund or balance due.</p>
 
-      document.getElementById("progress").style.width =
-        ((step + 1) / steps.length) * 100 + "%";
+<h3>Step 11: Sign</h3>
+<p>Always sign your return.</p>
 
-      step++;
-    }
+<div style="text-align:center; margin:30px 0;">
+<a href="https://is.gd/SRCKpA" target="_blank" class="button">
+Click here to file your taxes online
+</a>
+</div>
 
-    // INTERLINKING SYSTEM
-    const sitePages = [
-      { title: "What is a W-2?", url: "/w2-guide.html", desc: "Simple W-2 explanation." },
-      { title: "Tax Deductions", url: "/deductions.html", desc: "Lower your taxable income." },
-      { title: "Tax Refunds", url: "/tax-refund.html", desc: "Why refunds happen." },
-      { title: "1040 Checklist", url: "/1040-checklist.html", desc: "Before you file." }
-    ];
+<script>
+document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
 
-    function renderLinks() {
-      const container = document.getElementById("owlLinks");
+const deadline = new Date("October 15, 2026 23:59:59").getTime();
+const el = document.getElementById("countdown");
 
-      sitePages.forEach(page => {
-        const card = document.createElement("a");
-        card.href = page.url;
-        card.className = "link-card";
+setInterval(() => {
+  const now = new Date().getTime();
+  const d = deadline - now;
 
-        card.innerHTML = `
-          <h3>🦉 ${page.title}</h3>
-          <p>${page.desc}</p>
-        `;
+  if(d < 0){ el.innerText = "Deadline passed"; return; }
 
-        container.appendChild(card);
-      });
-    }
+  const days = Math.floor(d/(1000*60*60*24));
+  const hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((d%(1000*60*60))/(1000*60));
+  const seconds = Math.floor((d%(1000*60))/1000);
 
-    renderLinks();
-
-    // start first lesson
-    nextStep();
-  </script>
+  el.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+},1000);
+</script>
 
 </body>
 </html>
