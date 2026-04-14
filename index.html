@@ -2,113 +2,100 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
-<meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
-
 <title>How to File Taxes - Easy Guide</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #0b2f5a;
-    color: #ffffff;
+    background:#0b2f5a;
+    color:#fff;
+    line-height:1.6;
 }
 
-h1, h2 { color: #ffcc00; }
-h3 { color: #ffffff; }
-
-ul { margin: 10px 0 20px 20px; }
-
-.tip, .extra-tip {
-    background-color: #1f4e79;
-    border-left: 5px solid #ffcc00;
-    padding: 10px;
-    margin: 10px 0;
+/* TOP SECTION */
+.top {
+    text-align:center;
+    padding:10px 10px 5px 10px;
 }
 
-.button {
-    background-color: #ffcc00;
-    color:#0b2f5a;
-    padding:15px 25px;
-    text-decoration:none;
-    font-size:18px;
-    border-radius:8px;
-    display:inline-block;
+.logo {
+    width:160px;
+    max-width:80%;
+    height:auto;
+    display:block;
+    margin:10px auto;
 }
 
-.countdown {
-    font-size: 20px;
+/* TEXT */
+h1 {
+    color:#ffcc00;
+    margin:5px 0 10px 0;
+    font-size:24px;
 }
 
-.banner {
+.center {
     text-align:center;
     margin-bottom:20px;
+}
+
+h2 {
+    color:#ffcc00;
+    margin-top:30px;
+}
+
+.tip {
+    background:#1f4e79;
+    border-left:5px solid #ffcc00;
+    padding:10px;
+    margin:10px 0;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ✅ TOP LOGO (OWL) -->
-<header style="text-align:center; padding:10px 15px 5px 15px;">
+<!-- ✅ TOP LOGO (FIXED + CACHE SAFE) -->
+<div class="top">
+    <div style="font-size:14px; opacity:0.8;">Logo</div>
 
-  <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png"
-       alt="Professor Owl Logo"
-       style="width:120px; height:auto; display:block; margin:0 auto;">
+    <img class="logo"
+         src="https://brightlane.github.io/how-to-file-taxes/professorowl.png?v=3"
+         alt="Professor Owl Logo">
 
-  <h1 style="margin:5px 0;">🦉 Professor Owl’s Easy Tax Guide</h1>
-
-</header>
+    <h1>🦉 Professor Owl’s Easy Tax Guide</h1>
+</div>
 
 <!-- 📅 DATE + COUNTDOWN -->
-<div style="text-align:center; margin-bottom:20px;">
+<div class="center">
+    <p>📅 Today is: <span id="currentDate"></span></p>
 
-  <p>📅 Today is: <span id="currentDate"></span></p>
-
-  <p class="countdown">
-    ⏰ Time until Tax Extension Deadline: <span id="countdown"></span>
-  </p>
-
+    <p>⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 </div>
 
-<!-- BANNER -->
-<div class="banner">
-<a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
-<img src="https://7667.imgix.net/banners/54182.png">
-</a>
-</div>
-
-<!-- CONTENT START -->
+<!-- CONTENT -->
 <h2>✅ PART 1 — Get Your Papers Ready</h2>
 
 <h3>Step 1: Income Papers</h3>
-<ul>
-<li>W-2 = money from your job</li>
-<li>1099 = extra money (side jobs, bank interest)</li>
-<li>Other income</li>
-</ul>
+<p>W-2 = money from your job<br>
+1099 = extra money (side jobs, bank interest)<br>
+Other income</p>
 
-<div class="tip"><strong>Tip:</strong> Put everything in one folder.</div>
+<div class="tip">Tip: Put everything in one folder.</div>
 
 <h3>Step 2: Deductions</h3>
-<ul>
-<li>Charity donations</li>
-<li>Medical bills</li>
-<li>School costs</li>
-</ul>
+<p>Charity donations<br>
+Medical bills<br>
+School costs</p>
 
-<div class="tip"><strong>Tip:</strong> Keep receipts!</div>
+<div class="tip">Tip: Keep receipts!</div>
 
 <h3>Step 3: Personal Info</h3>
-<ul>
-<li>Social Security number</li>
-<li>Bank account info</li>
-</ul>
+<p>Social Security number<br>
+Bank account info</p>
 
-<div class="tip"><strong>Tip:</strong> Double-check everything.</div>
+<div class="tip">Tip: Double-check everything.</div>
 
 <h2>✅ PART 2 — Filing Steps</h2>
 
@@ -136,16 +123,10 @@ ul { margin: 10px 0 20px 20px; }
 <h3>Step 11: Sign</h3>
 <p>Always sign your return.</p>
 
-<!-- CTA -->
-<div style="text-align:center; margin:40px 0;">
-<a href="https://is.gd/SRCKpA" class="button">
-Get Your Maximum Refund Now
-</a>
-</div>
-
 <!-- SCRIPT -->
 <script>
-document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
+document.getElementById("currentDate").innerText =
+new Date().toLocaleDateString();
 
 const deadline = new Date("October 15, 2026 23:59:59").getTime();
 const el = document.getElementById("countdown");
@@ -154,7 +135,10 @@ setInterval(() => {
   const now = new Date().getTime();
   const d = deadline - now;
 
-  if(d < 0){ el.innerText = "Deadline passed"; return; }
+  if(d < 0){
+    el.innerText = "Deadline passed";
+    return;
+  }
 
   const days = Math.floor(d/(1000*60*60*24));
   const hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
