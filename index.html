@@ -1,409 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professor Owl Tax Classroom</title>
-<style>
-:root {
-  --bg: #0b1220;
-  --panel: #111827;
-  --board: #14532d;
-  --board2: #0f3d22;
-  --green: #22c55e;
-  --text: #fff;
-  --muted: #cbd5e1;
-  --link: #93c5fd;
-}
-* {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(17, 24, 39, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid var(--green);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 10px 14px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  min-width: 0;
-  color: inherit;
-}
-.brand img {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid var(--green);
-}
-.brand span {
-  font-weight: 800;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.nav {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.nav a {
-  color: var(--link);
-  font-size: 14px;
-}
-.hero {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 20px;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px 16px;
-}
-.owl-wrap {
-  text-align: center;
-}
-.owl {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 22px;
-  animation: float 3s ease-in-out infinite;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-.owl.breathe {
-  animation: float 0.9s ease-in-out infinite;
-}
-.speech {
-  background: #1f2937;
-  border-left: 4px solid var(--green);
-  padding: 14px 16px;
-  border-radius: 12px;
-  color: var(--muted);
-}
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-.board {
-  max-width: 1100px;
-  margin: 0 auto 18px;
-  padding: 22px 20px;
-}
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px 18px;
-}
-.board,
-.card {
-  background: linear-gradient(180deg, var(--board), var(--board2));
-  border: 3px solid var(--green);
-  border-radius: 14px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-}
-.title {
-  font-size: 20px;
-  font-weight: 800;
-  margin: 0 0 10px;
-}
-.text {
-  font-size: 18px;
-  line-height: 1.55;
-  color: #dcfce7;
-  min-height: 84px;
-}
-.meta {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-  color: #bbf7d0;
-  font-size: 13px;
-}
-.controls {
-  text-align: center;
-  margin: 16px 0 26px;
-}
-button,
-.cta a {
-  background: var(--green);
-  color: #000;
-  border: none;
-  padding: 12px 18px;
-  margin: 6px;
-  border-radius: 10px;
-  font-weight: 800;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-}
-button:active,
-.cta a:active {
-  transform: scale(0.98);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  padding: 0 16px 18px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.card {
-  padding: 16px;
-  position: relative;
-  overflow: hidden;
-}
-.card.small {
-  color: #bbf7d0;
-  margin-top: 8px;
-}
-.card.locked::after {
-  content: 'LOCKED';
-  position: absolute;
-  top: 12px;
-  right: -34px;
-  transform: rotate(35deg);
-  background: #f59e0b;
-  color: #111;
-  padding: 4px 42px;
-  font-size: 12px;
-  font-weight: 900;
-}
-.card small {
-  display: block;
-  color: #bbf7d0;
-  margin-top: 8px;
-}
-.cta {
-  text-align: center;
-  margin: 18px 0 34px;
-}
-.footer {
-  padding: 18px 16px 40px;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 13px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Owl Tax Classroom</title>
+    <style>
+        :root {
+            --bg: #0b1220;
+            --panel: #111827;
+            --board: #14532d;
+            --board2: #0f3d22;
+            --green: #22c55e;
+            --text: #fff;
+            --muted: #cbd5e1;
+            --link: #93c5fd;
+            --accent: #f59e0b;
+        }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .nav {
-    display: none;
-  }
-  .owl {
-    width: 120px;
-    height: 120px;
-  }
-  button,
-  .cta a {
-    width: 92%;
-    max-width: 360px;
-  }
-}
-</style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* PROGRESS BAR */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--green);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--green);
+        }
+
+        /* STICKY HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--green);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-link img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--green);
+        }
+
+        /* HERO & OWL */
+        .hero {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .owl-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .speech-bubble {
+            background: var(--panel);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 5px solid var(--green);
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+        }
+
+        /* BLACKBOARD SYSTEM */
+        .blackboard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blackboard {
+            background: linear-gradient(135deg, var(--board), var(--board2));
+            border: 10px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 50px 40px;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+            min-height: 300px;
+            transition: opacity 0.2s ease;
+        }
+
+        .chalk-title {
+            font-family: 'Courier New', monospace;
+            color: var(--green);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .chalk-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        /* CONTROLS */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .btn-next { background: var(--green); color: #000; }
+        .btn-back { background: #374151; color: #fff; }
+
+        /* GRID & FOOTER */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--panel);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card.locked::after {
+            content: 'COMING SOON';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent);
+            color: #000;
+            padding: 5px 40px;
+            transform: rotate(35deg);
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        .footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: #090e1a;
+            border-top: 1px solid #1f2937;
+        }
+
+        @media (max-width: 600px) {
+            .btn { width: 100%; }
+            .controls { flex-direction: column; }
+            .blackboard { padding: 30px 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="Professor Owl">
-      <span>Professor Owl Tax Classroom</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#lessons">Lessons</a>
-      <a href="#blackboard">Blackboard</a>
-      <a href="#recap">Recap</a>
-      <a href="#schedule">Schedule Preview</a>
-    </nav>
-  </div>
-</header>
+    <div id="progress-container"><div id="progress-bar"></div></div>
 
-<main>
+    <header class="header">
+        <div class="header-inner">
+            <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="brand-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="Professor Owl">
+                <span>Professor Owl Classroom</span>
+            </a>
+            <div style="font-size: 12px; color: var(--green); font-weight: 800;">LIVE LESSON MODE</div>
+        </div>
+    </header>
 
-  <section class="hero">
-    <div class="owl-wrap">
-      <img class="owl" id="owl" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="Professor Owl">
-    </div>
-    <div class="speech" id="speech">
-      Welcome to your learning journey. Follow each lesson step-by-step.
-    </div>
-  </section>
+    <main>
+        <section class="hero">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" id="owl" class="owl-img" alt="Owl">
+            <div class="speech-bubble" id="speech">Welcome! Let's get started.</div>
+        </section>
 
-  <section class="board" id="blackboard">
-    <div class="title" id="title"></div>
-    <div class="text" id="text"></div>
-    <div class="meta" id="meta"></div>
-  </section>
+        <section class="blackboard-container">
+            <div class="blackboard" id="bb-inner">
+                <div class="chalk-title" id="title"></div>
+                <div class="chalk-text" id="text"></div>
+            </div>
+        </section>
 
-  <section class="controls" id="lessons">
-    <button onclick="prev()">⬅ Back</button>
-    <button onclick="next()">Next ➡</button>
-  </section>
+        <div class="controls">
+            <button class="btn btn-back" onclick="prev()">Back</button>
+            <button class="btn btn-next" onclick="next()">Next Lesson</button>
+        </div>
 
-  <section id="recap" class="board section">
-    <div class="title">Class Recap</div>
-    <div class="text">
-      Today you learned how income, adjustments, taxes, and payments connect into one system.
-    </div>
-  </section>
+        <section id="schedule" class="grid">
+            <div class="card locked"><h3>Schedule 1</h3><p>Additional Income</p></div>
+            <div class="card locked"><h3>Schedule 2</h3><p>Additional Taxes</p></div>
+            <div class="card locked"><h3>Schedule 3</h3><p>Payments/Credits</p></div>
+        </section>
 
-  <section id="schedule" class="grid">
-    <div class="card locked">
-      Schedule 1
-      <small>Extra income concepts</small>
-      <small>Coming Next</small>
-    </div>
-    <div class="card locked">
-      Schedule 2
-      <small>Additional tax concepts</small>
-      <small>Coming Next</small>
-    </div>
-    <div class="card locked">
-      Schedule 3
-      <small>Credits and payment expansion</small>
-      <small>Coming Next</small>
-    </div>
-  </section>
+        <div class="footer">
+            <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="btn btn-next" style="text-decoration:none; display:inline-block;">Final Step: Start Filing</a>
+            <p style="margin-top:20px; opacity:0.5;">© 2026 Professor Owl Tax Guide · Affiliate Disclosure Included</p>
+        </div>
+    </main>
 
-  <section class="cta">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-      Start Filing Now
-    </a>
-  </section>
+    <script>
+        const lessons = [
+            ["Line 1: Identity", "Your tax file begins with your legal name and SSN. Accurate identity ensures your refund goes to YOU."],
+            ["Line 2: Filing Status", "Single, Married, or Head of Household? This choice dictates your tax brackets for the entire year."],
+            ["Line 3-7: The Income Engine", "From wages to interest, this is where your total earnings are tallied before any deductions."],
+            ["Line 8-12: Standard Deduction", "The IRS allows a set amount of income to be tax-free. Most people use this to lower their bill instantly."],
+            ["Line 15: Taxable Income", "The 'Magic Number.' This is what remains after deductions and what your tax is actually based on."],
+            ["Line 24: Total Tax", "This is the final calculation of what you owe before we look at what you've already paid."],
+            ["Line 25-33: Payments & Refunds", "If your withholdings exceed your tax, you get a refund. This is the goal of the classroom!"]
+        ];
 
-  <div class="footer">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-      Professor Owl Tax Classroom
-    </a> · Affiliate link preserved.
-    <br><br>
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-      Open full classroom
-    </a>
-  </div>
+        let current = 0;
 
-</main>
+        function update() {
+            const [t, txt] = lessons[current];
+            const bb = document.getElementById('bb-inner');
+            
+            // Fade effect
+            bb.style.opacity = 0;
+            
+            setTimeout(() => {
+                document.getElementById('title').innerText = t;
+                document.getElementById('text').innerText = txt;
+                document.getElementById('speech').innerText = `"Professor Owl says: ${txt}"`;
+                
+                // Progress bar logic
+                const percent = ((current + 1) / lessons.length) * 100;
+                document.getElementById('progress-bar').style.width = percent + "%";
+                
+                bb.style.opacity = 1;
+            }, 200);
+        }
 
-<!-- LinkConnector tracking pixel -->
-<img src="https://www.linkconnector.com/tr.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide&tb=1" width="1" height="1" alt="">
+        function next() { if(current < lessons.length - 1) { current++; update(); } }
+        function prev() { if(current > 0) { current--; update(); } }
 
-<script>
-const lessons = [
-  ["Line 1 Concept", "Identity in the tax system. Why it matters: defines who is reporting.", "Identity + setup"],
-  ["Line 2 Concept", "Filing category concept. Why it matters: affects rules applied.", "Identity + setup"],
-  ["Line 3 Concept", "Income basics. Why it matters: starting point of the system.", "Income"],
-  ["Line 4 Concept", "More income types. Why it matters: complete financial picture.", "Income"],
-  ["Line 5 Concept", "Income total. Why it matters: foundation of calculations.", "Income"],
-  ["Line 6 Concept", "Adjustments. Why it matters: fairness corrections.", "Adjustments"],
-  ["Line 7 Concept", "Adjustment meaning. Why it matters: accuracy.", "Adjustments"],
-  ["Line 8 Concept", "Deductions. Why it matters: reduces taxable amount.", "Adjustments"],
-  ["Line 9 Concept", "Deduction options. Why it matters: different paths.", "Adjustments"],
-  ["Line 10 Concept", "Taxable income. Why it matters: what is taxed.", "Tax logic"],
-  ["Line 11 Concept", "Start of tax calculation.", "Tax logic"],
-  ["Line 12 Concept", "Tax structure.", "Tax logic"],
-  ["Line 13 Concept", "Calculation steps.", "Tax logic"],
-  ["Line 14 Concept", "Estimated tax.", "Tax logic"],
-  ["Line 15 Concept", "Adjusting tax.", "Tax logic"],
-  ["Line 16 Concept", "Credits.", "Credits + payments"],
-  ["Line 17 Concept", "Refund idea.", "Credits + payments"],
-  ["Line 18 Concept", "Payments made.", "Credits + payments"],
-  ["Line 19 Concept", "Withholding.", "Credits + payments"],
-  ["Line 20 Concept", "Tracking payments.", "Credits + payments"],
-  ["Line 21 Concept", "Compare owed vs paid.", "Credits + payments"],
-  ["Line 22 Concept", "Refund outcome.", "Final outcome"],
-  ["Line 23 Concept", "Balance due.", "Final outcome"],
-  ["Line 24 Concept", "Accuracy importance.", "Final outcome"],
-  ["Line 25 Concept", "Verification.", "Final outcome"],
-  ["Line 26 Concept", "Correction.", "Final outcome"],
-  ["Line 27 Concept", "Validation.", "Final outcome"],
-  ["Line 28 Concept", "Submission.", "Final outcome"],
-  ["Line 29 Concept", "Processing.", "Final outcome"],
-  ["Line 30 Concept", "Review.", "Final outcome"],
-  ["Line 31 Concept", "Error detection.", "Final outcome"],
-  ["Line 32 Concept", "Fixing errors.", "Final outcome"],
-  ["Line 33 Concept", "Approval.", "Final outcome"],
-  ["Line 34 Concept", "Final result.", "Final outcome"],
-  ["Line 35 Concept", "Record keeping.", "Final outcome"],
-  ["Line 36 Concept", "Audit concept.", "Final outcome"],
-  ["Line 37 Concept", "Completion.", "Final outcome"],
-  ["Line 38 Concept", "Big picture of the tax system.", "Final outcome"]
-];
-
-let i = 0;
-
-const title = document.getElementById("title");
-const text = document.getElementById("text");
-const meta = document.getElementById("meta");
-const speech = document.getElementById("speech");
-const owl = document.getElementById("owl");
-
-function render() {
-  const l = lessons[i];
-  title.innerText = l[0];
-  text.innerText = l[1];
-  meta.innerText = "Lesson " + (i + 1) + " of " + lessons.length + " · " + l[2];
-  speech.innerText = "Professor Owl says: " + l[1];
-
-  owl.classList.remove("breathe");
-  void owl.offsetWidth; // trigger reflow
-  owl.classList.add("breathe");
-}
-
-function next() {
-  if (i < lessons.length - 1) {
-    i++;
-    render();
-  }
-}
-function prev() {
-  if (i > 0) {
-    i--;
-    render();
-  }
-}
-
-render();
-</script>
-
+        update();
+    </script>
+    <img src="https://www.linkconnector.com/tr.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide&tb=1" width="1" height="1" style="display:none;">
 </body>
 </html>
