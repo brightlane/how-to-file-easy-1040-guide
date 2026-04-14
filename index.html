@@ -1,245 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Professor Owl Tax Classroom</title>
 
 <style>
 body {
-  margin: 0;
+  margin:0;
   font-family: Arial, sans-serif;
-  background: #0b1220;
-  color: white;
+  background:#0b1220;
+  color:white;
 }
 
-/* ================= STICKY HEADER ================= */
+/* HEADER */
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #111827;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  border-bottom: 2px solid #22c55e;
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#111827;
+  padding:10px;
+  border-bottom:2px solid #22c55e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.header a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.nav a {
+  color:#93c5fd;
+  margin-left:12px;
+  text-decoration:none;
+  font-size:14px;
 }
 
-.header img {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero {
-  text-align: center;
-  padding: 25px 10px;
+  text-align:center;
+  padding:20px;
 }
 
-.hero img {
-  width: 110px;
-  animation: float 3s ease-in-out infinite;
+.owl {
+  width:120px;
+  animation:float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-10px);}
 }
 
-/* ================= BLACKBOARD ================= */
+/* BOARD */
 .board {
-  max-width: 900px;
-  margin: 20px auto;
-  background: #14532d;
-  border: 3px solid #22c55e;
-  border-radius: 10px;
-  padding: 20px;
-  min-height: 120px;
+  max-width:900px;
+  margin:20px auto;
+  background:#14532d;
+  border:3px solid #22c55e;
+  border-radius:10px;
+  padding:20px;
 }
 
 .title {
-  font-size: 18px;
-  font-weight: bold;
+  font-weight:bold;
+  font-size:18px;
 }
 
 .text {
-  margin-top: 10px;
-  color: #d1fae5;
-  line-height: 1.4;
+  margin-top:10px;
+  color:#d1fae5;
 }
 
-/* ================= CONTROLS ================= */
+/* BUTTONS */
 .controls {
-  text-align: center;
-  margin: 15px;
+  text-align:center;
+  margin:15px;
 }
 
 button {
-  background: #22c55e;
-  border: none;
-  padding: 10px 14px;
-  margin: 5px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+  background:#22c55e;
+  border:none;
+  padding:10px 16px;
+  margin:5px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-button:hover {
-  background: #16a34a;
-}
-
-/* ================= SCHEDULE ================= */
+/* SCHEDULE */
 .schedule {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+  padding:20px;
 }
 
 .card {
-  background: #1f2937;
-  padding: 15px;
-  border-radius: 10px;
-  border-left: 4px solid #22c55e;
-  opacity: 0.85;
+  background:#1f2937;
+  padding:15px;
+  border-radius:10px;
+  border-left:4px solid #22c55e;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 .cta {
-  text-align: center;
-  margin: 30px;
+  text-align:center;
+  margin:30px;
 }
 
 .cta a {
-  background: #22c55e;
-  color: black;
-  padding: 12px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+  background:#22c55e;
+  color:black;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .nav {display:none;}
+  button {width:90%;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <div class="header">
   <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="owl">
-    Professor Owl Tax Classroom
+    <img src="https://7667.imgix.net/banners/54186.png" style="height:40px;">
   </a>
+  <div class="nav">
+    <a href="#lesson">Lessons</a>
+    <a href="#board">Blackboard</a>
+    <a href="#recap">Recap</a>
+    <a href="#schedule">Schedules</a>
+  </div>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <div class="hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="owl">
+  <img class="owl" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg">
   <h1>Professor Owl Classroom</h1>
-  <p>Step-by-step guided learning system</p>
+  <p>Welcome to your learning journey. Follow each lesson step-by-step.</p>
 </div>
 
-<!-- ================= BLACKBOARD ================= -->
-<div class="board">
-  <div class="title" id="title">Loading Lesson...</div>
-  <div class="text" id="text">Please wait...</div>
+<!-- BLACKBOARD -->
+<div class="board" id="board">
+  <div class="title" id="title"></div>
+  <div class="text" id="text"></div>
 </div>
 
-<!-- ================= CONTROLS ================= -->
+<!-- CONTROLS -->
 <div class="controls">
   <button onclick="prev()">⬅ Back</button>
   <button onclick="next()">Next ➡</button>
 </div>
 
-<!-- ================= SCHEDULE ================= -->
-<div class="schedule">
-  <div class="card">📘 Schedule 1<br>Extra Income Concepts</div>
-  <div class="card">📗 Schedule 2<br>Tax Adjustments Concepts</div>
-  <div class="card">📙 Schedule 3<br>Credits & Payments Concepts</div>
+<!-- RECAP -->
+<div id="recap" class="board">
+  <div class="title">Class Recap</div>
+  <div class="text">
+    Today you learned how income, adjustments, taxes, and payments all connect into one system.
+    You now understand how financial reporting works step-by-step.
+  </div>
 </div>
 
-<!-- ================= CTA ================= -->
+<!-- SCHEDULE -->
+<div id="schedule" class="schedule">
+  <div class="card">📘 Schedule 1<br>Extra Income & Adjustments (Coming Next)</div>
+  <div class="card">📗 Schedule 2<br>Additional Tax Concepts (Coming Next)</div>
+  <div class="card">📙 Schedule 3<br>Credits & Payments (Coming Next)</div>
+</div>
+
+<!-- CTA -->
 <div class="cta">
   <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-    Visit Official Resource
+    Start Filing Now
   </a>
 </div>
 
+<!-- TRACKING PIXEL -->
+<img src="https://www.linkconnector.com/tr.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide&tb=1" width="1" height="1">
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+const lessons = [
+["Line 1 Concept","Identity in the tax system. Why it matters: defines who is reporting."],
+["Line 2 Concept","Filing category concept. Why it matters: affects rules applied."],
+["Line 3 Concept","Income basics. Why it matters: starting point of system."],
+["Line 4 Concept","More income types. Why it matters: complete financial picture."],
+["Line 5 Concept","Income total. Why it matters: foundation of calculations."],
+["Line 6 Concept","Adjustments. Why it matters: fairness corrections."],
+["Line 7 Concept","Adjustment meaning. Why it matters: accuracy."],
+["Line 8 Concept","Deductions. Why it matters: reduces taxable amount."],
+["Line 9 Concept","Deduction options. Why it matters: different paths."],
+["Line 10 Concept","Taxable income. Why it matters: what is taxed."],
+["Line 11 Concept","Start of tax calculation."],
+["Line 12 Concept","Tax structure."],
+["Line 13 Concept","Calculation steps."],
+["Line 14 Concept","Estimated tax."],
+["Line 15 Concept","Adjusting tax."],
+["Line 16 Concept","Credits."],
+["Line 17 Concept","Refund idea."],
+["Line 18 Concept","Payments made."],
+["Line 19 Concept","Withholding."],
+["Line 20 Concept","Tracking payments."],
+["Line 21 Concept","Compare owed vs paid."],
+["Line 22 Concept","Refund outcome."],
+["Line 23 Concept","Balance due."],
+["Line 24 Concept","Accuracy importance."],
+["Line 25 Concept","Verification."],
+["Line 26 Concept","Correction."],
+["Line 27 Concept","Validation."],
+["Line 28 Concept","Submission."],
+["Line 29 Concept","Processing."],
+["Line 30 Concept","Review."],
+["Line 31 Concept","Error detection."],
+["Line 32 Concept","Fixing errors."],
+["Line 33 Concept","Approval."],
+["Line 34 Concept","Final result."],
+["Line 35 Concept","Record keeping."],
+["Line 36 Concept","Audit concept."],
+["Line 37 Concept","Completion."],
+["Line 38 Concept","Big picture of tax system."]
+];
 
-  const lessons = [
-    ["Identity Basics", "Understanding who the system applies to."],
-    ["Filing Overview", "Why yearly reporting exists."],
-    ["Income Concept", "Money earned from work or other sources."],
-    ["Multiple Income Sources", "Different ways income appears."],
-    ["Income Summary", "Combining all income."],
-    ["Adjustment Idea", "Why numbers change."],
-    ["Fairness Principle", "System balance concept."],
-    ["Deduction Concept", "Reducing taxable amount."],
-    ["Standard vs Options", "Different deduction methods."],
-    ["Taxable Income", "Income used for calculation."],
-    ["System Activation", "When rules apply."],
-    ["Progressive Structure", "Higher income treatment."],
-    ["Calculation Flow", "How tax math works."],
-    ["Preliminary Result", "Initial outcome."],
-    ["Adjustment Layer", "Refining calculations."],
-    ["Credit Concept", "Direct reductions."],
-    ["Refund Idea", "Overpayment return."],
-    ["Payment System", "Money paid during year."],
-    ["Withholding Concept", "Automatic payments."],
-    ["Tracking System", "Recording payments."],
-    ["Comparison Stage", "Matching owed vs paid."],
-    ["Refund Outcome", "Money returned."],
-    ["Balance Due", "Remaining amount owed."],
-    ["Accuracy Importance", "Why correctness matters."],
-    ["Verification System", "Checking data."],
-    ["Correction Stage", "Fixing issues."],
-    ["Validation Step", "Final confirmation."],
-    ["Submission", "Sending data."],
-    ["Processing", "System review."],
-    ["Review Stage", "Checking return."],
-    ["Error Detection", "Finding mistakes."],
-    ["Correction Review", "Fixing issues."],
-    ["Approval Stage", "Accepted return."],
-    ["Final Result", "Outcome reached."],
-    ["Record Storage", "Saving history."],
-    ["Audit Concept", "Possible review."],
-    ["Completion", "Process finished."],
-    ["Big Picture", "How system works overall."]
-  ];
+let i=0;
 
-  let i = 0;
+function render(){
+  document.getElementById("title").innerText = lessons[i][0];
+  document.getElementById("text").innerText = lessons[i][1];
+}
 
-  function render() {
-    document.getElementById("title").innerText = lessons[i][0];
-    document.getElementById("text").innerText = lessons[i][1];
-  }
+function next(){ if(i<lessons.length-1){i++; render();}}
+function prev(){ if(i>0){i--; render();}}
 
-  window.next = function () {
-    if (i < lessons.length - 1) i++;
-    render();
-  };
-
-  window.prev = function () {
-    if (i > 0) i--;
-    render();
-  };
-
-  render();
-});
+render();
 </script>
 
 </body>
