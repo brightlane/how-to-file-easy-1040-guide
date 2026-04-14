@@ -1,152 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
+    <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refund Quest: Get Your Gold Back!</title>
+    <title>How to File Taxes - Easy Guide</title>
+
     <style>
-        :root {
-            --space-dark: #0b1a30;
-            --quest-blue: #1f4e79;
-            --loot-gold: #ffcc00;
-            --text-white: #ffffff;
-            --line-neon: #00ff87;
-        }
-
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--space-dark);
-            color: var(--text-white);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            padding-bottom: 120px;
-            text-align: center;
-        }
-
-        /* --- THE GIANT CLICKABLE OWL --- */
-        .hero {
-            padding: 40px 0;
-            background: radial-gradient(circle, #1f4e79 0%, #0b1a30 90%);
-        }
-
-        .owl-mascot {
-            width: 400px;
-            max-width: 85vw;
-            filter: drop-shadow(0 0 40px var(--loot-gold));
-            cursor: pointer;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* --- MISSION CARDS --- */
-        .mission-container {
-            max-width: 900px;
-            margin: 0 auto;
             padding: 20px;
+            background-color: #0b2f5a;
+            color: #ffffff;
+        }
+        h1, h2 { color: #ffcc00; }
+        h3 { color: #ffffff; }
+
+        ul { margin: 10px 0 20px 20px; }
+
+        .tip, .extra-tip,
+        .banner,
+        .beginner-cheatsheet,
+        .tax-table,
+        .w2-guide,
+        .never-fail-steps,
+        .faq-cta {
+            margin-bottom: 20px;
         }
 
-        .secret-card {
-            background: linear-gradient(135deg, #1f4e79, #0b1a30);
-            border: 3px solid var(--line-neon);
-            border-radius: 20px;
-            padding: 25px;
-            margin: 20px 0;
-            box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
-        }
-
-        .tax-row {
-            background: rgba(255, 255, 255, 0.05);
+        .tip, .extra-tip {
+            background-color: #1f4e79;
+            border-left: 5px solid #ffcc00;
+            padding: 10px;
             margin: 10px 0;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 10px;
         }
 
-        .line-label { color: var(--line-neon); font-weight: bold; font-family: monospace; }
-
-        input {
+        .professor {
             width: 120px;
-            background: #000;
-            color: var(--loot-gold);
-            border: 2px solid var(--loot-gold);
-            padding: 8px;
-            border-radius: 5px;
-            text-align: right;
+            float: right;
+            margin: 0 0 10px 20px;
         }
 
-        /* --- MAX CONVERSION BUTTONS --- */
-        .btn-loot {
-            display: inline-block;
-            background: var(--loot-gold);
-            color: black;
-            padding: 20px 50px;
-            border-radius: 50px;
-            font-size: 26px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 8px 0px #b89600;
-            margin: 20px 0;
+        .button {
+            background-color: #ffcc00;
+            color:#0b2f5a;
+            padding:15px 25px;
+            text-decoration:none;
+            font-size:18px;
+            border-radius:8px;
+            display:inline-block;
         }
 
-        .cta-footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(11, 26, 48, 0.95);
-            padding: 20px 0;
-            border-top: 3px solid var(--loot-gold);
+        .countdown {
+            font-size: 20px;
+        }
+
+        .banner {
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .logo-banner {
+            text-align:center;
+            margin:20px 0;
+            background:#1f4e79;
+            padding:10px;
+            border-radius:8px;
+        }
+
+        .logo-banner img {
+            max-height:70px;
+            max-width:100%;
+        }
+
+        @media (max-width:600px){
+            .professor {
+                float:none;
+                display:block;
+                margin:auto;
+                margin-bottom:10px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide">
-            <img src="professorowl.png" alt="Professor Owl" class="owl-mascot" onerror="this.src='https://img.icons8.com/color/480/owl.png'">
+<!-- ★ Your logo banner at the top (update URLs below) -->
+<div class="logo-banner">
+    <a href="https://YOUR_HOMEPAGE_URL" target="_blank">
+        <img
+            src="https://YOUR_LOGO_URL"
+            alt="Palmo Kid - Benny Palmarino"
+        >
+    </a>
+</div>
+
+<!-- Professor Owl banner (with your affiliate link) -->
+<div class="banner">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
+        <img src="https://7667.imgix.net/banners/54182.png" alt="Tax Guide Banner">
+    </a>
+</div>
+
+<p>📅 Today is: <span id="currentDate"></span></p>
+<p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
+
+<h1>🦉 Professor Owl’s Easy Tax Guide</h1>
+
+<img src="thumbnail.jfif" alt="Professor Owl" class="professor">
+
+<h2>✅ PART 1 — Get Your Papers Ready</h2>
+
+<h3>Step 1: Income Papers</h3>
+<ul>
+    <li>W-2 = money from your job</li>
+    <li>1099 = extra money (side jobs, bank interest)</li>
+    <li>Other money (tips, small jobs)</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Put everything in one folder.</div>
+
+<h3>Step 2: Deductions (Things that save money)</h3>
+<ul>
+    <li>Charity donations</li>
+    <li>Medical bills</li>
+    <li>School costs</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Keep receipts!</div>
+
+<h3>Step 3: Personal Info</h3>
+<ul>
+    <li>Social Security numbers</li>
+    <li>Bank account</li>
+</ul>
+<div class="tip"><strong>Tip:</strong> Check numbers carefully.</div>
+
+<h2>✅ PART 2 — Filling Out Your Taxes</h2>
+
+<h3>Step 4: Add Your Income (Lines 4–8)</h3>
+<ul>
+    <li>Line 4: Interest (bank money)</li>
+    <li>Line 5: Dividends (stocks)</li>
+    <li>Line 6: Retirement money</li>
+    <li>Line 7: Social Security</li>
+    <li>Line 8: Other income</li>
+</ul>
+<div class="extra-tip">Think of this like adding all your money together.</div>
+
+<h3>Step 5: Adjust Your Income (Line 9)</h3>
+<ul>
+    <li>Student loan interest</li>
+    <li>IRA savings</li>
+    <li>Business costs</li>
+</ul>
+<div class="tip">These lower your total income.</div>
+
+<h3>Step 6: Find Your AGI</h3>
+<p>AGI = Total money − adjustments</p>
+
+<h3>Step 7: Deductions (Lines 11–12)</h3>
+<ul>
+    <li>Standard deduction (easy)</li>
+    <li>Itemized (more detailed)</li>
+</ul>
+<div class="tip">Pick the bigger one to save money.</div>
+
+<h3>Step 8: Calculate Tax (Lines 13–15)</h3>
+<ul>
+    <li>Line 13: Your tax</li>
+    <li>Extra taxes if needed</li>
+    <li>Total tax</li>
+</ul>
+
+<h3>Step 9: Credits & Payments (Lines 16–20)</h3>
+<ul>
+    <li>Tax already paid</li>
+    <li>Credits (money back)</li>
+</ul>
+<div class="extra-tip">Credits = money back!</div>
+
+<h3>Step 10: Refund or Owe (Lines 21–24)</h3>
+<ul>
+    <li>Paid too much → refund</li>
+    <li>Paid too little → owe</li>
+</ul>
+
+<h3>Step 11: Sign (Line 25)</h3>
+<p>Don’t forget to sign!</p>
+
+<h3>Extra Forms</h3>
+<ul>
+    <li>Schedule A – deductions</li>
+    <li>Schedule B – interest</li>
+    <li>Schedule C – business</li>
+</ul>
+
+<div style="text-align:center; margin:30px 0;">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" target="_blank" class="button">
+        Click here to file your taxes online
+    </a>
+</div>
+
+
+<!-- HERO section (affiliate link on CTA) -->
+<div class="banner">
+    <h1>How to File Taxes (2026 Guide for Beginners)</h1>
+    <p>Learn exactly how to file your taxes step-by-step, avoid mistakes, and maximize your refund.</p>
+
+    <div style="text-align:center; margin:20px 0;">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+            Start Filing Your Taxes Now (Free)
         </a>
-        <h1 style="color:var(--loot-gold); font-size: 50px; margin: 10px 0;">REFUND QUEST</h1>
-        <p style="font-size: 22px;">Hardly earned any money? You might still have <b>Hidden Loot!</b></p>
-    </section>
-
-    <div class="mission-container">
-        
-        <div class="secret-card">
-            <h2 style="color: var(--line-neon);">🕵️ The "Hidden Loot" Secret</h2>
-            <p>If you worked a little bit and your boss took money for taxes, you can get it <b>ALL BACK</b>. Even if you only earned $500!</p>
-        </div>
-
-        <div style="background: var(--quest-blue); padding: 20px; border-radius: 20px;">
-            <h3 style="color: var(--loot-gold);">The 1040 Mission Log</h3>
-            
-            <div class="tax-row">
-                <span class="line-label">Line 1z</span>
-                <span>Total Money Earned</span>
-                <input type="number" placeholder="$0">
-            </div>
-
-            <div class="tax-row" style="border: 2px solid var(--line-neon);">
-                <span class="line-label">Line 25a</span>
-                <span><b>Federal Tax Withheld (Box 2 on W-2)</b></span>
-                <input type="number" placeholder="$0">
-            </div>
-
-            <p style="font-size: 14px; margin-top: 15px;">Whatever you put in <b>Line 25a</b> is the gold you get back!</p>
-        </div>
-
-        <a href="https://is.gd/SRCKpA" class="btn-loot">CLAIM YOUR REFUND</a>
-
     </div>
+</div>
 
-    <div class="cta-footer">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" style="color: var(--loot-gold); font-weight: bold; text-decoration: none; font-size: 20px;">
-            🦉 Visit Professor Owl's Headquarters
-        </a>
+<!-- Featured snippet bait -->
+<section class="featured-snippet">
+    <h2>📌 How to File Taxes (Quick Answer)</h2>
+    <ol>
+        <li>Collect W-2 and 1099 forms</li>
+        <li>Add all income sources</li>
+        <li>Subtract deductions</li>
+        <li>Apply tax credits</li>
+        <li>Calculate total tax</li>
+        <li>File online or by mail</li>
+        <li>Get refund or pay balance</li>
+    </ol>
+</section>
+
+<!-- Main guide -->
+<section class="main-guide">
+    <h2>Step-by-Step Guide to Filing Taxes</h2>
+
+    <h3>1. Gather Your Documents</h3>
+    <p>You need W-2s, 1099s, Social Security number, and bank details.</p>
+
+    <h3>2. Report Your Income</h3>
+    <p>Include job income, freelance work, investments, and any side earnings.</p>
+
+    <h3>3. Claim Deductions</h3>
+    <p>Deductions reduce your taxable income and can increase your refund.</p>
+
+    <h3>4. Apply Tax Credits</h3>
+    <p>Credits directly reduce your tax bill and can give you money back.</p>
+
+    <h3>5. File Your Return</h3>
+    <p>Online filing is the fastest and easiest option.</p>
+</section>
+
+<!-- Mid CTA (same affiliate link) -->
+<div style="text-align:center; margin:30px 0;">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+        File Your Taxes Online in Minutes
+    </a>
+</div>
+
+<!-- Common mistakes -->
+<section class="common-mistakes">
+    <h2>⚠️ Common Tax Filing Mistakes</h2>
+    <ul>
+        <li>Wrong Social Security number</li>
+        <li>Missing income</li>
+        <li>Forgetting credits</li>
+        <li>Math errors</li>
+        <li>Not signing your return</li>
+    </ul>
+</section>
+
+<!-- Refund info -->
+<section class="refund-info">
+    <h2>💰 How Long Does a Tax Refund Take?</h2>
+    <p>Most refunds arrive within 21 days if you file electronically. Paper returns can take 6–8 weeks.</p>
+</section>
+
+<!-- FAQ section -->
+<section class="faq-section">
+    <h2>❓ Tax Filing FAQs</h2>
+
+    <h3>How do I file taxes for the first time?</h3>
+    <p>Gather your documents, enter income, apply deductions, and submit your return online.</p>
+
+    <h3>What documents do I need?</h3>
+    <p>W-2s, 1099s, ID, bank info, and receipts for deductions.</p>
+
+    <h3>Can I file taxes online?</h3>
+    <p>Yes, online filing is the fastest and most popular method.</p>
+
+    <h3>How can I increase my refund?</h3>
+    <p>Use deductions and credits to reduce your taxable income.</p>
+</section>
+
+<!-- Final CTA (same affiliate link) -->
+<div style="text-align:center; margin:40px 0;">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+        Get Your Maximum Tax Refund Now
+    </a>
+</div>
+
+<!-- Quick Tax Cheat Sheet -->
+<div class="beginner-cheatsheet">
+    <div style="background:#1f4e79; color:#ffffff; padding:15px; border-left:5px solid #ffcc00;">
+        <h2>📝 Quick Tax Cheat Sheet for Beginners</h2>
+        <ul>
+            <li><strong>Step 1:</strong> Gather W-2, 1099, and receipts</li>
+            <li><strong>Step 2:</strong> Look at Box 1 & Box 2 on your W-2</li>
+            <li><strong>Step 3:</strong> Check your income in the tax table to see your rate</li>
+            <li><strong>Step 4:</strong> Subtract deductions to lower taxes</li>
+            <li><strong>Step 5:</strong> Apply tax credits for money back</li>
+            <li><strong>Step 6:</strong> File online for faster refund</li>
+        </ul>
+        <p style="font-size:14px; opacity:0.9;">Use this as your one-page reference before diving into the full guide.</p>
     </div>
+</div>
 
-</body>
-</html>
+<!-- How to read a tax table -->
+<section class="tax-table">
+    <h2>📊 How to Read a Tax Table Easily</h2>
+    <p>Here’s a simple color-coded example. Your tax only applies to the part of income in each bracket:</p>
+    <table border="1" cellpadding="5" cellspacing="0" style="width:100%; text-align:center;">
+        <tr style="background:#ffcc00;"><th>Income</th><th>Rate</th><th>Example Tax</th></tr>
+        <tr style="background:#ffe680;"><td>$0 – $10,000</td><td>10%</td><td>$1,000 if you earned $10,000</td></tr>
+        <tr style="background:#ffd24d;"><td>$10,001 – $40,000</td><td>12%</td><td>$3,600 if you earned $30,000 in this bracket</td></tr>
+        <tr style="background:#ffb84d;"><td>$40,001 – $85,000</td><td>22%</td><td>$9,900 if you earned $45,000 in this bracket</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Only the money in each bracket is taxed at that rate. Don’t multiply your total income by the highest rate!</p>
+</section>
+
+<!-- W-2 guide -->
+<section class="w2-guide">
+    <h2>🦉 How to Read Your W-2 (Step-by-Step)</h2>
+    <ul>
+        <li><strong>Box 1 – Wages:</strong> Your total money earned. Example: $12,000</li>
+        <li><strong>Box 2 – Federal Tax Withheld:</strong> Tax already taken out. Example: $1,500</li>
+        <li><strong>Box 3 – Social Security:</strong> Money that counts for Social Security. Example: $12,000</li>
+        <li><strong>Box 5 – Medicare:</strong> Money that counts for Medicare. Example: $12,000</li>
+    </ul>
+    <p><strong>Tip:</strong> Think of Box 1 as “your take-home amount” and Box 2 as “money already paid for taxes.” Focus on these first.</p>
+</section>
+
+<!-- Never-fail filing steps -->
+<section class="never-fail-steps">
+    <h2>🚀 Never-Fail Filing Steps</h2>
+    <ol>
+        <li>Gather all forms: W-2, 1099, and receipts for deductions.</li>
+        <li>Add up all income to find your total earnings.</li>
+        <li>Subtract deductions to find your Adjusted Gross Income (AGI).</li>
+        <li>Check the tax table to find how much tax you owe.</li>
+        <li>Apply tax credits for any money back.</li>
+        <li>Sign your forms to make them official.</li>
+        <li>File online for the fastest refund.</li>
+    </ol>
+    <p><strong>Tip:</strong> Follow these steps in order, and you can file your taxes even if it’s your first time.</p>
+</section>
+
+<!-- FAQ + CTA -->
+<section class="faq-cta">
+    <h2>❓ FAQ: Never Filed Taxes Before?</h2>
+    <h3>What is a W-2?</h3>
+    <p>A form from your job showing your earnings and tax withheld.</p>
+    <h3>What is a 1099?</h3>
+    <p>A form for other money you earned like side jobs or bank interest.</p>
+    <h3>What is a tax table?</h3>
+    <p>A chart that tells you the tax rate for different amounts of income.</p>
+    <h3>Do I have to file if I earned very little?</h3>
+    <p>Sometimes you don’t, but filing can give you a refund.</p>
+
+    <!-- Call-to-action button (same affiliate link) -->
+    <div style="text-align:center; margin:30px 0;">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" style="display:inline-block; background:#ffcc00; color:#0b2f5a; padding:15px 25px; font-size:18px; text-decoration:none; border-radius:8px;">
+            File Your Taxes Online Easily
