@@ -4,7 +4,7 @@
     <meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
     <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
     <meta charset="UTF-8">
-    <title>How to File Taxes - Easy Guide</title>
+    <title>🦉 Professor Owl's Easy Tax Guide - 2026</title>
 
     <style>
         body {
@@ -17,364 +17,285 @@
         }
         h1, h2 { color: #ffcc00; }
         h3 { color: #ffffff; }
+        h1 { font-size: 2.5em; }
 
         ul { margin: 10px 0 20px 20px; }
-
-        .tip, .extra-tip,
-        .banner,
-        .beginner-cheatsheet,
-        .tax-table,
-        .w2-guide,
-        .never-fail-steps,
-        .faq-cta {
-            margin-bottom: 20px;
-        }
 
         .tip, .extra-tip {
             background-color: #1f4e79;
             border-left: 5px solid #ffcc00;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
+            border-radius: 0 8px 8px 0;
         }
 
-        .professor {
-            width: 100px;
-            float: right;
-            margin: 0 0 10px 20px;
+        .professor-hero {
+            width: 1000px;
+            max-width: 95vw;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(255,204,0,0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .professor-hero:hover {
+            transform: scale(1.02);
         }
 
-        .professor-large {
-            width: 160px;
-            margin: 0 0 10px 20px;
-        }
+        .professor-large { width: 160px; margin: 0 0 10px 20px; }
+        .professor { width: 100px; float: right; margin: 0 0 10px 20px; }
+        .owl-in-tip { width: 70px; margin: 0 15px 10px 0; float: left; }
 
         .button {
             background-color: #ffcc00;
-            color:#0b2f5a;
-            padding:15px 25px;
-            text-decoration:none;
-            font-size:18px;
-            border-radius:8px;
-            display:inline-block;
-        }
-
-        .countdown {
+            color: #0b2f5a;
+            padding: 18px 35px;
+            text-decoration: none;
             font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            display: inline-block;
+            transition: background 0.3s;
         }
+        .button:hover { background-color: #e6b800; }
 
-        .banner {
-            text-align:center;
-            margin-bottom:20px;
-        }
-
+        .banner { text-align: center; margin-bottom: 25px; }
         .logo-banner {
-            text-align:center;
-            margin:20px 0;
-            background:#1f4e79;
-            padding:15px;
-            border-radius:8px;
+            text-align: center;
+            margin: 25px 0;
+            background: #1f4e79;
+            padding: 20px;
+            border-radius: 12px;
         }
+        .logo-banner img { max-height: 100px; max-width: 100%; }
 
-        .logo-banner img {
-            max-height:100px;
-            max-width:100%;
-        }
+        .countdown { font-size: 22px; font-weight: bold; color: #ffcc00; }
+        .section-divider { border-top: 3px solid #ffcc00; margin: 40px 0; padding-top: 20px; }
 
-        .owl-in-tip {
-            width:70px;
-            margin:0 10px 10px 0;
-            float:left;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ffcc00; }
+        th { background: #ffcc00; color: #0b2f5a; }
 
-        @media (max-width:600px){
+        @media (max-width: 600px) {
+            body { padding: 10px; }
             .professor, .professor-large, .owl-in-tip {
-                width:90px;
-                float:none;
-                display:block;
-                margin:auto;
-                margin-bottom:10px;
+                width: 90px; float: none; display: block; margin: 0 auto 10px;
             }
+            .professor-hero { width: 95vw; }
+            h1 { font-size: 2em; }
         }
     </style>
 </head>
 
 <body>
+    <script>
+        // Date & Countdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            });
+            
+            // Tax deadline Oct 15, 2026 (extension deadline)
+            const taxDeadline = new Date('2026-10-15T23:59:59');
+            const timeLeft = taxDeadline - now;
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('countdown').textContent = `${days}d ${hours}h remaining`;
+        });
+    </script>
 
-<!-- ★ Big clickable logo at the top (update URLs below) -->
-<div class="logo-banner">
-    <a href="https://YOUR_HOMEPAGE_URL" target="_blank">
-        <img
-            src="https://YOUR_LOGO_URL"
-            alt="Palmo Kid - Benny Palmarino"
-        >
-    </a>
-</div>
+    <!-- 🦉 HERO BANNER: Professor Owl 10x bigger + clickable affiliate -->
+    <div class="banner">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" target="_blank" rel="noopener">
+            <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" 
+                 alt="🦉 Professor Owl's Easy Tax Guide" class="professor-hero">
+        </a>
+        <div style="font-size: 32px; color: #ffcc00; font-weight: bold; margin: 10px 0;">
+            🦉 Professor Owl's Easy Tax Guide
+        </div>
+    </div>
 
-<!-- Professor Owl banner + affiliate link -->
-<div class="banner">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
-        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="professor-large">
-    </a>
-    <img
-        src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png"
-        alt="Professor Owl"
-        class="professor"
-    >
-</div>
-
-<p>📅 Today is: <span id="currentDate"></span></p>
-<p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
-
-<h1>🦉 Professor Owl’s Easy Tax Guide</h1>
-
-<h2>✅ PART 1 — Get Your Papers Ready</h2>
-
-<h3>Step 1: Income Papers</h3>
-<ul>
-    <li>W-2 = money from your job</li>
-    <li>1099 = extra money (side jobs, bank interest)</li>
-    <li>Other money (tips, small jobs)</li>
-</ul>
-<div class="tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    <strong>Tip:</strong> Put everything in one folder.
-</div>
-
-<h3>Step 2: Deductions (Things that save money)</h3>
-<ul>
-    <li>Charity donations</li>
-    <li>Medical bills</li>
-    <li>School costs</li>
-</ul>
-<div class="tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    <strong>Tip:</strong> Keep receipts!
-</div>
-
-<h3>Step 3: Personal Info</h3>
-<ul>
-    <li>Social Security numbers</li>
-    <li>Bank account</li>
-</ul>
-<div class="tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    <strong>Tip:</strong> Check numbers carefully.
-</div>
-
-<h2>✅ PART 2 — Filling Out Your Taxes</h2>
-
-<h3>Step 4: Add Your Income (Lines 4–8)</h3>
-<ul>
-    <li>Line 4: Interest (bank money)</li>
-    <li>Line 5: Dividends (stocks)</li>
-    <li>Line 6: Retirement money</li>
-    <li>Line 7: Social Security</li>
-    <li>Line 8: Other income</li>
-</ul>
-<div class="extra-tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    Think of this like adding all your money together.
-</div>
-
-<h3>Step 5: Adjust Your Income (Line 9)</h3>
-<ul>
-    <li>Student loan interest</li>
-    <li>IRA savings</li>
-    <li>Business costs</li>
-</ul>
-<div class="tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    These lower your total income.
-</div>
-
-<h3>Step 6: Find Your AGI</h3>
-<p>AGI = Total money − adjustments</p>
-
-<h3>Step 7: Deductions (Lines 11–12)</h3>
-<ul>
-    <li>Standard deduction (easy)</li>
-    <li>Itemized (more detailed)</li>
-</ul>
-<div class="tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    Pick the bigger one to save money.
-</div>
-
-<h3>Step 8: Calculate Tax (Lines 13–15)</h3>
-<ul>
-    <li>Line 13: Your tax</li>
-    <li>Extra taxes if needed</li>
-    <li>Total tax</li>
-</ul>
-
-<h3>Step 9: Credits & Payments (Lines 16–20)</h3>
-<ul>
-    <li>Tax already paid</li>
-    <li>Credits (money back)</li>
-</ul>
-<div class="extra-tip">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-    Credits = money back!
-</div>
-
-<h3>Step 10: Refund or Owe (Lines 21–24)</h3>
-<ul>
-    <li>Paid too much → refund</li>
-    <li>Paid too little → owe</li>
-</ul>
-
-<h3>Step 11: Sign (Line 25)</h3>
-<p>Don’t forget to sign!</p>
-
-<h3>Extra Forms</h3>
-<ul>
-    <li>Schedule A – deductions</li>
-    <li>Schedule B – interest</li>
-    <li>Schedule C – business</li>
-</ul>
-
-<div style="text-align:center; margin:30px 0;">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" target="_blank" class="button">
-        Click here to file your taxes online
-    </a>
-</div>
-
-
-<!-- HERO section (with big Professor Owl) -->
-<div class="banner">
-    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="professor-large">
-    <h1>How to File Taxes (2026 Guide for Beginners)</h1>
-    <p>Learn exactly how to file your taxes step-by-step, avoid mistakes, and maximize your refund.</p>
-
-    <div style="text-align:center; margin:20px 0;">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
-            Start Filing Your Taxes Now (Free)
+    <!-- Your logo banner (smaller, below hero) -->
+    <div class="logo-banner">
+        <a href="https://YOUR_HOMEPAGE_URL" target="_blank" rel="noopener">
+            <img src="https://YOUR_LOGO_URL" alt="Palmo Kid - Benny Palmarino">
         </a>
     </div>
-</div>
 
-<!-- Featured snippet bait -->
-<section class="featured-snippet">
-    <h2>📌 How to File Taxes (Quick Answer)</h2>
-    <ol>
-        <li>Collect W-2 and 1099 forms</li>
-        <li>Add all income sources</li>
-        <li>Subtract deductions</li>
-        <li>Apply tax credits</li>
-        <li>Calculate total tax</li>
-        <li>File online or by mail</li>
-        <li>Get refund or pay balance</li>
-    </ol>
-</section>
+    <!-- Status -->
+    <p>📅 Today is: <span id="currentDate"></span></p>
+    <p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
-<!-- Main guide -->
-<section class="main-guide">
-    <h2>Step-by-Step Guide to Filing Taxes</h2>
+    <h1>🦉 Professor Owl's Easy Tax Guide (2026 Edition)</h1>
 
-    <h3>1. Gather Your Documents</h3>
-    <p>You need W-2s, 1099s, Social Security number, and bank details.</p>
-
-    <h3>2. Report Your Income</h3>
-    <p>Include job income, freelance work, investments, and any side earnings.</p>
-
-    <h3>3. Claim Deductions</h3>
-    <p>Deductions reduce your taxable income and can increase your refund.</p>
-
-    <h3>4. Apply Tax Credits</h3>
-    <p>Credits directly reduce your tax bill and can give you money back.</p>
-
-    <h3>5. File Your Return</h3>
-    <p>Online filing is the fastest and easiest option.</p>
-</section>
-
-<!-- Mid CTA (with Professor Owl and affiliate link) -->
-<div style="text-align:center; margin:30px 0;">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
-        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-        File Your Taxes Online in Minutes
-    </a>
-</div>
-
-<!-- Common mistakes -->
-<section class="common-mistakes">
-    <h2>⚠️ Common Tax Filing Mistakes</h2>
+    <!-- PART 1: Get Ready -->
+    <h2>✅ PART 1 — Get Your Papers Ready (15 Minutes)</h2>
+    
+    <h3>Step 1: Income Papers</h3>
     <ul>
-        <li>Wrong Social Security number</li>
-        <li>Missing income</li>
-        <li>Forgetting credits</li>
-        <li>Math errors</li>
-        <li>Not signing your return</li>
+        <li><strong>W-2</strong> = Money from your job (employer sends by Jan 31)</li>
+        <li><strong>1099-NEC/MISC</strong> = Side jobs, freelance, bank interest</li>
+        <li><strong>Other:</strong> Tips, small jobs, crypto transactions</li>
     </ul>
-</section>
-
-<!-- Refund info -->
-<section class="refund-info">
-    <h2>💰 How Long Does a Tax Refund Take?</h2>
-    <p>Most refunds arrive within 21 days if you file electronically. Paper returns can take 6–8 weeks.</p>
-</section>
-
-<!-- FAQ section -->
-<section class="faq-section">
-    <h2>❓ Tax Filing FAQs</h2>
-
-    <h3>How do I file taxes for the first time?</h3>
-    <p>Gather your documents, enter income, apply deductions, and submit your return online.</p>
-
-    <h3>What documents do I need?</h3>
-    <p>W-2s, 1099s, ID, bank info, and receipts for deductions.</p>
-
-    <h3>Can I file taxes online?</h3>
-    <p>Yes, online filing is the fastest and most popular method.</p>
-
-    <h3>How can I increase my refund?</h3>
-    <p>Use deductions and credits to reduce your taxable income.</p>
-</section>
-
-<!-- Final CTA (with Owl) -->
-<div style="text-align:center; margin:40px 0;">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+    <div class="tip">
         <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-        Get Your Maximum Tax Refund Now
-    </a>
-</div>
-
-<!-- Quick Tax Cheat Sheet -->
-<div class="beginner-cheatsheet">
-    <div style="background:#1f4e79; color:#ffffff; padding:15px; border-left:5px solid #ffcc00;">
-        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
-        <h2>📝 Quick Tax Cheat Sheet for Beginners</h2>
-        <ul>
-            <li><strong>Step 1:</strong> Gather W-2, 1099, and receipts</li>
-            <li><strong>Step 2:</strong> Look at Box 1 & Box 2 on your W-2</li>
-            <li><strong>Step 3:</strong> Check your income in the tax table to see your rate</li>
-            <li><strong>Step 4:</strong> Subtract deductions to lower taxes</li>
-            <li><strong>Step 5:</strong> Apply tax credits for money back</li>
-            <li><strong>Step 6:</strong> File online for faster refund</li>
-        </ul>
-        <p style="font-size:14px; opacity:0.9;">Use this as your one-page reference before diving into the full guide.</p>
+        <strong>🦉 Owl Tip:</strong> Create one folder called "2025 Taxes" and dump everything there.
     </div>
-</div>
 
-<!-- How to read a tax table -->
-<section class="tax-table">
-    <h2>📊 How to Read a Tax Table Easily</h2>
-    <p>Here’s a simple color-coded example. Your tax only applies to the part of income in each bracket:</p>
-    <table border="1" cellpadding="5" cellspacing="0" style="width:100%; text-align:center;">
-        <tr style="background:#ffcc00;"><th>Income</th><th>Rate</th><th>Example Tax</th></tr>
-        <tr style="background:#ffe680;"><td>$0 – $10,000</td><td>10%</td><td>$1,000 if you earned $10,000</td></tr>
-        <tr style="background:#ffd24d;"><td>$10,001 – $40,000</td><td>12%</td><td>$3,600 if you earned $30,000 in this bracket</td></tr>
-        <tr style="background:#ffb84d;"><td>$40,001 – $85,000</td><td>22%</td><td>$9,900 if you earned $45,000 in this bracket</td></tr>
-    </table>
-    <p><strong>Tip:</strong> Only the money in each bracket is taxed at that rate. Don’t multiply your total income by the highest rate!</p>
-</section>
-
-<!-- W-2 guide -->
-<section class="w2-guide">
-    <h2>🦉 How to Read Your W-2 (Step-by-Step)</h2>
+    <h3>Step 2: Deductions (Money Savers)</h3>
     <ul>
-        <li><strong>Box 1 – Wages:</strong> Your total money earned. Example: $12,000</li>
-        <li><strong>Box 2 – Federal Tax Withheld:</strong> Tax already taken out. Example: $1,500</li>
-        <li><strong>Box 3 – Social Security:</strong> Money that counts for Social Security. Example: $12,000</li>
-        <li><strong>Box 5 – Medicare:</strong> Money that counts for Medicare. Example: $12,000</li>
+        <li>Charity donations (receipts needed)</li>
+        <li>Medical bills over 7.5% of income</li>
+        <li>Student loan interest ($2,500 max)</li>
+        <li>Home office (if self-employed)</li>
     </ul>
-    <p><strong>Tip:</strong> Think of Box 1 as “your take-home amount” and Box 2 as “money already paid for taxes.”
+    <div class="tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Tip:</strong> Take photos of receipts with your phone!
+    </div>
+
+    <h3>Step 3: Personal Info</h3>
+    <ul>
+        <li>Social Security numbers (you + dependents)</li>
+        <li>Bank routing/account for direct deposit</li>
+        <li>2024 AGI (from last year's return)</li>
+    </ul>
+    <div class="tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Tip:</strong> Double-check SSNs - one digit wrong = rejected return!
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- PART 2: Fill It Out -->
+    <h2>✅ PART 2 — Filling Out Your 1040 (30 Minutes)</h2>
+
+    <h3>Step 4: Total Income (Lines 1-11)</h3>
+    <ul>
+        <li><strong>Line 1:</strong> W-2 wages (Box 1)</li>
+        <li><strong>Line 2b:</strong> Taxable interest</li>
+        <li><strong>Line 3b:</strong> Dividends</li>
+        <li><strong>Line 7:</strong> Capital gains</li>
+        <li><strong>Line 8:</strong> Other income (side hustles)</li>
+    </ul>
+    <div class="extra-tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Math:</strong> Add all income boxes together = Line 11 total.
+    </div>
+
+    <h3>Step 5: Adjustments (Line 12-15)</h3>
+    <ul>
+        <li>Student loan interest</li>
+        <li>IRA contributions</li>
+        <li>Health Savings Account</li>
+        <li>Self-employment tax (½)</li>
+    </ul>
+    <div class="tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Tip:</strong> These lower your income before tax rates apply!
+    </div>
+
+    <h3>Step 6: AGI (Line 15)</h3>
+    <p><strong>AGI = Total Income − Adjustments</strong><br>
+    This is your "taxable income number" that determines your tax bracket.</p>
+
+    <h3>Step 7: Deductions (Line 16-19)</h3>
+    <ul>
+        <li><strong>Standard Deduction (2026):</strong><br>
+            Single: $15,000 | Married: $30,000 | Head of Household: $22,500</li>
+        <li><strong>Itemized:</strong> State tax + mortgage + charity + medical</li>
+    </ul>
+    <div class="tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Rule:</strong> Pick whichever is BIGGER to save more money!
+    </div>
+
+    <h3>Step 8: Taxable Income → Tax Owed</h3>
+    <p>Taxable Income = AGI − Deductions<br>
+    Use the tax table or software calculates automatically.</p>
+
+    <!-- Tax Table Example -->
+    <table>
+        <tr><th>Taxable Income</th><th>Tax Rate</th><th>Your Tax on That Bracket</th></tr>
+        <tr><td>$0 - $11,925</td><td>10%</td><td>$1,192.50 max</td></tr>
+        <tr><td>$11,926 - $48,475</td><td>12%</td><td>$4,386 max</td></tr>
+        <tr><td>$48,476 - $103,350</td><td>22%</td><td>$12,072 max</td></tr>
+    </table>
+
+    <h3>Step 9: Credits = FREE MONEY (Lines 20+)</h3>
+    <ul>
+        <li><strong>Child Tax Credit:</strong> $2,000 per child under 17</li>
+        <li><strong>EITC:</strong> Earned Income Credit (low/moderate income)</li>
+        <li><strong>Education credits</strong> for college tuition</li>
+    </ul>
+    <div class="extra-tip">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+        <strong>🦉 Owl Secret:</strong> Credits reduce tax dollar-for-dollar (better than deductions)!
+    </div>
+
+    <h3>Step 10: Payments Already Made</h3>
+    <ul>
+        <li>W-2 Box 2 (federal withholding)</li>
+        <li>Estimated payments</li>
+        <li>Refundable credits</li>
+    </ul>
+
+    <h3>Step 11: Refund or Owe</h3>
+    <ul>
+        <li><strong>Line 35 > Line 24:</strong> You get refund!</li>
+        <li><strong>Line 24 > Line 35:</strong> You owe money</li>
+    </ul>
+
+    <!-- BIG CTA -->
+    <div style="text-align: center; margin: 50px 0; padding: 30px; background: #1f4e79; border-radius: 15px;">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" target="_blank" class="button">
+            🚀 File Your 2025 Taxes Now (Takes 45 Minutes Max)
+        </a>
+    </div>
+
+    <!-- CHEAT SHEET -->
+    <div style="background: linear-gradient(135deg, #1f4e79, #0b2f5a); padding: 25px; border-radius: 15px; border-left: 8px solid #ffcc00; margin: 40px 0;">
+        <h2 style="color: #ffcc00;">📝 Professor Owl's 7-Step Never-Fail Checklist</h2>
+        <ol style="font-size: 18px;">
+            <li>✅ Gather ALL W-2s and 1099s</li>
+            <li>✅ Enter income from Box 1 of each form</li>
+            <li>✅ Take standard deduction ($15K single)</li>
+            <li>✅ Claim Child Tax Credit if eligible</li>
+            <li>✅ Enter withholding from W-2 Box 2</li>
+            <li>✅ E-file for fastest refund (21 days)</li>
+            <li>✅ Direct deposit = 2 weeks faster!</li>
+        </ol>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="professor-large">
+        </div>
+    </div>
+
+    <!-- W-2 Decoder -->
+    <h2>🔍 W-2 Box Decoder (Most Important Boxes)</h2>
+    <table>
+        <tr><th>Box</th><th>What It Means</th><th>Where It Goes</th></tr>
+        <tr><td><strong>1</strong></td><td>Total Wages</td><td>Form 1040 Line 1</td></tr>
+        <tr><td><strong>2</strong></td><td>Federal Tax Paid</td><td>Form 1040 Line 25</td></tr>
+        <tr><td><strong>17</strong></td><td>State Tax Paid</td><td>State return</td></tr>
+    </table>
+
+    <!-- FINAL CTA -->
+    <div style="text-align: center; margin: 60px 0; padding: 40px; background: #ffcc00; color: #0b2f5a; border-radius: 20px;">
+        <h2 style="margin: 0 0 20px 0;">⏰ Don't Wait - File Today!</h2>
+        <p style="font-size: 20px; margin: 0 0 30px 0;">Get your maximum refund in 21 days with direct deposit</p>
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" target="_blank" class="button" 
+           style="font-size: 24px; padding: 25px 50px;">
+            🦉 Start with Professor Owl Now (FREE)
+        </a>
+    </div>
+
+    <div style="text-align: center; font-size: 14px; opacity: 0.8; margin-top: 50px;">
+        <p>Optimized for 2025 tax year • Updated April 2026</p>
+        <p>Palmo Kid Affiliate Sites • Langhorne, PA</p>
+    </div>
+
+</body>
+</html>
