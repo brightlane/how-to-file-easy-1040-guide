@@ -1,6 +1,5 @@
-.professor {
-    width: 320px;   /* increased from 120px */
-    max-width: 40%;
-    float: right;
-    margin: 0 0 10px 20px;
-}
+<div style="text-align:center; margin:20px 0;">
+  <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png"
+       alt="Professor Owl"
+       style="width:420px; max-width:90%; height:auto;">
+</div>
