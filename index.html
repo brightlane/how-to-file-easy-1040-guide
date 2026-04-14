@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
+    <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
     <title>Refund Quest: Professor Owl's Tax Adventure</title>
     
     <style>
@@ -20,208 +22,166 @@
             background-color: var(--space-dark);
             color: var(--text-white);
             margin: 0;
+            padding: 0;
             overflow-x: hidden;
         }
 
-        /* --- THE BOUNCING OWL ANIMATION --- */
+        /* OWL BOUNCE ANIMATION */
         @keyframes owlBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         .owl-mascot {
-            width: 120px;
+            width: 150px;
             animation: owlBounce 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px var(--loot-gold));
+            filter: drop-shadow(0 0 15px var(--loot-gold));
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
         }
 
-        /* --- QUEST MAP NAVIGATION --- */
+        /* QUEST MAP */
         .quest-map {
             display: flex;
             justify-content: space-around;
-            padding: 20px;
+            padding: 15px;
             background: rgba(255,255,255,0.05);
-            border-bottom: 4px dashed var(--quest-blue);
-            margin-bottom: 40px;
+            border-bottom: 4px dashed var(--loot-gold);
         }
 
-        .map-node {
-            text-align: center;
-            font-size: 12px;
-            color: var(--loot-gold);
-        }
-
+        .map-node { text-align: center; font-size: 12px; color: var(--loot-gold); }
         .node-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--quest-blue);
-            border: 3px solid var(--loot-gold);
-            margin: 0 auto 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            width: 30px; height: 30px; border-radius: 50%;
+            background: var(--quest-blue); border: 2px solid var(--loot-gold);
+            margin: 0 auto 5px; display: flex; align-items: center; justify-content: center;
         }
 
-        /* --- HERO SECTION --- */
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: radial-gradient(circle, #1f4e79 0%, #0b1a30 100%);
         }
 
         .quest-title {
-            font-size: clamp(32px, 8vw, 60px);
+            font-size: clamp(35px, 10vw, 65px);
             color: var(--loot-gold);
-            text-shadow: 3px 3px 0px #000;
-            margin: 10px 0;
+            text-shadow: 4px 4px 0px #000;
+            margin: 15px 0;
         }
 
-        /* --- INTERACTIVE CARDS --- */
+        /* CONTENT CARDS */
         .card {
             background: var(--quest-blue);
-            border-radius: 20px;
-            padding: 25px;
-            margin: 20px auto;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 25px auto;
             max-width: 800px;
-            border: 4px solid transparent;
+            box-shadow: 0 12px 0px rgba(0,0,0,0.4);
+            border: 3px solid transparent;
             transition: 0.3s;
-            position: relative;
         }
 
-        .card:hover {
-            border-color: var(--loot-gold);
-            transform: scale(1.02);
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--loot-gold); }
 
-        .shield-icon {
-            font-size: 40px;
-            float: left;
-            margin-right: 15px;
-        }
-
-        /* --- THE LOOT CALCULATOR --- */
-        .calc-box {
-            background: #12385d;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid var(--success-green);
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            width: 120px;
-            font-size: 18px;
-            margin: 10px;
-        }
-
-        /* --- BIG ACTION BUTTONS --- */
         .btn-loot {
             display: inline-block;
             background: var(--loot-gold);
             color: var(--space-dark);
-            padding: 20px 40px;
+            padding: 20px 45px;
             border-radius: 50px;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 10px 0px #b89600;
-            transition: 0.1s;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
-        .btn-loot:active {
-            transform: translateY(5px);
-            box-shadow: 0 5px 0px #b89600;
-        }
-
-        /* --- UI ELEMENTS --- */
-        .badge {
-            background: var(--success-green);
-            color: black;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
-            vertical-align: middle;
-        }
+        .btn-loot:active { transform: translateY(6px); box-shadow: 0 4px 0px #b89600; }
 
         .countdown-bomb {
             background: var(--danger-red);
-            padding: 15px;
+            padding: 12px 25px;
             border-radius: 15px;
-            font-size: 20px;
+            font-weight: bold;
             display: inline-block;
-            margin-top: 20px;
+            box-shadow: 0 5px 0px #9e2a2a;
+        }
+
+        .calc-input {
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            font-size: 22px;
+            width: 180px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .quest-map { font-size: 10px; }
+            .card { margin: 15px; padding: 20px; }
         }
     </style>
 </head>
 <body>
 
     <nav class="quest-map">
-        <div class="map-node"><div class="node-circle">1</div>Start</div>
+        <div class="map-node"><div class="node-circle">1</div>Scrolls</div>
         <div class="map-node"><div class="node-circle">2</div>Income</div>
         <div class="map-node"><div class="node-circle">3</div>Shields</div>
-        <div class="map-node"><div class="node-circle">4</div>Loot!</div>
+        <div class="map-node"><div class="node-circle">4</div>LOOT</div>
     </nav>
 
     <section class="hero">
-        <img src="professorowl.png" alt="Professor Owl" class="owl-mascot">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide">
+            <img src="professorowl.png" alt="Professor Owl" class="owl-mascot">
+        </a>
         <h1 class="quest-title">REFUND QUEST</h1>
-        <p>Level Up Your Money Skills with Professor Owl!</p>
+        <p>Level Up Your Tax Game with Professor Owl!</p>
         
         <div class="countdown-bomb">
-            💣 🚀 Mission Deadline: <span id="timer"></span>
+            💣 Mission Deadline: <span id="timer"></span>
         </div>
     </section>
 
-    <div style="max-width: 900px; margin: auto; padding: 0 20px;">
+    <div class="container" style="max-width: 900px; margin: auto; padding: 10px;">
 
         <div class="card">
-            <span class="shield-icon">📜</span>
-            <h2>Quest 1: The Paper Trail <span class="badge">EASY</span></h2>
-            <p>Gather your magic scrolls! You need your <strong>W-2</strong> (Money from work) and your <strong>1099</strong> (Side-quest money).</p>
-            <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 10px;">
-                <strong>Owl Tip:</strong> Box 1 on your W-2 is your total gold earned!
-            </div>
+            <h2>📜 Mission 1: The Magic Scrolls</h2>
+            <p>Gather your <strong>W-2s</strong> and <strong>1099s</strong>. These are your loot maps! They tell the IRS exactly how much gold you earned this year.</p>
+            <p style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px;">
+                <strong>Owl Intelligence:</strong> Box 1 is your "Total Gold," and Box 2 is your "Tax Shield" already paid!
+            </p>
         </div>
 
         <div class="card">
-            <span class="shield-icon">🛡️</span>
-            <h2>Quest 2: Activate Your Shields</h2>
-            <p>Deductions are like <strong>Magic Shields</strong>. They hide your money from being taxed! </p>
-            <ul>
-                <li>School Supplies Shield ✏️</li>
-                <li>Charity Shield 🎁</li>
-                <li>Doctor Bill Shield 🩺</li>
-            </ul>
+            <h2>🛡️ Mission 2: Activate Your Shields</h2>
+            <p>Did you know you can hide gold from the Tax King? Use <strong>Deductions</strong>! These cover your school supplies, charity, and doctor visits.</p>
         </div>
 
-        <div class="card calc-box">
-            <h2>💰 Will You Get a Loot Drop?</h2>
-            <p>Enter the "Tax Withheld" (Box 2 on your W-2):</p>
-            <input type="number" id="taxPaid" placeholder="$0.00">
-            <p>If this number is bigger than what you owe, you get a <strong>REFUND!</strong></p>
-            <button onclick="checkLoot()" class="btn-loot" style="font-size: 16px; padding: 10px 20px;">Check for Loot!</button>
-            <div id="lootResult" style="margin-top:15px; font-size: 24px; font-weight: bold;"></div>
+        <div class="card" style="text-align: center; background: #12385d; border: 3px solid var(--success-green);">
+            <h2>💰 Loot Drop Calculator</h2>
+            <p>Check Box 2 on your W-2. What does it say?</p>
+            <input type="number" id="taxPaid" class="calc-input" placeholder="$0.00">
+            <br>
+            <button onclick="checkLoot()" class="btn-loot" style="font-size: 18px; padding: 12px 30px;">Scan for Refund</button>
+            <div id="lootResult" style="margin-top:20px; font-size: 26px; font-weight: bold;"></div>
         </div>
 
-        <div style="text-align: center; padding: 60px 0;">
-            <img src="professorowl.png" alt="Owl" style="width: 60px; opacity: 0.5;">
-            <h2>Ready to Claim Your Loot?</h2>
-            <p>Click the big button to use the Grand Record Keeper (E-file) and finish your quest!</p>
-            <a href="https://is.gd/SRCKpA" class="btn-loot">CLAIM YOUR REFUND NOW</a>
-            <p style="margin-top:10px; opacity:0.6;">Fast 21-Day Delivery 🚀</p>
+        <div style="text-align: center; padding: 50px 0;">
+            <a href="https://is.gd/SRCKpA" target="_blank" class="btn-loot">CLAIM YOUR REFUND NOW</a>
+            <p style="opacity: 0.8; margin-top: 25px;">
+                <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" style="color: var(--loot-gold); text-decoration: underline;">
+                    Visit Mission Hub: E-File Headquarters
+                </a>
+            </p>
         </div>
 
     </div>
 
     <script>
-        // 1. Mission Timer
+        // Mission Countdown
         const deadline = new Date("October 15, 2026 23:59:59").getTime();
         setInterval(() => {
             const now = new Date().getTime();
@@ -233,19 +193,18 @@
             document.getElementById("timer").innerText = `${days}d ${hours}h ${mins}m ${secs}s`;
         }, 1000);
 
-        // 2. Loot Calculator Fun
+        // Loot Checker Logic
         function checkLoot() {
             const val = document.getElementById("taxPaid").value;
             const res = document.getElementById("lootResult");
             if(val > 0) {
-                res.innerHTML = "✨ JACKPOT! ✨<br>You are eligible for a refund!";
+                res.innerHTML = "🎉 BOOM! ✨<br>You have a Refund waiting!";
                 res.style.color = "var(--success-green)";
             } else {
-                res.innerHTML = "Check your W-2 Box 2 again!";
+                res.innerHTML = "Check your W-2 for a number!";
                 res.style.color = "var(--loot-gold)";
             }
         }
     </script>
-
 </body>
 </html>
