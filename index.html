@@ -4,154 +4,223 @@
     <meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
     <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Owl’s 1040 Tax Mastery - Line-by-Line Guide</title>
+    <title>How to File Taxes - Easy Guide</title>
+
     <style>
-        :root {
-            --bg: #0b2f5a;
-            --panel: #1f4e79;
-            --board: #14532d;
-            --yellow: #ffcc00;
-            --text: #ffffff;
-            --green: #22c55e;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #0b2f5a;
+            color: #ffffff;
         }
 
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: var(--bg); color: var(--text); }
-        #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: rgba(255,255,255,0.1); z-index: 2000; }
-        #progress-bar { height: 100%; background: var(--green); width: 0%; transition: width 0.4s ease; }
+        h1, h2 { color: #ffcc00; }
+        h3 { color: #ffffff; }
+        ul { margin: 10px 0 20px 20px; }
 
-        .header { position: sticky; top: 0; z-index: 1000; background: var(--panel); border-bottom: 3px solid var(--yellow); padding: 10px 0; }
-        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        
-        .brand-link { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--yellow); font-weight: bold; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--yellow); object-fit: cover; }
+        .tip, .extra-tip {
+            background-color: #1f4e79;
+            border-left: 5px solid #ffcc00;
+            padding: 15px;
+            margin: 10px 0;
+        }
 
-        .classroom { max-width: 1100px; margin: 30px auto; padding: 20px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
-        .teacher-box { text-align: center; position: sticky; top: 100px; }
-        .owl-main { width: 100%; border-radius: 20px; border: 4px solid var(--yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
-        .blackboard { background: linear-gradient(135deg, #14532d, #0a351d); border: 12px solid #333; border-radius: 10px; padding: 40px; min-height: 380px; box-shadow: inset 0 0 50px #000; }
-        .chalk-title { font-family: 'Courier New', monospace; color: var(--yellow); font-size: 2rem; margin-bottom: 15px; text-transform: uppercase; }
-        .chalk-text { font-family: 'Courier New', monospace; font-size: 1.3rem; line-height: 1.6; }
+        /* PROFESSOR OWL SIDEBAR */
+        .professor-container {
+            float: right;
+            width: 200px;
+            margin: 0 0 20px 20px;
+            text-align: center;
+        }
 
-        .btn { padding: 15px 30px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; }
-        .btn-next { background: var(--yellow); color: var(--bg); flex-grow: 1; }
-        .btn-back { background: #4b5563; color: white; }
+        .professor {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #ffcc00;
+        }
 
-        .countdown-wrap { text-align: center; margin: 20px 0; font-weight: bold; }
-        .tip-box { background: var(--panel); border-left: 5px solid var(--yellow); padding: 20px; margin: 30px 0; }
-        
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; color: black; border-radius: 8px; overflow: hidden; }
-        th { background: var(--yellow); padding: 12px; }
-        td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        .speech-bubble {
+            background: #fff;
+            color: #000;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            font-style: italic;
+            position: relative;
+        }
 
-        @media (max-width: 850px) { .classroom { grid-template-columns: 1fr; } .teacher-box { position: static; } }
+        /* INTERACTIVE CLASSROOM */
+        .blackboard-wrap {
+            background: #14532d;
+            border: 8px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            min-height: 250px;
+            box-shadow: inset 0 0 20px #000;
+        }
+
+        .chalk-title { font-family: 'Courier New', Courier, monospace; color: #ffcc00; font-size: 1.5rem; margin-bottom: 10px; }
+        .chalk-text { font-family: 'Courier New', Courier, monospace; color: #fff; font-size: 1.1rem; }
+
+        .nav-btn {
+            background-color: #ffcc00;
+            color: #0b2f5a;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button {
+            background-color: #ffcc00;
+            color:#0b2f5a;
+            padding:15px 25px;
+            text-decoration:none;
+            font-size:18px;
+            font-weight: bold;
+            border-radius:8px;
+            display: inline-block;
+        }
+
+        .banner { text-align:center; margin-bottom:20px; }
+        table { width:100%; border-collapse: collapse; margin: 20px 0; background: #fff; color: #000; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+
+        @media (max-width:600px){
+            .professor-container {
+                float:none;
+                display:block;
+                margin:auto;
+                width: 150px;
+                margin-bottom:10px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<div id="progress-container"><div id="progress-bar"></div></div>
-
-<header class="header">
-    <div class="header-inner">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="brand-link">
-            <img src="https://images.unsplash.com/photo-1544390906-5f5600643d93?w=100&h=100&fit=crop" class="logo-img" alt="Logo">
-            <span>Professor Owl Classroom</span>
-        </a>
-        <div style="font-size: 12px; font-weight: 900; color: var(--green);">LIVE SESSION</div>
-    </div>
-</header>
-
-<div class="countdown-wrap">
-    ⏰ <span id="currentDate"></span> | Deadline: <span id="countdown"></span>
+<div class="banner">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
+        <img src="https://7667.imgix.net/banners/54182.png" alt="Tax Guide Banner">
+    </a>
 </div>
 
-<main class="classroom">
-    <aside class="teacher-box">
-        <img src="https://images.unsplash.com/photo-1544390906-5f5600643d93?w=400&h=400&fit=crop" class="owl-main" alt="Professor Owl">
-        <div id="speech" style="background: white; color: black; padding: 15px; border-radius: 10px; margin-top: 15px; font-style: italic; font-size: 0.9rem;">"Hoot! Let's master these 38 lines!"</div>
-    </aside>
+<p>📅 Today is: <span id="currentDate"></span></p>
+<p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
-    <section>
-        <div class="blackboard" id="bb">
-            <div class="chalk-title" id="title">Orientation</div>
-            <div class="chalk-text" id="text">Welcome to the 2026 Tax Classroom. We are going to walk through every line from 1 to 38 so you can file with total confidence.</div>
-        </div>
-        <div style="display: flex; gap: 15px; margin-top: 20px;">
-            <button class="btn btn-back" onclick="prev()">Back</button>
-            <button class="btn btn-next" onclick="next()">Next Step ➡</button>
-        </div>
-    </section>
-</main>
+<h1>🦉 Professor Owl’s Interactive Tax Classroom</h1>
 
-<div style="max-width: 1100px; margin: 0 auto; padding: 20px;">
-    <h2>📊 2026 Marginal Tax Rates</h2>
-    <table>
-        <tr><th>Income Bracket</th><th>Tax Rate</th><th>Base Tax</th></tr>
-        <tr><td>$0 – $11,600</td><td>10%</td><td>$0</td></tr>
-        <tr><td>$11,601 – $47,150</td><td>12%</td><td>$1,160</td></tr>
-        <tr><td>$47,151 – $100,525</td><td>22%</td><td>$5,426</td></tr>
-    </table>
+<div class="professor-container">
+    <img src="https://images.unsplash.com/photo-1544390906-5f5600643d93?w=200&h=200&fit=crop" alt="Professor Owl" class="professor">
+    <div class="speech-bubble" id="owl-speech">"Hoot! Ready to start?"</div>
+</div>
 
-    <div class="tip-box">
-        <h3>📝 The Never-Fail Filing Checklist</h3>
-        <ul>
-            <li>Gather W-2s (Job Income) and 1099s (Side Income/Interest)</li>
-            <li>Locate your Adjusted Gross Income (AGI) on Line 11</li>
-            <li>Choose the Standard Deduction (Line 12) to save time</li>
-            <li>Check Line 34 for your Refund amount!</li>
-        </ul>
-    </div>
-
-    <div style="text-align: center; margin: 40px 0;">
-        <a href="https://is.gd/SRCKpA" class="btn btn-next" style="font-size: 1.5rem; padding: 20px 40px;">Start Official Online Filing</a>
+<div class="blackboard-wrap">
+    <div class="chalk-title" id="class-title">Class Orientation</div>
+    <div class="chalk-text" id="class-text">Welcome! I will guide you through every line from 1 to 38. Use the buttons below to progress through your lesson.</div>
+    <div style="margin-top: 20px;">
+        <button class="nav-btn" onclick="prev()">Back</button>
+        <button class="nav-btn" onclick="next()" id="next-btn">Next Step ➡</button>
     </div>
 </div>
 
-<footer style="text-align: center; padding: 50px; opacity: 0.6; font-size: 0.8rem;">
-    © 2026 Professor Owl Tax Guide · <a href="https://is.gd/SRCKpA" style="color: white;">Filing Center</a>
-</footer>
+<hr style="border: 1px solid #1f4e79; margin: 40px 0;">
 
-<img src="https://www.linkconnector.com/tr.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide&tb=1" width="1" height="1" style="display:none;">
+<h2>✅ PART 1 — Get Your Papers Ready</h2>
+<div class="tip"><strong>Quick Tip:</strong> Keep your W-2 and 1099s in one folder before starting Line 1.</div>
+
+<section id="w2-guide">
+    <h2>🦉 How to Read Your W-2 (Step-by-Step)</h2>
+    <ul>
+        <li><strong>Box 1 – Wages:</strong> Your total money earned.</li>
+        <li><strong>Box 2 – Federal Tax Withheld:</strong> Tax already taken out.</li>
+    </ul>
+</section>
+
+<h2>📊 Simple Tax Rates Table</h2>
+<table>
+    <tr style="background:#ffcc00;"><th>Income Bracket</th><th>Tax Rate</th></tr>
+    <tr><td>$0 – $11,600</td><td>10%</td></tr>
+    <tr><td>$11,601 – $47,150</td><td>12%</td></tr>
+</table>
+
+<div style="text-align:center; margin:30px 0;">
+    <a href="https://is.gd/SRCKpA" target="_blank" class="button">
+        Click here to file your taxes online
+    </a>
+</div>
+
+<section id="faq">
+    <h2>❓ Tax Filing FAQs</h2>
+    <h3>What are Schedules 1, 2, and 3?</h3>
+    <p>These are extra forms for additional income (Sch 1), additional taxes (Sch 2), and advanced credits (Sch 3) that connect to your main 1040 form.</p>
+</section>
+
+<img src="https://www.linkconnector.com/tr.php?lc=007949054182005142&atid=TaxGuide&tb=1" width="1" height="1" style="display:none;">
 
 <script>
+    // TIMER SCRIPT
     document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
     const deadline = new Date("October 15, 2026 23:59:59").getTime();
-    function updateTimer() {
+    const el = document.getElementById("countdown");
+    setInterval(() => {
         const now = new Date().getTime();
         const d = deadline - now;
-        if(d < 0) { document.getElementById("countdown").innerText = "Deadline Passed"; return; }
+        if(d < 0){ el.innerText = "Deadline passed"; return; }
         const days = Math.floor(d/(1000*60*60*24));
         const hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-        const min = Math.floor((d%(1000*60*60))/(1000*60));
-        document.getElementById("countdown").innerText = `${days}d ${hours}h ${min}m`;
-    }
-    setInterval(updateTimer, 60000); updateTimer();
+        const minutes = Math.floor((d%(1000*60*60))/(1000*60));
+        el.innerText = `${days}d ${hours}h ${minutes}m`;
+    }, 1000);
 
+    // LESSON SCRIPT (Line 1 to 38 + Prep for Schedules)
     const lessons = [
-        ["Orientation", "Hoot! I'm Professor Owl. Today we tackle the 1040 form. Have your W-2s and 1099s ready—we are going through all 38 lines."],
-        ["Lines 1a-1z: Wages", "This is your starting point. Every dollar from your job, including tips and fringe benefits, is tallied here."],
-        ["Lines 2-3: Interest", "Money your money made! Line 2 covers bank interest, while Line 3 tracks dividends from your stocks."],
-        ["Lines 4-7: Retirement", "Distributions from IRAs, Pensions, and Social Security. The form helps you calculate what part is taxable."],
-        ["Line 11: The AGI", "Adjusted Gross Income. This is the 'Master Number' that determines which tax credits you qualify for."],
-        ["Line 12: Deduction", "The Standard Deduction. Most people use this to shield a large portion of their income from being taxed at all."],
-        ["Line 15: Taxable Income", "The Bottom Line. After all subtractions, this is the final amount the IRS applies tax rates to."],
-        ["Line 24: Total Tax", "This is what you owe for the year based on your income bracket, before we look at what you already paid."],
-        ["Line 33: Payments", "The total of your withholdings and refundable credits. This is the money you've already 'sent' to the IRS."],
-        ["Line 34: THE REFUND", "Victory! If Line 33 is bigger than Line 24, the IRS owes YOU the difference. This is your refund."],
-        ["Final Conclusion", "Class dismissed! You've mastered the 1-38 logic. You are now fully prepared for Schedule 1 (Income), Schedule 2 (Tax), and Schedule 3 (Credits). Click below to file!"]
+        ["Orientation", "Hoot! Welcome to class. We are going to master the 1040 form line-by-line. Have your W-2 ready!"],
+        ["Lines 1a-1z", "Report your wages and salaries. This is where your job income lives."],
+        ["Lines 2-8", "Add your interest, dividends, and other income. Line 8 pulls in extra data from Schedule 1!"],
+        ["Line 11", "Adjusted Gross Income (AGI). This number determines which credits you can actually claim."],
+        ["Lines 12-15", "Subtract your Standard Deduction (Line 12) to find your Taxable Income (Line 15)."],
+        ["Lines 16-24", "Calculate your Tax. Line 24 is your total tax before we look at what you already paid."],
+        ["Lines 25-33", "Report your Payments and Credits. This is where your W-2 withholding (Line 25) counts!"],
+        ["Line 34: REFUND", "If your payments are higher than your tax, you get a refund. Hoot! That's the goal."],
+        ["Lines 37-38", "Amount you owe. If you didn't pay enough during the year, this is the balance due."],
+        ["Class Graduation", "Well done! You have mastered the 1-38 logic. You are now prepared to tackle Schedule 1, 2, and 3. Click below to file officially!"]
     ];
 
-    let current = 0;
-    function update() {
-        document.getElementById('title').innerText = lessons[current][0];
-        document.getElementById('text').innerText = lessons[current][1];
-        document.getElementById('speech').innerText = `"Professor Owl says: ${lessons[current][0]} is vital!"`;
-        document.getElementById('progress-bar').style.width = ((current + 1) / lessons.length) * 100 + "%";
+    let step = 0;
+    function updateClass() {
+        document.getElementById('class-title').innerText = lessons[step][0];
+        document.getElementById('class-text').innerText = lessons[step][1];
+        document.getElementById('owl-speech').innerText = `"Step ${step + 1}: ${lessons[step][0]}!"`;
     }
-    function next() { if(current < lessons.length - 1) { current++; update(); } else { window.location.href="https://is.gd/SRCKpA"; } }
-    function prev() { if(current > 0) { current--; update(); } }
-    update();
+    function next() {
+        if(step < lessons.length - 1) { step++; updateClass(); }
+        else { window.location.href = "https://is.gd/SRCKpA"; }
+    }
+    function prev() { if(step > 0) { step--; updateClass(); } }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How do I file taxes?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Collect documents, report income on lines 1-8, subtract deductions, and file online."
+    }
+  }]
+}
+</script>
+
 </body>
 </html>
