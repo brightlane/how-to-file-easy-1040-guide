@@ -2,98 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>1040 Beginner Guide - Professor Owl</title>
+<meta name="msvalidate.01" content="574044E39556B8B8DAAF1D1F233C87B0" />
+<meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
+
+<title>1040 Beginner Guide - Professor Owl 40 Step System</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #0b2f5a;
-    color: #ffffff;
+    background: #0b2f5a;
+    color: #fff;
+    line-height: 1.6;
 }
 
-h1, h2 { color: #ffcc00; }
-
-.tip {
-    background:#1f4e79;
-    padding:10px;
-    border-left:5px solid #ffcc00;
-    margin:10px 0;
+h1, h2 {
+    color: #ffcc00;
 }
 
 /* 🦉 HERO OWL */
-.owl-hero {
+.hero {
     text-align:center;
-    padding:10px 0 20px;
+    margin-bottom:20px;
 }
 
-.owl-hero img {
+.hero img {
     width:100%;
-    max-width:1400px;
-    cursor:pointer;
-    border-radius:18px;
+    max-width:1200px;
+    border-radius:16px;
     box-shadow:0 12px 40px rgba(0,0,0,0.5);
-    transition:transform 0.3s ease;
-}
-
-.owl-hero img:hover {
-    transform:scale(1.03);
-}
-
-/* 🧠 TEACHER BOX */
-.owl-teacher {
-    background:#1f4e79;
-    padding:20px;
-    border-left:5px solid #ffcc00;
-    border-radius:10px;
-    margin:20px 0;
-    text-align:center;
-}
-
-.owl-teacher img {
-    width:180px;
     cursor:pointer;
-    transition:transform 0.3s ease;
+    transition:0.3s;
 }
 
-.owl-teacher img:hover {
-    transform:scale(1.05);
+.hero img:hover {
+    transform:scale(1.02);
 }
 
-.owl-speech {
-    background:#0b2f5a;
+/* 🧠 SECTION CARDS */
+.card {
+    background:#1f4e79;
+    border-left:5px solid #ffcc00;
     padding:15px;
-    margin-top:10px;
-    border-radius:8px;
-    font-size:18px;
+    margin:12px 0;
+    border-radius:10px;
 }
 
-.owl-btn {
-    margin-top:10px;
+/* 🦉 OWL TIP BOX */
+.owl-tip {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    background:#163a5c;
+    padding:10px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.owl-tip img {
+    width:70px;
+    border-radius:8px;
+}
+
+.button {
+    display:inline-block;
     background:#ffcc00;
     color:#0b2f5a;
-    padding:12px 18px;
-    border:none;
+    padding:14px 20px;
     border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.owl-progress {
-    height:10px;
-    background:#0b2f5a;
-    margin-top:10px;
-    border-radius:5px;
-    overflow:hidden;
-}
-
-#bar {
-    height:100%;
-    width:0%;
-    background:#ffcc00;
-    transition:width 0.3s ease;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -101,94 +81,118 @@ h1, h2 { color: #ffcc00; }
 <body>
 
 <!-- 🦉 HERO OWL (CLICKABLE AFFILIATE) -->
-<div class="owl-hero">
-  <a href="https://is.gd/SRCKpA" target="_blank">
+<div class="hero">
+<a href="https://is.gd/SRCKpA" target="_blank">
     <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
-  </a>
+</a>
 </div>
 
-<h1>🦉 Professor Owl’s Line-by-Line 1040 Guide</h1>
+<h1>🦉 Professor Owl’s 40-Step 1040 Beginner Guide</h1>
 
-<div class="tip">
-Learn how to fill out your 1040 step-by-step with Professor Owl.
-</div>
-
-<!-- 🧠 INTERACTIVE TEACHER -->
-<div class="owl-teacher">
-
-  <a href="https://is.gd/SRCKpA" target="_blank">
+<div class="owl-tip">
     <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
-  </a>
-
-  <div class="owl-speech" id="speech">
-    Click “Next Lesson” to start learning your 1040 🦉
-  </div>
-
-  <button class="owl-btn" onclick="nextLesson()">Next Lesson →</button>
-
-  <div class="owl-progress">
-    <div id="bar"></div>
-  </div>
-
+    <div>
+        <b>🦉 Welcome!</b> I will guide you step-by-step through your entire 1040 tax return.
+    </div>
 </div>
 
-<!-- 📘 CONTENT -->
-<h2>📄 Line 1: Wages</h2>
-<p>Your job income from W-2 forms.</p>
+<!-- 🧍 PERSONAL INFO -->
+<h2>🧍 Section 1: Personal Info</h2>
 
-<h2>🏦 Lines 2–8: Other Income</h2>
-<p>Interest, dividends, side jobs, freelance.</p>
+<div class="card">1. Filing status (single / married / head of household)</div>
+<div class="card">2. Your full name</div>
+<div class="card">3. Spouse name (if applicable)</div>
+<div class="card">4. Social Security Number</div>
+<div class="card">5. Dependents</div>
 
-<h2>➕ Line 9: Total Income</h2>
-<p>Add everything together.</p>
+<div class="owl-tip">
+<img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
+<div>🦉 Always double-check your SSN — mistakes cause delays.</div>
+</div>
 
-<h2>🧾 Adjustments</h2>
-<p>Subtract student loans, retirement contributions.</p>
+<!-- 💼 INCOME -->
+<h2>💼 Section 2: Income</h2>
 
-<h2>📊 AGI</h2>
-<p>Your adjusted gross income.</p>
+<div class="card">6. W-2 wages (job income)</div>
+<div class="card">7. Interest income</div>
+<div class="card">8. Dividend income</div>
+<div class="card">9. IRA distributions</div>
+<div class="card">10. Retirement income</div>
+<div class="card">11. Social Security income</div>
+<div class="card">12. Capital gains</div>
+<div class="card">13. Other income (freelance / side jobs)</div>
+<div class="card">14. Total income</div>
 
-<h2>📉 Deductions</h2>
-<p>Standard or itemized deductions.</p>
+<div class="owl-tip">
+<img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
+<div>🦉 Add ALL income sources — even small ones matter.</div>
+</div>
 
-<h2>💰 Tax</h2>
-<p>Calculate what you owe.</p>
+<!-- 📉 ADJUSTMENTS -->
+<h2>📉 Section 3: Adjustments</h2>
 
-<h2>🎯 Credits</h2>
-<p>Reduce your tax bill.</p>
+<div class="card">15. Student loan interest</div>
+<div class="card">16. Educator expenses</div>
+<div class="card">17. HSA contributions</div>
+<div class="card">18. IRA deductions</div>
+<div class="card">19. Self-employment deductions</div>
+<div class="card">20. Total adjustments</div>
 
-<h2>💳 Payments</h2>
-<p>Taxes already paid.</p>
+<!-- 📊 TAXABLE INCOME -->
+<h2>📊 Section 4: Taxable Income</h2>
 
-<h2>📦 Final Result</h2>
-<p>Refund or amount owed.</p>
+<div class="card">21. Adjusted Gross Income (AGI)</div>
+<div class="card">22. Standard deduction</div>
+<div class="card">23. Itemized deduction option</div>
+<div class="card">24. Final taxable income</div>
 
-<script>
-const lessons = [
-"🦉 Welcome! Let’s learn your 1040 step-by-step.",
-"Step 1: Gather W-2 and 1099 forms.",
-"Step 2: Add all your income together.",
-"Step 3: Subtract deductions.",
-"Step 4: Calculate AGI.",
-"Step 5: Choose standard or itemized deduction.",
-"Step 6: Calculate tax owed.",
-"Step 7: Apply credits.",
-"Step 8: Compare payments vs tax.",
-"Final Step: Refund or amount owed."
-];
+<!-- 💰 TAX -->
+<h2>💰 Section 5: Tax Calculation</h2>
 
-let i = 0;
+<div class="card">25. Federal tax (IRS tables)</div>
+<div class="card">26. Additional taxes</div>
+<div class="card">27. Special tax rules (if applicable)</div>
+<div class="card">28. Total tax owed</div>
 
-function nextLesson() {
-  document.getElementById("speech").innerText = lessons[i];
+<!-- 🎯 CREDITS -->
+<h2>🎯 Section 6: Credits</h2>
 
-  let progress = ((i + 1) / lessons.length) * 100;
-  document.getElementById("bar").style.width = progress + "%";
+<div class="card">29. Child tax credit</div>
+<div class="card">30. Education credits</div>
+<div class="card">31. Earned income credit</div>
+<div class="card">32. Other credits</div>
+<div class="card">33. Total credits</div>
 
-  i++;
-  if(i >= lessons.length) i = 0;
-}
-</script>
+<!-- 💳 PAYMENTS -->
+<h2>💳 Section 7: Payments</h2>
+
+<div class="card">34. Federal tax withheld</div>
+<div class="card">35. Estimated payments</div>
+<div class="card">36. Refundable credits</div>
+<div class="card">37. Total payments</div>
+
+<!-- 📦 FINAL -->
+<h2>📦 Section 8: Final Result</h2>
+
+<div class="card">38. Refund amount</div>
+<div class="card">39. Amount owed</div>
+<div class="card">40. Final balance</div>
+
+<!-- 🖊️ SIGNATURE -->
+<h2>🖊️ Section 9: Signature & Filing</h2>
+
+<div class="card">41. Taxpayer signature</div>
+<div class="card">42. Spouse signature (if joint)</div>
+<div class="card">43. Filing date</div>
+<div class="card">44. Identity verification PIN</div>
+<div class="card">45. Submit return (efile or mail)</div>
+
+<!-- CTA -->
+<div style="text-align:center;">
+<a class="button" href="https://is.gd/SRCKpA" target="_blank">
+👉 File Your Taxes Online With Help
+</a>
+</div>
 
 </body>
 </html>
