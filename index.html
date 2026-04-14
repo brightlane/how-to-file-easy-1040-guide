@@ -13,12 +13,16 @@
       color:#fff;
       line-height:1.6;
     }
-    h1,h2{
-      color:#ffcc00;
-    }
     .wrap{
       max-width:1100px;
       margin:0 auto;
+    }
+    h1,h2{
+      color:#ffcc00;
+      margin:0 0 10px 0;
+    }
+    a{
+      text-decoration:none;
     }
     .hero{
       display:flex;
@@ -53,24 +57,25 @@
       font-weight:bold;
       margin-top:10px;
     }
-    .owl-bar{
+    .owl-step{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       gap:14px;
-      margin:18px 0;
+      margin:14px 0;
       padding:14px;
-      background:#1f4e79;
+      background:#12385d;
       border-left:5px solid #ffcc00;
       border-radius:10px;
       flex-wrap:wrap;
     }
     .owl{
-      width:120px;
+      width:92px;
       height:auto;
       display:block;
+      flex:0 0 auto;
     }
     .section{
-      margin:14px 0;
+      margin:14px 0 22px 0;
       padding:14px;
       background:#1f4e79;
       border-left:5px solid #ffcc00;
@@ -108,6 +113,12 @@
       background:#ffcc00;
       color:#0b2f5a;
     }
+    .owl-inline{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
     @media (max-width:700px){
       .hero{ justify-content:center; }
       .hero-center{ width:100%; }
@@ -124,9 +135,11 @@
       </a>
 
       <div class="hero-center">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" target="_blank" rel="noopener" style="text-decoration:none;">
-          <img src="Mr.-Owl.jpg" alt="Professor Owl" style="width:70px;height:auto;vertical-align:middle;margin-right:8px;">
-          <span style="color:#ffcc00;font-size:30px;font-weight:bold;">Professor Owl Tax Guide</span>
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" target="_blank" rel="noopener" style="color:inherit;">
+          <div class="owl-inline" style="justify-content:center;">
+            <img src="Mr.-Owl.jpg" alt="Professor Owl" style="width:70px;height:auto;">
+            <span style="color:#ffcc00;font-size:30px;font-weight:bold;">Professor Owl Tax Guide</span>
+          </div>
         </a>
         <p class="mini">A simple tax guide for beginners, explained like you are in fifth grade.</p>
         <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" target="_blank" rel="noopener" class="button">
@@ -139,32 +152,45 @@
       </a>
     </div>
 
-    <div class="owl-bar">
-      <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
-      <div>
-        <h2>Professor Owl says</h2>
-        <p class="mini">We will do taxes one tiny step at a time. Each part has only a few short tips so it stays easy to follow.</p>
-      </div>
-    </div>
-
     <div class="section">
       <h2>Step 1: Get your papers</h2>
-      <p><strong>What it means:</strong> Put all your tax papers in one place.</p>
+      <div class="owl-step">
+        <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
+        <div>
+          <p><strong>Professor Owl says:</strong> Put all your tax papers in one folder.</p>
+          <p class="mini">This helps you stay organized before you begin.</p>
+        </div>
+      </div>
+      <p><strong>What it means:</strong> Gather your W-2s, 1099s, and receipts.</p>
       <div class="tip">Tip 1: Find your W-2 forms.</div>
-      <div class="tip">Tip 2: Find your 1099 forms if you had side jobs.</div>
-      <div class="tip">Tip 3: Keep receipts for things you may deduct.</div>
+      <div class="tip">Tip 2: Find your 1099 forms.</div>
+      <div class="tip">Tip 3: Keep receipts in one place.</div>
     </div>
 
     <div class="section">
       <h2>Step 2: Add your income</h2>
+      <div class="owl-step">
+        <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
+        <div>
+          <p><strong>Professor Owl says:</strong> Write down every dollar you earned.</p>
+          <p class="mini">Start with the biggest numbers first.</p>
+        </div>
+      </div>
       <p><strong>What it means:</strong> Write down all the money you made.</p>
       <div class="tip">Tip 1: Look at Box 1 on your W-2.</div>
-      <div class="tip">Tip 2: Add money from other forms if needed.</div>
+      <div class="tip">Tip 2: Add money from side jobs if needed.</div>
       <div class="tip">Tip 3: Use a calculator so the numbers stay exact.</div>
     </div>
 
     <div class="section">
       <h2>Step 3: Use deductions and credits</h2>
+      <div class="owl-step">
+        <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
+        <div>
+          <p><strong>Professor Owl says:</strong> Deductions and credits can help lower your tax bill.</p>
+          <p class="mini">Credits are usually the bigger win.</p>
+        </div>
+      </div>
       <p><strong>What it means:</strong> These can help lower your tax bill.</p>
       <div class="tip">Tip 1: Deductions lower the amount that gets taxed.</div>
       <div class="tip">Tip 2: Credits lower the tax itself.</div>
@@ -198,10 +224,19 @@
       <p class="mini"><strong>Tip:</strong> Only the money in each bracket gets taxed at that rate.</p>
     </div>
 
-    <div class="owl-bar">
-      <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
-      <div>
-        <p class="mini"><strong>Professor Owl says:</strong> Double-check every number, sign your return, and file only after everything looks right.</p>
+    <div class="section">
+      <h2>Final check</h2>
+      <div class="owl-step">
+        <img src="Mr.-Owl.jpg" alt="Professor Owl mascot" class="owl">
+        <div>
+          <p><strong>Professor Owl says:</strong> Double-check every number before you file.</p>
+          <p class="mini">Then sign your return and click the finish button.</p>
+        </div>
+      </div>
+      <div class="tip">Tip 1: Check for missing numbers.</div>
+      <div class="tip">Tip 2: Make sure your name and Social Security number are correct.</div>
+      <div class="tip">Tip 3: Sign your return before you send it.</div>
+      <div style="text-align:center; margin-top:18px;">
         <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" target="_blank" rel="noopener" class="button">
           Finish Filing
         </a>
