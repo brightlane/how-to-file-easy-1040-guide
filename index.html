@@ -1,404 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🦉 Professor Owl's COMPLETE Form 1040 Guide - ALL 38 Lines</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-      line-height: 1.5; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh; 
-    }
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
-    
-    /* HERO - Professor Owl at top */
-    .hero { 
-      background: white; border-radius: 20px; padding: 2rem; text-align: center; 
-      box-shadow: 0 20px 40px rgba(0,102,204,0.15); margin-bottom: 2rem;
-      border: 3px solid #0066cc;
-    }
-    .hero-branding { 
-      display: flex; align-items: center; justify-content: space-between; max-width: 800px; margin: 0 auto 1rem;
-    }
-    .e-file-logo { font-size: 1.8rem; font-weight: bold; color: #0066cc; }
-    .owl-hero { 
-      width: 120px; height: 120px; border: 5px solid #0066cc; border-radius: 50%; 
-      margin: 0 2rem; box-shadow: 0 10px 30px rgba(0,102,204,0.3);
-      background: #ffeb3b; display: flex; align-items: center; justify-content: center;
-    }
-    .hero h1 { color: #0066cc; font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .hero-cta { 
-      display: inline-block; padding: 1rem 2.5rem; background: #0066cc; color: white; 
-      text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem;
-      box-shadow: 0 10px 25px rgba(0,102,204,0.4); transition: all 0.3s;
-    }
-    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,102,204,0.5); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professor Owl Attention Classroom</title>
 
-    /* LINES SECTION */
-    .lines-section { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    .section-title { text-align: center; color: #0066cc; font-size: 2rem; margin-bottom: 1rem; }
-    .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem; }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: white;
+}
 
-    .owl-line { 
-      display: flex; align-items: flex-start; padding: 1.5rem; margin-bottom: 1rem; 
-      background: #f8f9ff; border-left: 6px solid #0066cc; border-radius: 0 12px 12px 0;
-      transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,102,204,0.1);
-    }
-    .owl-line:hover { transform: translateX(5px); box-shadow: 0 8px 25px rgba(0,102,204,0.2); }
-    .owl-icon { 
-      width: 28px; height: 28px; margin-right: 1rem; margin-top: 0.2rem; flex-shrink: 0;
-      background: #ffeb3b; border: 3px solid #0066cc; border-radius: 50%; padding: 2px;
-    }
-    .line-content strong { font-size: 1.3rem; color: #111; display: block; margin-bottom: 0.3rem; }
-    .line-desc { color: #555; font-size: 0.98rem; margin-bottom: 0.4rem; }
-    .owl-tip { 
-      background: #e3f2fd; padding: 0.6rem; border-radius: 8px; border-left: 4px solid #0066cc;
-      font-size: 0.92rem; color: #0066cc; font-weight: 500;
-    }
+/* ================= HEADER ================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 2px solid #22c55e;
+}
 
-    /* BOTTOM CTA */
-    .final-cta { 
-      text-align: center; padding: 2.5rem; background: linear-gradient(135deg, #0066cc, #004499);
-      border-radius: 20px; color: white; margin-top: 3rem;
-    }
-    @media (max-width: 768px) {
-      .hero-branding { flex-direction: column; gap: 1rem; }
-      .owl-line { flex-direction: column; }
-      .owl-icon { align-self: flex-start; }
-    }
-  </style>
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav a {
+  margin-left: 12px;
+  font-size: 13px;
+  color: #93c5fd;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.owl {
+  font-size: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+  margin: 10px 0;
+}
+
+/* ================= BOARD ================= */
+.board {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #14532d;
+  border-radius: 10px;
+  padding: 20px;
+  border: 3px solid #22c55e;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  text-align: center;
+  margin: 15px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+/* ================= LESSON BOX ================= */
+.lesson-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lesson-text {
+  font-size: 14px;
+  color: #d1fae5;
+  line-height: 1.4;
+}
+
+/* ================= FOOTER CTA ================= */
+.cta {
+  text-align: center;
+  margin: 30px;
+}
+
+.cta a {
+  background: #22c55e;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
 </head>
+
 <body>
-  <!-- HERO WITH CLICKABLE OWL -->
-  <a href="https://YOUR_AFFILIATE_URL_HERE" class="hero" style="text-decoration: none; color: inherit; display: block;">
-    <div class="hero-branding">
-      <div class="e-file-logo">e-file.com</div>
-      <div class="owl-hero">
-        🦉 <!-- Replace with: <img src="professor-owl.png" style="width:100%;height:100%;border-radius:50%;"> -->
-      </div>
-      <div class="e-file-logo">e-file.com</div>
-    </div>
-    <h1>Professor Owl Teaches Form 1040</h1>
-    <p style="color: #666; font-size: 1.2rem; margin-bottom: 1.5rem;">Click Owl to file your taxes in 10 minutes!</p>
-    <div class="hero-cta">START MY RETURN →</div>
+
+<!-- ================= HEADER ================= -->
+<div class="header">
+  <a class="logo" href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
+    🦉 Professor Owl Classroom
   </a>
 
-  <div class="container">
-    <section class="lines-section">
-      <h2 class="section-title">🦉 ALL 38 LINES - Professor Owl Explains EVERY ONE</h2>
-      <p class="subtitle">Owl appears on EVERY line. e-file.com auto-fills 90% automatically!</p>
-
-      <!-- PERSONAL INFO -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>📝 Name, SSN, Address (Top Section)</strong>
-          <div class="line-desc">Your name EXACTLY as on Social Security card. SSN no hyphens. Address as on W-2.</div>
-          <div class="owl-tip">✅ Filing status? Single/MFJ/HOH. Wrong = audit risk! Check dependents' SSNs twice.</div>
-        </div>
-      </div>
-
-      <!-- INCOME SECTION -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 1: Wages (W-2 Box 1)</strong>
-          <div class="line-desc">Add ALL W-2 Box 1 numbers. Include tips. No job? Enter 0.</div>
-          <div class="owl-tip">✅ Multiple jobs? Add them ALL. e-file.com imports W-2s instantly. Check tips!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 2a: Tax-Exempt Interest</strong>
-          <div class="line-desc">Municipal bonds (1099-INT Box 8). Usually small or $0.</div>
-          <div class="owl-tip">✅ Not taxed! Most people = $0. Check year-end bank mail.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 2b: Taxable Interest</strong>
-          <div class="line-desc">Bank accounts, CDs (1099-INT Box 1). $10+ gets form.</div>
-          <div class="owl-tip">✅ Check ALL bank accounts. Even $12 savings interest counts!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 3a: Qualified Dividends</strong>
-          <div class="line-desc">Special stock dividends (1099-DIV Box 1b). Lower tax rate.</div>
-          <div class="owl-tip">✅ Broker statement shows this. Gets favorable tax rate!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 3b: Ordinary Dividends</strong>
-          <div class="line-desc">Regular stock dividends (1099-DIV Box 1a).</div>
-          <div class="owl-tip">✅ Your broker sends 1099-DIV in February. Don't miss it!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 4a: Total IRA Distributions</strong>
-          <div class="line-desc">All IRA withdrawals (1099-R Box 1).</div>
-          <div class="owl-tip">✅ No withdrawal? Enter 0. Roth usually not taxable.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 4b: Taxable IRA</strong>
-          <div class="line-desc">Taxable portion of IRA withdrawals (1099-R Box 2a).</div>
-          <div class="owl-tip">✅ Under 59½? 10% penalty might apply. Software calculates.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 5a: Total Pensions/Annuities</strong>
-          <div class="line-desc">Pension payments (1099-R Box 1).</div>
-          <div class="owl-tip">✅ Military/retirement pensions go here. Check 1099-R.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 5b: Taxable Pensions</strong>
-          <div class="line-desc">Taxable portion (1099-R Box 2a).</div>
-          <div class="owl-tip">✅ Some pensions partially tax-free. Form shows amount.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 6a: Total Social Security</strong>
-          <div class="line-desc">SSA-1099 Box 5 amount.</div>
-          <div class="owl-tip">✅ SSA mails form in January. No work = $0.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 6b: Taxable Social Security</strong>
-          <div class="line-desc">0-85% taxable (software calculates).</div>
-          <div class="owl-tip">✅ High other income = more SS taxable. Let e-file.com figure it!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 7: Capital Gain/Loss</strong>
-          <div class="line-desc">Stock sales, crypto (Schedule D).</div>
-          <div class="owl-tip">✅ Sold stocks/crypto/NFTs? Broker reports on 1099-B.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 8: Other Income (Schedule 1)</strong>
-          <div class="line-desc">Unemployment, gigs, rentals, alimony, crypto.</div>
-          <div class="owl-tip">✅ Don't forget: DoorDash, Airbnb, gambling winnings!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 9: Total Income</strong>
-          <div class="line-desc">Lines 1-8 automatically added.</div>
-          <div class="owl-tip">✅ Software does math. Double-check big numbers!</div>
-        </div>
-      </div>
-
-      <!-- ADJUSTMENTS -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 10: Adjustments (Schedule 1)</strong>
-          <div class="line-desc">Student loan interest, IRA contributions, HSA.</div>
-          <div class="owl-tip">✅ $2,000 student loan interest? Deduct up to that!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 11: AGI (Adjusted Gross Income)</strong>
-          <div class="line-desc">Line 9 minus Line 10. KEY NUMBER!</div>
-          <div class="owl-tip">✅ AGI determines credits/deductions. Save this number!</div>
-        </div>
-      </div>
-
-      <!-- DEDUCTIONS -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 12: Standard Deduction</strong>
-          <div class="line-desc">2026: Single=$16,100 | MFJ=$32,200 | HOH=$24,150 (+$1,600 if 65+).</div>
-          <div class="owl-tip">✅ Most take standard. Itemize only if > these amounts.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 13: QBI Deduction</strong>
-          <div class="line-desc">20% of business income (Schedule 1).</div>
-          <div class="owl-tip">✅ Self-employed? Big deduction! Software calculates.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 14: ? (Auto-calculated)</strong>
-          <div class="line-desc">Line 11 minus (12+13). If negative, enter 0.</div>
-          <div class="owl-tip">✅ This = your TAXABLE INCOME.</div>
-        </div>
-      </div>
-
-      <!-- TAX -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 15: Tax</strong>
-          <div class="line-desc">Tax Table amount or software calculation.</div>
-          <div class="owl-tip">✅ 10-37% brackets. Software picks right rate.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 16: AMT (Usually $0)</strong>
-          <div class="line-desc">Alternative Minimum Tax (Form 6251).</div>
-          <div class="owl-tip">✅ 95% of people = $0. Software checks automatically.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 18: Total Tax (15+16+17)</strong>
-          <div class="line-desc">Auto-calculated.</div>
-          <div class="owl-tip">✅ Your TOTAL tax before credits.</div>
-        </div>
-      </div>
-
-      <!-- CREDITS -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 19: Child Tax Credit</strong>
-          <div class="line-desc">$2,000 per child under 17 (Schedule 8812).</div>
-          <div class="owl-tip">✅ Phaseout starts $400k MFJ. Huge refund boost!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 23: Child Care Credit</strong>
-          <div class="line-desc">20-35% of daycare costs (Form 2441).</div>
-          <div class="owl-tip">✅ Daycare receipts needed. Working parents only.</div>
-        </div>
-      </div>
-
-      <!-- PAYMENTS -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 25a: Tax Withheld</strong>
-          <div class="line-desc">W-2 Box 2 + 1099 Box 4. ALL jobs!</div>
-          <div class="owl-tip">✅ Multiple W-2s? Add EVERY Box 2 amount!</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 25b: Estimated Payments</strong>
-          <div class="line-desc">Quarterly payments you made.</div>
-          <div class="owl-tip">✅ Self-employed made payments? Enter here.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 25c: Earned Income Credit (EIC)</strong>
-          <div class="line-desc">Low-income families with kids.</div>
-          <div class="owl-tip">✅ Up to $7,830 refund! Software qualifies you.</div>
-        </div>
-      </div>
-
-      <!-- REFUND/DUE -->
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 27: Total Payments</strong>
-          <div class="line-desc">Lines 25a-26 added automatically.</div>
-          <div class="owl-tip">✅ What IRS thinks you already paid.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 33: Overpayment/Refund</strong>
-          <div class="line-desc">Line 27 > Line 24 = refund amount.</div>
-          <div class="owl-tip">✅ Direct deposit = 2 weeks faster! Use bank routing#.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 35a-d: Direct Deposit</strong>
-          <div class="line-desc">Routing (9 digits), account #, checking/savings.</div>
-          <div class="owl-tip">✅ Bottom left of check shows routing#. Call bank if unsure.</div>
-        </div>
-      </div>
-
-      <div class="owl-line">
-        <div class="owl-icon">🦉</div>
-        <div class="line-content">
-          <strong>Line 37: Amount You Owe</strong>
-          <div class="line-desc">Line 24 > Line 27 = pay IRS by April 15.</div>
-          <div class="owl-tip">✅ Pay online = no late fees. e-file.com has payment plans!</div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- FINAL CTA -->
-    <div class="final-cta">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Professor Owl + e-file.com = DONE!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 2rem;">All 38 lines completed automatically.</p>
-      <a href="https://YOUR_AFFILIATE_URL_HERE" 
-         style="display: inline-block; padding: 1.5rem 3rem; background: white; color: #0066cc; 
-                font-weight: bold; font-size: 1.4rem; border-radius: 50px; text-decoration: none;
-                box-shadow: 0 15px 35px rgba(255,255,255,0.4);">
-        FILE MY 1040 NOW → (10 minutes)
-      </a>
-    </div>
+  <div class="nav">
+    <a href="#lesson">Lesson</a>
+    <a href="#board">Board</a>
   </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="owl">🦉</div>
+  <h1>Interactive Learning Classroom</h1>
+  <p>Learn step-by-step concepts with Professor Owl</p>
+</div>
+
+<!-- ================= BOARD ================= -->
+<div class="board" id="board">
+  <div class="lesson-title" id="title">Welcome</div>
+  <div class="lesson-text" id="text">Press "Next" to begin your learning journey.</div>
+</div>
+
+<!-- ================= CONTROLS ================= -->
+<div class="controls">
+  <button onclick="prevLesson()">⬅ Back</button>
+  <button onclick="nextLesson()">Next ➡</button>
+</div>
+
+<!-- ================= CTA ================= -->
+<div class="cta">
+  <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
+    Visit Official Resource
+  </a>
+</div>
+
+<script>
+const lessons = [
+  ["Identity Basics", "Understanding who the tax system applies to."],
+  ["Filing Overview", "Why people file yearly financial reports."],
+  ["Income Concept", "Money earned from work or other sources."],
+  ["Multiple Income Sources", "Different ways income can be earned."],
+  ["Income Summary", "Combining all income into one total idea."],
+  ["Adjustment Concept", "Why income may be adjusted before calculation."],
+  ["Fairness Principle", "Tax systems aim for fairness in treatment."],
+  ["Deduction Idea", "Ways income may be reduced conceptually."],
+  ["Standard vs Options", "Different methods of reducing taxable amount."],
+  ["Taxable Income", "Income that is considered for taxation."],
+  ["System Activation", "Where tax rules begin applying."],
+  ["Progressive Structure", "Higher income may be taxed differently."],
+  ["Calculation Flow", "How tax systems process numbers."],
+  ["Preliminary Result", "Early tax estimate before final steps."],
+  ["Adjustment Layer", "Refinements to calculated tax."],
+  ["Credit Concept", "Direct reductions to tax owed."],
+  ["Refund Idea", "When payments exceed obligations."],
+  ["Payment System", "Money paid during the year."],
+  ["Withholding Concept", "Automatic tax payments from income."],
+  ["Tracking System", "Keeping record of payments."],
+  ["Comparison Stage", "Matching owed vs paid amounts."],
+  ["Refund Outcome", "Money returned if overpaid."],
+  ["Balance Due", "Money still owed if underpaid."],
+  ["Accuracy Importance", "Why correct data matters."],
+  ["Verification System", "Cross-checking financial records."],
+  ["Correction Stage", "Fixing errors if found."],
+  ["Validation Step", "Confirming accuracy of return."],
+  ["Submission", "Sending data for processing."],
+  ["Processing", "System reviews information."],
+  ["Review Stage", "Checking for issues."],
+  ["Error Detection", "Finding inconsistencies."],
+  ["Correction Review", "Fixing flagged issues."],
+  ["Approval Stage", "Accepting valid returns."],
+  ["Final Result", "Outcome of tax calculation."],
+  ["Record Storage", "Keeping historical data."],
+  ["Audit Concept", "Possible deeper review."],
+  ["Completion", "Process finished."],
+  ["Big Picture", "Taxes as a system of fairness and order."]
+];
+
+let current = 0;
+
+function renderLesson() {
+  document.getElementById("title").innerText = lessons[current][0];
+  document.getElementById("text").innerText = lessons[current][1];
+}
+
+function nextLesson() {
+  if (current < lessons.length - 1) {
+    current++;
+    renderLesson();
+  }
+}
+
+function prevLesson() {
+  if (current > 0) {
+    current--;
+    renderLesson();
+  }
+}
+
+renderLesson();
+</script>
+
 </body>
 </html>
