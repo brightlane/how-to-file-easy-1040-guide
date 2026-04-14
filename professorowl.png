@@ -1,1 +1,6 @@
-"C:\Users\Benito\Desktop\Mr owl with brown eyes.png"
+.professor {
+    width: 320px;   /* increased from 120px */
+    max-width: 40%;
+    float: right;
+    margin: 0 0 10px 20px;
+}
