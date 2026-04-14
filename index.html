@@ -11,8 +11,6 @@
             --space-dark: #0b1a30;
             --quest-blue: #1f4e79;
             --loot-gold: #ffcc00;
-            --success-green: #00ff87;
-            --danger-red: #ff4757;
             --text-white: #ffffff;
         }
 
@@ -25,102 +23,108 @@
             text-align: center;
         }
 
-        /* THE BOUNCING OWL */
-        .owl-container {
-            padding-top: 50px;
-            min-height: 180px;
+        /* BIGGER CLICKABLE OWL */
+        .owl-section {
+            padding: 40px 0 20px 0;
+            background: radial-gradient(circle, #1f4e79 0%, #0b1a30 70%);
+        }
+
+        .owl-link {
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .owl-link:hover {
+            transform: scale(1.05);
         }
 
         .owl-mascot {
-            width: 150px;
+            /* BIGGER SIZE */
+            width: 220px; 
             height: auto;
             animation: bounce 3s infinite ease-in-out;
-            filter: drop-shadow(0 0 15px var(--loot-gold));
+            /* STRONGER GLOW */
+            filter: drop-shadow(0 0 25px var(--loot-gold));
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-25px); }
         }
 
         .quest-title {
-            font-size: clamp(35px, 10vw, 60px);
+            font-size: clamp(40px, 12vw, 75px);
             color: var(--loot-gold);
-            text-shadow: 3px 3px 0px #000;
-            margin: 10px 0;
+            text-shadow: 4px 4px 0px #000;
+            margin: 0;
+            letter-spacing: 2px;
         }
 
         .card {
             background: var(--quest-blue);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 25px;
+            padding: 30px;
             margin: 20px auto;
-            max-width: 800px;
-            border-bottom: 6px solid var(--loot-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 700px;
+            border-bottom: 8px solid var(--loot-gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .btn-loot {
             display: inline-block;
             background: var(--loot-gold);
             color: var(--space-dark);
-            padding: 20px 40px;
-            border-radius: 50px;
-            font-size: 24px;
+            padding: 22px 50px;
+            border-radius: 60px;
+            font-size: 28px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 8px 0px #b89600;
-            margin: 20px 0;
+            box-shadow: 0 10px 0px #b89600;
+            margin: 30px 0;
+            transition: 0.1s;
         }
 
-        .btn-loot:active { transform: translateY(4px); box-shadow: 0 4px 0px #b89600; }
-
-        .quest-map {
-            display: flex;
-            justify-content: space-around;
-            padding: 15px;
-            background: rgba(255,255,255,0.05);
-            border-bottom: 2px dashed var(--loot-gold);
+        .btn-loot:hover {
+            background: #ffe033;
         }
 
-        .node { color: var(--loot-gold); font-size: 12px; }
+        .btn-loot:active {
+            transform: translateY(6px);
+            box-shadow: 0 4px 0px #b89600;
+        }
     </style>
 </head>
 <body>
 
-    <nav class="quest-map">
-        <div class="node">Step 1: Scrolls</div>
-        <div class="node">Step 2: Shields</div>
-        <div class="node">Step 3: LOOT!</div>
-    </nav>
-
-    <div class="owl-container">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide">
+    <section class="owl-section">
+        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" target="_blank" class="owl-link">
             <img src="professorowl.png" alt="Professor Owl" class="owl-mascot">
         </a>
+        <h1 class="quest-title">REFUND QUEST</h1>
+        <p style="font-size: 20px;">Click Professor Owl to Start Your Mission!</p>
+    </section>
+
+    <div style="padding: 0 20px;">
+        <div class="card">
+            <h2 style="font-size: 30px;">📜 Level 1: Gather Your Scrolls</h2>
+            <p style="font-size: 18px;">Grab your <strong>W-2 forms</strong>. These are the secret maps that tell us how much gold the Tax King is holding for you!</p>
+        </div>
+
+        <div class="card">
+            <h2 style="font-size: 30px;">🛡️ Level 2: Use Your Shields</h2>
+            <p style="font-size: 18px;">Deductions (like school supplies) act as <strong>shields</strong> to protect your money!</p>
+        </div>
+
+        <div style="padding: 30px 0;">
+            <a href="https://is.gd/SRCKpA" target="_blank" class="btn-loot">CLAIM YOUR LOOT!</a>
+            <p style="margin-top: 20px;">
+                <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" style="color: var(--loot-gold); font-weight: bold;">
+                    Official Mission Headquarters
+                </a>
+            </p>
+        </div>
     </div>
 
-    <h1 class="quest-title">REFUND QUEST</h1>
-    <p>Level Up Your 2026 Taxes!</p>
-
-    <div class="card">
-        <h2>📜 Mission 1: The Magic Scrolls</h2>
-        <p>Find your <strong>W-2s</strong>. These show all the gold you earned and the tax shields already paid (Box 2)!</p>
-    </div>
-
-    <div class="card">
-        <h2>🛡️ Mission 2: Activate Your Shields</h2>
-        <p>Use deductions for school supplies or charity to protect your gold from the Tax King!</p>
-    </div>
-
-    <div style="padding: 40px 0;">
-        <a href="https://is.gd/SRCKpA" target="_blank" class="btn-loot">CLAIM YOUR REFUND NOW</a>
-        <br>
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" style="color: var(--loot-gold); font-size: 14px;">Visit Mission Hub</a>
-    </div>
-
-    <script>
-        console.log("Professor Owl Mission Active!");
-    </script>
 </body>
 </html>
