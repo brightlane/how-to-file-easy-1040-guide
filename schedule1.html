@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule 1 Mastery | Professor Owl 2026 Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0d1b3e; --gold: #f5c518; --white: #ffffff; --card: #1a2a4a; --red: #ef4444; }
+        body { font-family: 'Nunito', sans-serif; background: var(--navy); color: var(--white); margin: 0; padding: 0; line-height: 1.6; }
+
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        @keyframes popIn { 0%{opacity:0;transform:scale(0.7) translateY(30px)} 100%{opacity:1;transform:scale(1) translateY(0)} }
+
+        /* ── STICKY OWL ── */
+        .sticky-owl { position:fixed; left:15px; top:15px; width:90px; z-index:1000; animation:float 3s infinite ease-in-out; }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(180deg, #060e22 0%, #0d1b3e 100%);
+            border-bottom: 4px solid var(--gold);
+            padding: 70px 20px 60px;
+            text-align: center;
+        }
+        .hero-professor {
+            display: block; width: 260px; margin: 0 auto 28px;
+            animation: float 3s infinite ease-in-out, popIn 0.7s ease-out both;
+            filter: drop-shadow(0 16px 48px rgba(245,197,24,0.5));
+        }
+        .bubble {
+            display: inline-block; background: var(--gold); color: var(--navy);
+            font-family: 'Fredoka One', cursive; font-size: 1.25rem;
+            border-radius: 20px; padding: 13px 30px; margin-bottom: 30px;
+            box-shadow: 0 6px 24px rgba(245,197,24,0.4); position: relative;
+        }
+        .bubble::after {
+            content:''; position:absolute; top:-17px; left:50%; transform:translateX(-50%);
+            border:9px solid transparent; border-bottom-color:var(--gold);
+        }
+        .hero h1 { font-family:'Fredoka One',cursive; color:var(--gold); font-size:2.8rem; margin:0 0 10px; line-height:1.1; }
+        .hero .form-tag { display:inline-block; background:#1a2a4a; border:2px solid var(--gold); color:var(--gold); font-family:'Roboto Mono',monospace; font-size:0.95rem; border-radius:8px; padding:6px 18px; margin-bottom:16px; }
+        .hero p.sub { color:#cbd5e1; font-size:1.1rem; max-width:560px; margin:0 auto 36px; }
+        .hero-cta {
+            display:inline-block; background:var(--red); color:#fff;
+            font-family:'Fredoka One',cursive; font-size:1.55rem;
+            padding:18px 48px; border-radius:50px; text-decoration:none;
+            box-shadow:0 8px 30px rgba(239,68,68,0.55); transition:transform 0.2s;
+        }
+        .hero-cta:hover { transform:scale(1.04); }
+
+        /* ── CONTAINER ── */
+        .container { max-width:960px; margin:0 auto; padding:40px 20px; }
+
+        /* ── SECTION BREAK ── */
+        .section-break {
+            background: linear-gradient(90deg, var(--gold), #ff9900); color: var(--navy);
+            padding: 15px 25px; font-family:'Fredoka One',cursive; margin: 50px 0 30px 0;
+            border-radius: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.15rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .section-note {
+            background: #162240; border-left: 4px solid var(--gold);
+            padding: 14px 20px; border-radius: 8px; margin-bottom: 24px;
+            color: #cbd5e1; font-size: 0.95rem;
+        }
+
+        /* ── TAX LINE CARD: OWL | LINE# | CONTENT ── */
+        .tax-line {
+            background: var(--card); border-radius: 18px; margin-bottom: 20px;
+            border: 1px solid #2d4263;
+            display: grid; grid-template-columns: 150px 80px 1fr;
+            align-items: stretch; overflow: hidden;
+            transition: border-color 0.3s, background 0.3s;
+            min-height: 150px;
+        }
+        .tax-line:hover { border-color: var(--gold); background: #1e3158; }
+
+        .owl-col {
+            background: #111e3a; display:flex; align-items:center; justify-content:center; padding:16px 10px;
+        }
+        .owl-col img {
+            width:120px; height:120px; object-fit:contain;
+            filter:drop-shadow(0 4px 14px rgba(0,0,0,0.5));
+            animation:float 3s ease-in-out infinite;
+        }
+        .tax-line:nth-child(even) .owl-col img { animation-delay:0.6s; }
+        .tax-line:nth-child(3n)   .owl-col img { animation-delay:1.2s; }
+
+        .line-num-col {
+            background: var(--gold); color: var(--navy);
+            font-family:'Roboto Mono',monospace; font-weight:800; font-size:1.2rem;
+            display:flex; align-items:center; justify-content:center;
+            padding:10px 6px; text-align:center; word-break:break-all;
+        }
+
+        .content-col { padding:22px 24px; display:flex; flex-direction:column; justify-content:center; }
+        .content-col h3 { margin:0 0 8px; color:var(--gold); font-size:1.18rem; font-family:'Fredoka One',cursive; }
+        .content-col p  { margin:0; font-size:0.96rem; color:#e2e8f0; }
+        .wisdom { margin-top:14px; font-weight:800; font-size:0.82rem; }
+        .wisdom a { color:var(--gold); text-decoration:none; }
+        .wisdom a:hover { text-decoration:underline; }
+
+        /* ── CTA ── */
+        .cta-btn {
+            display:block; background:var(--red); color:white; text-align:center; padding:30px;
+            border-radius:60px; text-decoration:none; font-family:'Fredoka One',cursive;
+            font-size:2.2rem; margin:60px 0; box-shadow:0 10px 40px rgba(239,68,68,0.6);
+        }
+
+        @media (max-width:640px) {
+            .tax-line { grid-template-columns:90px 56px 1fr; min-height:110px; }
+            .owl-col img { width:72px; height:72px; }
+            .line-num-col { font-size:0.9rem; }
+            .hero h1 { font-size:2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-owl">
+        <a href="https://is.gd/SRCKpA">
+            <img src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png" style="width:100%" alt="Professor Owl">
+        </a>
+    </div>
+
+    <div class="hero">
+        <img src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png"
+            class="hero-professor" alt="Professor Owl"
+            onerror="this.outerHTML='<div style=\'font-size:120px;margin-bottom:20px;\'>🦉</div>';">
+        <div class="bubble">Schedule 1 unlocked — more money back, hoot!</div>
+        <div class="form-tag">Form 1040 — Schedule 1 (2026)</div>
+        <h1>Professor Owl's Schedule 1 Masterclass</h1>
+        <p class="sub">Schedule 1 is where hidden income gets reported AND where some of the best tax deductions live. Let me walk you through every single line!</p>
+        <a href="https://is.gd/SRCKpA" class="hero-cta">File Schedule 1 at E-File.com →</a>
+    </div>
+
+    <div class="container">
+        <div id="tax-content"></div>
+
+        <script>
+            const OWL = "https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png";
+            const LINK = "https://is.gd/SRCKpA";
+
+            const sections = [
+                {
+                    title: "Part I — Additional Income",
+                    note: "These are income sources that don't fit on the main 1040. Report them here and the total flows to Line 8 of your Form 1040.",
+                    lines: [
+                        { n:"1",  t:"Taxable Refunds of State/Local Taxes",      d:"If you got a refund from your state taxes last year AND you itemized deductions, some or all of that refund is taxable income this year. It sounds backwards, but the IRS wants it back if you got a deduction for it before. Professor Owl says: If you took the standard deduction last year, this line is $0 — lucky you!" },
+                        { n:"2a", t:"Alimony Received (Pre-2019 Agreements)",    d:"If your divorce agreement was finalized before January 1, 2019 and you receive alimony payments, that money is taxable income for you. Agreements after that date changed the rules completely. Hoot! Check the exact date on your divorce decree before filling this in." },
+                        { n:"3",  t:"Business Income or Loss (Schedule C)",      d:"Do you freelance, drive for a rideshare app, or run any kind of self-employed gig? Your net profit or loss from that work goes right here, pulled from Schedule C. The Professor says: Even a small side hustle needs a Schedule C — don't skip it!" },
+                        { n:"4",  t:"Other Gains or Losses (Form 4797)",         d:"This line is for gains or losses from selling business property — things like equipment, vehicles used for work, or rental buildings. It's different from personal investments. Owl Wisdom: If you sold a piece of business equipment this year, Form 4797 is your best friend." },
+                        { n:"5a", t:"Rental Real Estate, Royalties, Partnerships, S Corps (Schedule E)", d:"Rental income from a property you own, royalties from a book or patent, or your share of income from a partnership or S-corporation all flow through Schedule E to this line. The Professor reminds you: passive losses have special rules that can limit your deduction!" },
+                        { n:"6",  t:"Farm Income or Loss (Schedule F)",          d:"If you operate a farm — crops, livestock, dairy, anything agricultural — your profit or loss goes here from Schedule F. The IRS treats farming as its own special business category. Hoot! Even hobby farmers need to read the rules carefully to avoid an audit." },
+                        { n:"7",  t:"Unemployment Compensation",                 d:"Every dollar of unemployment benefits you received from the government is fully taxable income and must be reported here. You should receive a Form 1099-G showing the total. Professor Owl says: You can choose to have taxes withheld from future unemployment checks to avoid a surprise bill!" },
+                        { n:"8a", t:"Net Operating Loss Deduction",              d:"If your business lost more money than it made in a prior year, you may be able to carry that loss forward and deduct it against this year's income. This is a powerful tool for small business owners recovering from a tough year. The Professor loves this one!" },
+                        { n:"8b", t:"Gambling Winnings",                         d:"Casino winnings, lottery prizes, sports betting payouts — all of it is taxable and goes here. You should receive a Form W-2G for large winnings. Owl Wisdom: Keep records of your losses too — you may be able to deduct them if you itemize on Schedule A!" },
+                        { n:"8c", t:"Cancellation of Debt Income",               d:"If a lender cancelled or forgave a debt you owed — like a credit card settlement or a mortgage forgiveness — the IRS may treat that erased amount as taxable income. You'll get a Form 1099-C. The Professor says: There are important exceptions, like insolvency, that might make this tax-free!" },
+                        { n:"8d", t:"Foreign Income Exclusion (Form 2555)",      d:"If you lived and worked outside the United States, you may qualify to exclude a large chunk of your foreign earnings from U.S. taxes using Form 2555. For 2026, the exclusion limit has increased. Hoot! This is one of the biggest benefits for Americans working abroad!" },
+                        { n:"8e", t:"Income from Form 8853, 8889, or 8853",     d:"This covers taxable distributions from Archer Medical Savings Accounts (MSAs) or Health Savings Accounts (HSAs) that were used for non-qualified expenses. Most people leave this blank. Owl Tip: Always use HSA funds for medical expenses to avoid this extra tax!" },
+                        { n:"8f", t:"Taxable Health Savings Account Distributions", d:"If you withdrew money from your HSA for something that wasn't a qualified medical expense, that amount is taxable and goes here along with a possible penalty. The Professor urges you: keep every receipt for medical purchases to protect your HSA withdrawals!" },
+                        { n:"8g", t:"Alaska Permanent Fund Dividends",           d:"Alaska residents receive an annual Permanent Fund Dividend from the state's oil revenues. This payment is taxable federal income and must be reported here. Everyone else can skip this line — it only applies to Alaska!" },
+                        { n:"8h", t:"Wages Earned While Incarcerated",           d:"Income earned while you were incarcerated — such as from a prison work program — is taxable and goes on this line. The Professor says every dollar of income matters to the IRS regardless of the circumstances it was earned in." },
+                        { n:"8i", t:"Taxable Medicaid Waiver Payments",          d:"While most Medicaid waiver payments for home care are excluded from income, some may be taxable depending on your situation and elections made. Report the taxable portion here. Owl Wisdom: Getting this right can make a big difference — double-check your eligibility for exclusion!" },
+                        { n:"8j", t:"Pension/Annuity Income from Form 8915",    d:"If you took a coronavirus-related or disaster-related distribution from a retirement account in a prior year and elected to spread the income over three years, your third installment may land here. The Professor says: Check your prior-year Form 8915 to see if this applies to you!" },
+                        { n:"8k", t:"Taxable ABLE Account Distributions",        d:"ABLE accounts help people with disabilities save money tax-free. But if funds were used for non-qualified disability expenses, that amount becomes taxable income here. Hoot! Always spend ABLE funds on qualified expenses to keep this line at zero!" },
+                        { n:"8l", t:"Income from Schedule K-1 (Other)",          d:"K-1 forms come from partnerships, S-corps, trusts, and estates and report your share of the entity's income or loss. If your K-1 income doesn't fit into another specific line, it lands here. The Professor says: K-1s can be complex — read every box carefully!" },
+                        { n:"8m", t:"Recapture of Education Credits",            d:"If you claimed an education credit in a prior year but later received a refund from the school or a scholarship that covered the same expense, you may have to pay back some of that credit here. Owl Tip: Keep all tuition receipts for at least three years just in case!" },
+                        { n:"8n", t:"Interest on Education Loans Used for Non-Qualified Expenses", d:"Student loan interest is usually deductible, but only if the loan was used for qualified education expenses. If you used loan money for other purposes, the interest benefit is lost and this line may apply. The Professor wants you to borrow wisely!" },
+                        { n:"8o", t:"Other Income Not Listed Above",             d:"This is the true catch-all — jury duty pay, bartering income, prizes, awards, and any other taxable income that has no dedicated line. If the IRS says it's income and it has nowhere else to go, it lands here. Hoot! When in doubt, report it!" },
+                        { n:"10", t:"Total Additional Income",                   d:"Add up lines 1 through 8o and put the grand total here. This number then travels directly to Line 8 of your main Form 1040 to be added to your wages and other income. The Professor says: Every dollar on this page adds to your total income — let's make sure the deductions balance it out!" },
+                    ]
+                },
+                {
+                    title: "Part II — Adjustments to Income",
+                    note: "These are 'above-the-line' deductions — you get them even without itemizing. They reduce your Adjusted Gross Income (AGI) which unlocks more savings throughout your return.",
+                    lines: [
+                        { n:"11", t:"Educator Expenses",                         d:"K-12 teachers, principals, and aides can deduct up to $300 of their own money spent on classroom supplies, books, and protective items. If both spouses are educators filing jointly, that doubles to $600. Hoot! Save every Amazon receipt for classroom purchases — it adds up!" },
+                        { n:"12", t:"Certain Business Expenses (Form 2106)",     d:"Armed forces reservists, performing artists, and certain government officials can deduct unreimbursed work expenses here using Form 2106. Most other employees can no longer claim this deduction. The Professor says: If you qualify, this is a great break!" },
+                        { n:"13", t:"Health Savings Account (HSA) Deduction",   d:"Contributions you made directly to your HSA — not through payroll — are deductible here up to the annual limit. For 2026, the self-only limit is $4,300 and the family limit is $8,550. Owl Wisdom: An HSA is the only triple-tax-advantaged account available — use it!" },
+                        { n:"14", t:"Moving Expenses (Military Only)",           d:"Most taxpayers can no longer deduct moving expenses, but active duty military members who move due to a permanent change of station still qualify. The Professor honors your service — make sure you claim this if you're eligible!" },
+                        { n:"15", t:"Deductible Part of Self-Employment Tax",    d:"If you're self-employed, you pay both the employee and employer halves of Social Security and Medicare taxes. The IRS lets you deduct the employer half (50%) right here as an adjustment. Professor Owl says: This is automatic — don't miss it if you have Schedule C income!" },
+                        { n:"16", t:"Self-Employed SEP, SIMPLE, and Qualified Plans", d:"Contributions you made to your own retirement plan as a self-employed person — like a SEP-IRA or Solo 401(k) — can be deducted here. For 2026, SEP-IRA contributions can be up to 25% of net self-employment income. Hoot! Save for retirement and slash your tax bill at the same time!" },
+                        { n:"17", t:"Self-Employed Health Insurance Deduction",  d:"If you're self-employed and paid for your own health, dental, or long-term care insurance, you can deduct 100% of those premiums here. You cannot deduct more than your net self-employment income. The Professor loves this one for freelancers and small business owners!" },
+                        { n:"18", t:"Penalty on Early Withdrawal of Savings",   d:"Did your bank charge you a penalty for withdrawing a CD early? That penalty fee is deductible here. You'll find the amount in Box 2 of Form 1099-INT from your bank. Owl Tip: It's a small deduction but it's yours — claim every penny!" },
+                        { n:"19a",t:"Alimony Paid (Pre-2019 Agreements)",       d:"If you pay alimony under a divorce agreement finalized before January 1, 2019, those payments are deductible here. You must include the recipient's Social Security number. For post-2018 agreements, this deduction no longer exists. The Professor says: Check your divorce decree date carefully!" },
+                        { n:"20", t:"IRA Deduction",                             d:"Contributions to a traditional IRA may be fully or partially deductible depending on your income and whether you have a workplace retirement plan. For 2026, the contribution limit is $7,000, or $8,000 if you're 50 or older. Hoot! Even a partial deduction is worth claiming!" },
+                        { n:"21", t:"Student Loan Interest Deduction",           d:"You can deduct up to $2,500 of student loan interest you paid this year. This phases out at higher income levels, but most borrowers qualify for at least a partial deduction. The Professor says: Your lender will send you a Form 1098-E showing how much interest you paid!" },
+                        { n:"22", t:"Archer MSA Deduction",                      d:"Contributions to an Archer Medical Savings Account — an older form of tax-advantaged health account — are deductible here. These accounts are no longer open to new participants, but existing account holders can still contribute. Owl Wisdom: If you have one, use it!" },
+                        { n:"23", t:"Other Adjustments",                         d:"This catch-all line covers deductions like jury duty pay you turned over to your employer, contributions to Section 501(c)(18)(D) pension plans, and other less common adjustments. The Professor says: If you have a unique deduction with nowhere else to go, look here first!" },
+                        { n:"26", t:"Total Adjustments to Income",              d:"Add lines 11 through 23 and enter the total here. This grand total then flows to Line 10 of your main Form 1040 and directly reduces your Adjusted Gross Income. Hoot Hoot! The bigger this number, the lower your AGI — and a lower AGI means more credits and a smaller tax bill!" },
+                    ]
+                }
+            ];
+
+            const contentDiv = document.getElementById('tax-content');
+
+            sections.forEach(section => {
+                contentDiv.innerHTML += `<div class="section-break">${section.title}</div>`;
+                contentDiv.innerHTML += `<div class="section-note">🦉 <strong>Professor Owl says:</strong> ${section.note}</div>`;
+
+                section.lines.forEach((item, index) => {
+                    contentDiv.innerHTML += `
+                        <div class="tax-line">
+                            <div class="owl-col">
+                                <img src="${OWL}" alt="Professor Owl">
+                            </div>
+                            <div class="line-num-col">${item.n}</div>
+                            <div class="content-col">
+                                <h3>${item.t}</h3>
+                                <p>${item.d}</p>
+                                <p class="wisdom">
+                                    <a href="${LINK}">🦉 Owl Wisdom: Click here to automate Line ${item.n} &rarr;</a>
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+        </script>
+
+        <a href="https://is.gd/SRCKpA" class="cta-btn">FILE SCHEDULE 1 NOW AT E-FILE.COM →</a>
+
+        <footer style="text-align:center;padding:60px 20px;border-top:2px dashed var(--gold);">
+            <img src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png" style="width:120px;margin-bottom:20px;" alt="Professor Owl">
+            <p><strong>© 2026 Professor Owl's Programmatic SEO Engine</strong></p>
+            <p style="opacity:0.7;font-size:0.9rem;">Official affiliate partner of e-file.com. Schedule 1 (Form 1040) 2026 Edition. Always consult a tax professional for your specific situation.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
