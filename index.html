@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* Starry background */
   body::before {
     content: '';
     position: fixed;
@@ -44,7 +43,88 @@
     z-index: -2;
   }
 
-  /* ===== HEADER ===== */
+  /* ===== STICKY NAV ===== */
+  #quick-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 27, 62, 0.97);
+    border-bottom: 2px solid var(--gold);
+    backdrop-filter: blur(10px);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    padding: 8px 16px;
+  }
+  #quick-nav.visible { transform: translateY(0); }
+  .nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-inner span {
+    font-family: 'Fredoka One', cursive;
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+  .nav-jump {
+    background: rgba(245,197,24,0.12);
+    border: 1px solid rgba(245,197,24,0.35);
+    color: var(--light);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .nav-jump:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+
+  /* ===== FACT TICKER ===== */
+  #fact-ticker {
+    background: linear-gradient(90deg, #0a1530, #122b5e, #0a1530);
+    border-bottom: 1px solid rgba(245,197,24,0.3);
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    animation: tickerScroll 40s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  #fact-ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-item {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
+    color: #fef3c7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ticker-sep { color: var(--gold); font-size: 1.1rem; }
+  @keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ===== HERO ===== */
   .hero {
     text-align: center;
     padding: 40px 20px 20px;
@@ -64,8 +144,30 @@
     font-family: 'Patrick Hand', cursive;
     font-size: clamp(1rem, 2.5vw, 1.4rem);
     color: var(--light);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
+
+  /* Master toggle row */
+  .hero-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .master-toggle-btn {
+    background: rgba(245,197,24,0.12);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.95rem;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .master-toggle-btn:hover { background: var(--gold); color: var(--navy); }
 
   /* ===== OWL SVG ===== */
   .owl-container {
@@ -86,6 +188,20 @@
     50% { transform: translateY(-12px) rotate(1deg); }
   }
 
+  /* Owl blink animation */
+  .owl-eyelid {
+    transform-origin: center top;
+    transform-box: fill-box;
+    animation: owlBlink 5s ease-in-out infinite;
+  }
+  .owl-eyelid-right {
+    animation-delay: 0.04s;
+  }
+  @keyframes owlBlink {
+    0%, 90%, 100% { transform: scaleY(0); }
+    93%, 97%      { transform: scaleY(1); }
+  }
+
   /* ===== CTA BUTTON ===== */
   .cta-wrap { text-align: center; margin: 16px 0 8px; }
 
@@ -101,12 +217,17 @@
     box-shadow: 0 4px 20px rgba(255,50,50,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     letter-spacing: 0.5px;
+    animation: ctaPulse 2.5s ease-in-out infinite;
   }
   .cta-btn:hover {
     transform: translateY(-3px) scale(1.04);
     box-shadow: 0 8px 30px rgba(255,50,50,0.7);
+    animation: none;
   }
-  .cta-btn::before { content: "🖥️ "; }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(255,50,50,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
+    50%       { box-shadow: 0 4px 36px rgba(255,50,50,0.85), 0 0 0 8px rgba(255,50,50,0.12), inset 0 1px 0 rgba(255,255,255,0.2); }
+  }
 
   /* ===== COUNTDOWN BAR ===== */
   .countdown-bar {
@@ -152,8 +273,6 @@
     box-shadow: 0 8px 30px rgba(0,0,0,0.4);
   }
 
-  .intro-owl { font-size: 3rem; flex-shrink: 0; animation: owlFloat 3s ease-in-out infinite; }
-
   .intro-text h2 {
     font-family: 'Fredoka One', cursive;
     color: var(--gold);
@@ -167,16 +286,19 @@
     max-width: 860px;
     margin: 40px auto 16px;
     padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
   }
   .section-header h2 {
     font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
     color: var(--gold);
     border-bottom: 3px solid var(--gold);
-    padding-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding-bottom: 6px;
+    flex: 1;
+    min-width: 0;
   }
 
   /* ===== LINE CARDS ===== */
@@ -189,6 +311,7 @@
     gap: 18px;
   }
 
+  /* Scroll-reveal */
   .line-card {
     background: linear-gradient(135deg, #122b5e 0%, #1a3a6e 100%);
     border-radius: 18px;
@@ -196,21 +319,24 @@
     padding: 0;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.5s ease, translate 0.5s ease;
+    opacity: 0;
+    translate: 0 24px;
   }
+  .line-card.revealed { opacity: 1; translate: 0 0; }
   .line-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
 
-  .line-card.green-accent { border-left-color: var(--green); }
-  .line-card.red-accent { border-left-color: var(--red); }
-  .line-card.amber-accent { border-left-color: var(--amber); }
-  .line-card.blue-accent { border-left-color: #60a5fa; }
+  .line-card.green-accent  { border-left-color: var(--green); }
+  .line-card.red-accent    { border-left-color: var(--red); }
+  .line-card.amber-accent  { border-left-color: var(--amber); }
+  .line-card.blue-accent   { border-left-color: #60a5fa; }
   .line-card.purple-accent { border-left-color: #a78bfa; }
 
   .line-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 16px 20px;
+    gap: 10px;
+    padding: 14px 16px;
     cursor: pointer;
     user-select: none;
   }
@@ -219,56 +345,66 @@
     background: var(--gold);
     color: var(--navy);
     font-family: 'Fredoka One', cursive;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     padding: 4px 10px;
     border-radius: 8px;
     white-space: nowrap;
     flex-shrink: 0;
   }
-  .line-card.green-accent .line-num { background: var(--green); }
-  .line-card.red-accent .line-num { background: var(--red); color: white; }
-  .line-card.amber-accent .line-num { background: var(--amber); }
-  .line-card.blue-accent .line-num { background: #60a5fa; color: var(--navy); }
+  .line-card.green-accent .line-num  { background: var(--green); color: #052e16; }
+  .line-card.red-accent .line-num    { background: var(--red); color: white; }
+  .line-card.amber-accent .line-num  { background: var(--amber); color: var(--navy); }
+  .line-card.blue-accent .line-num   { background: #60a5fa; color: var(--navy); }
   .line-card.purple-accent .line-num { background: #a78bfa; color: var(--navy); }
 
   .line-title {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.1rem;
+    font-size: clamp(0.88rem, 2.2vw, 1.05rem);
     color: var(--white);
     flex: 1;
+    min-width: 0;
+    line-height: 1.3;
   }
 
-  .line-emoji { font-size: 1.4rem; flex-shrink: 0; }
+  .line-emoji { font-size: 1.3rem; flex-shrink: 0; }
 
   .toggle-btn {
     background: rgba(255,255,255,0.1);
     border: none;
     color: var(--gold);
-    font-size: 1.2rem;
-    width: 30px;
-    height: 30px;
+    font-size: 1rem;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s, transform 0.3s;
+    transition: background 0.2s, transform 0.35s;
     flex-shrink: 0;
   }
   .toggle-btn.open { transform: rotate(180deg); background: rgba(245,197,24,0.2); }
 
+  /* Smooth accordion */
   .line-body {
-    display: none;
-    padding: 0 20px 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s ease;
+    padding: 0 20px;
+    border-top: 0px solid rgba(255,255,255,0.08);
   }
-  .line-body.open { display: block; }
+  .line-body.open {
+    max-height: 1200px;
+    padding: 0 20px 20px;
+    border-top-width: 1px;
+  }
+  .line-body-inner { padding-top: 14px; }
 
   .line-explain {
     font-size: 1rem;
     color: var(--light);
     line-height: 1.7;
-    margin: 14px 0 10px;
+    margin-bottom: 10px;
   }
 
   .what-you-need {
@@ -295,7 +431,6 @@
   }
   .what-you-need li::before { content: "→"; color: var(--gold); flex-shrink: 0; }
 
-  /* Owl speech bubble */
   .owl-tip {
     background: linear-gradient(135deg, #0d2a1a, #0f3822);
     border: 2px solid var(--green);
@@ -305,27 +440,11 @@
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    position: relative;
   }
-  .owl-tip::before {
-    content: "🦉";
-    font-size: 1.6rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+  .owl-tip::before { content: "🦉"; font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
   .owl-tip-content { flex: 1; }
-  .owl-tip-label {
-    font-family: 'Fredoka One', cursive;
-    color: var(--green);
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-  }
-  .owl-tip-text {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1rem;
-    color: #d1fae5;
-    line-height: 1.5;
-  }
+  .owl-tip-label { font-family: 'Fredoka One', cursive; color: var(--green); font-size: 0.85rem; margin-bottom: 4px; }
+  .owl-tip-text { font-family: 'Patrick Hand', cursive; font-size: 1rem; color: #d1fae5; line-height: 1.5; }
 
   .warning-tip {
     background: linear-gradient(135deg, #2d1400, #3d1f00);
@@ -362,6 +481,7 @@
     max-width: 860px;
     margin: 48px auto 20px;
     padding: 0 16px;
+    scroll-margin-top: 56px;
   }
   .part-divider-inner {
     background: linear-gradient(90deg, var(--gold), var(--amber), var(--gold));
@@ -373,10 +493,122 @@
   }
   .part-divider-inner h3 {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
     color: var(--navy);
   }
   .part-divider-inner span { font-size: 2rem; }
+
+  /* ===== REFUND INFOGRAPHIC ===== */
+  .infographic-wrap {
+    max-width: 860px;
+    margin: 0 auto 20px;
+    padding: 0 16px;
+  }
+  .infographic {
+    background: linear-gradient(135deg, #0d1f4a, #122b5e);
+    border: 2px solid rgba(245,197,24,0.4);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .infographic h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .flow-box {
+    background: rgba(255,255,255,0.06);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 14px 16px;
+    min-width: 110px;
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+  }
+  .flow-box .fb-icon { font-size: 1.8rem; }
+  .flow-box .fb-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.8rem;
+    color: #aac4e8;
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+  .flow-box .fb-val {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+  .flow-arrow {
+    font-size: 1.5rem;
+    color: rgba(245,197,24,0.5);
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+  .flow-split {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .flow-outcome {
+    flex: 1;
+    min-width: 180px;
+    max-width: 260px;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+  .flow-outcome.refund {
+    background: linear-gradient(135deg, #052e16, #0a3d20);
+    border: 2px solid var(--green);
+  }
+  .flow-outcome.owe {
+    background: linear-gradient(135deg, #2d0a0a, #3d1010);
+    border: 2px solid var(--red);
+  }
+  .flow-outcome .fo-icon { font-size: 2rem; }
+  .flow-outcome .fo-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    margin: 6px 0 4px;
+  }
+  .flow-outcome.refund .fo-title { color: var(--green); }
+  .flow-outcome.owe .fo-title { color: var(--red); }
+  .flow-outcome .fo-desc {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
+    color: #d1fae5;
+    line-height: 1.4;
+  }
+  .flow-outcome.owe .fo-desc { color: #fecaca; }
+  .flow-compare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 16px 0 4px;
+    flex-wrap: wrap;
+  }
+  .compare-chip {
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9rem;
+  }
+  .compare-chip.green-chip { background: rgba(34,197,94,0.15); border: 1.5px solid var(--green); color: var(--green); }
+  .compare-chip.red-chip   { background: rgba(239,68,68,0.15); border: 1.5px solid var(--red); color: #fca5a5; }
+  .compare-vs { font-family: 'Fredoka One', cursive; color: var(--gold); font-size: 1.1rem; }
 
   /* ===== FOOTER ===== */
   footer {
@@ -414,13 +646,6 @@
   #back-top:hover { transform: scale(1.1); }
   #back-top.show { display: flex; }
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    .intro-card { flex-direction: column; }
-    .line-title { font-size: 0.95rem; }
-    .countdown-bar { font-size: 0.9rem; }
-  }
-
   /* Progress bar */
   .progress-wrap {
     max-width: 860px;
@@ -447,7 +672,6 @@
     transition: width 0.4s ease;
   }
 
-  /* Highlight box */
   .highlight-box {
     background: rgba(245,197,24,0.08);
     border: 1px solid rgba(245,197,24,0.3);
@@ -458,72 +682,97 @@
     color: #fef3c7;
   }
 
-  /* Expand all btn */
   .expand-all-btn {
     background: transparent;
     border: 2px solid var(--gold);
     color: var(--gold);
     font-family: 'Fredoka One', cursive;
-    font-size: 1rem;
-    padding: 8px 20px;
+    font-size: 0.9rem;
+    padding: 6px 16px;
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    margin-top: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .expand-all-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 600px) {
+    .intro-card { flex-direction: column; }
+    .countdown-bar { font-size: 0.85rem; padding: 10px 12px; gap: 8px; }
+    .cd-sep { display: none; }
+    .cd-value { font-size: 1.1rem; }
+    .line-header { gap: 8px; padding: 12px 12px; }
+    .line-emoji { display: none; }
+    .line-body { padding-left: 12px; padding-right: 12px; }
+    .line-body.open { padding-left: 12px; padding-right: 12px; padding-bottom: 16px; }
+    .part-divider-inner { padding: 12px 16px; gap: 10px; }
+    .part-divider-inner span { font-size: 1.4rem; }
+    .nav-inner span { display: none; }
+    .flow-box { min-width: 80px; padding: 10px 8px; }
+    .flow-row { gap: 2px; }
+    .flow-arrow { padding: 0 2px; font-size: 1.1rem; }
+    .hero-controls { gap: 8px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ===== STICKY QUICK-JUMP NAV ===== -->
+<nav id="quick-nav">
+  <div class="nav-inner">
+    <span>🦉 Jump:</span>
+    <button class="nav-jump" onclick="jumpTo('part1-anchor')">📋 Personal Info</button>
+    <button class="nav-jump" onclick="jumpTo('part2-anchor')">💰 Income</button>
+    <button class="nav-jump" onclick="jumpTo('part3-anchor')">✂️ Adjustments</button>
+    <button class="nav-jump" onclick="jumpTo('part4-anchor')">🎁 Credits</button>
+    <button class="nav-jump" onclick="jumpTo('part5-anchor')">💵 Payments</button>
+    <button class="nav-jump" onclick="jumpTo('part6-anchor')">🎉 Refund/Owe</button>
+    <button class="nav-jump" onclick="jumpTo('part7-anchor')">✍️ Sign</button>
+  </div>
+</nav>
+
+<!-- ===== FACT TICKER ===== -->
+<div id="fact-ticker">
+  <div class="ticker-track" id="ticker-track">
+    <!-- filled by JS -->
+  </div>
+</div>
 
 <!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-title">🦉 Professor Owl's<br>IRS Form 1040 Guide</div>
   <div class="hero-sub">Your Friendly Feathered Guide to Filing Taxes for the Very First Time!</div>
 
-  <!-- OWL SVG -->
+  <div class="hero-controls">
+    <button class="master-toggle-btn" id="master-btn" onclick="masterToggle()">⊕ Expand All Sections</button>
+  </div>
+
+  <!-- OWL SVG with blinking eyelids -->
   <div class="owl-container">
     <svg class="owl-svg" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
-      <!-- Graduation cap shadow -->
       <ellipse cx="90" cy="50" rx="60" ry="6" fill="rgba(0,0,0,0.2)"/>
-      <!-- Graduation cap brim -->
       <rect x="40" y="42" width="100" height="10" rx="5" fill="#111"/>
-      <!-- Cap top -->
       <rect x="62" y="14" width="56" height="34" rx="6" fill="#1a1a1a"/>
-      <!-- Cap tassel string -->
       <line x1="140" y1="47" x2="148" y2="72" stroke="#f5c518" stroke-width="2.5"/>
-      <!-- Tassel -->
       <rect x="144" y="72" width="8" height="16" rx="3" fill="#f5c518"/>
       <line x1="146" y1="88" x2="143" y2="100" stroke="#f5c518" stroke-width="1.5"/>
       <line x1="148" y1="88" x2="148" y2="101" stroke="#f5c518" stroke-width="1.5"/>
       <line x1="150" y1="88" x2="153" y2="100" stroke="#f5c518" stroke-width="1.5"/>
-
-      <!-- Body main -->
       <ellipse cx="90" cy="148" rx="58" ry="70" fill="#8b5e3c"/>
-      <!-- Belly -->
       <ellipse cx="90" cy="155" rx="36" ry="48" fill="#c9935a"/>
-      <!-- Belly stripes -->
       <ellipse cx="90" cy="155" rx="28" ry="38" fill="none" stroke="#a07040" stroke-width="1.5" opacity="0.5"/>
       <ellipse cx="90" cy="155" rx="18" ry="26" fill="none" stroke="#a07040" stroke-width="1.2" opacity="0.4"/>
-
-      <!-- Wings -->
       <ellipse cx="38" cy="145" rx="20" ry="40" fill="#7a5230" transform="rotate(-10 38 145)"/>
       <ellipse cx="142" cy="145" rx="20" ry="40" fill="#7a5230" transform="rotate(10 142 145)"/>
-
-      <!-- Wing feather tips left -->
       <path d="M22 175 Q18 190 25 200 Q30 185 35 180Z" fill="#6a4520"/>
       <path d="M30 180 Q28 195 36 205 Q40 190 44 183Z" fill="#6a4520"/>
-      <!-- Wing feather tips right -->
       <path d="M158 175 Q162 190 155 200 Q150 185 145 180Z" fill="#6a4520"/>
       <path d="M150 180 Q152 195 144 205 Q140 190 136 183Z" fill="#6a4520"/>
-
-      <!-- Head -->
       <ellipse cx="90" cy="90" rx="48" ry="46" fill="#8b5e3c"/>
-
-      <!-- Ear tufts -->
       <polygon points="58,52 52,28 68,48" fill="#7a5230"/>
       <polygon points="122,52 128,28 112,48" fill="#7a5230"/>
-
       <!-- Eye whites -->
       <circle cx="72" cy="90" r="17" fill="white"/>
       <circle cx="108" cy="90" r="17" fill="white"/>
@@ -536,28 +785,24 @@
       <!-- Eye shine -->
       <circle cx="77" cy="87" r="2.5" fill="white"/>
       <circle cx="113" cy="87" r="2.5" fill="white"/>
-
+      <!-- Eyelids (animated) -->
+      <rect class="owl-eyelid" x="55" y="73" width="34" height="18" rx="9" fill="#8b5e3c"/>
+      <rect class="owl-eyelid owl-eyelid-right" x="91" y="73" width="34" height="18" rx="9" fill="#8b5e3c"/>
       <!-- Beak -->
       <polygon points="90,96 82,108 98,108" fill="#e8a800"/>
       <line x1="82" y1="102" x2="98" y2="102" stroke="#c8900a" stroke-width="1.5"/>
-
-      <!-- Facial disk ring -->
+      <!-- Facial disk -->
       <ellipse cx="90" cy="90" rx="38" ry="36" fill="none" stroke="#c9935a" stroke-width="3" opacity="0.5"/>
-
       <!-- Feet -->
       <path d="M72 210 Q68 218 62 220 M72 210 Q72 218 70 222 M72 210 Q76 218 80 221" stroke="#d4a96a" stroke-width="3" stroke-linecap="round" fill="none"/>
       <path d="M108 210 Q104 218 98 220 M108 210 Q108 218 106 222 M108 210 Q112 218 116 221" stroke="#d4a96a" stroke-width="3" stroke-linecap="round" fill="none"/>
-
-      <!-- Legs -->
       <rect x="68" y="200" width="8" height="14" rx="4" fill="#c9935a"/>
       <rect x="104" y="200" width="8" height="14" rx="4" fill="#c9935a"/>
-
       <!-- Bow tie -->
       <polygon points="78,122 90,128 78,134" fill="#ef4444"/>
       <polygon points="102,122 90,128 102,134" fill="#ef4444"/>
       <circle cx="90" cy="128" r="5" fill="#cc0000"/>
-
-      <!-- Professor glasses -->
+      <!-- Glasses -->
       <circle cx="72" cy="90" r="17" fill="none" stroke="#333" stroke-width="2.5"/>
       <circle cx="108" cy="90" r="17" fill="none" stroke="#333" stroke-width="2.5"/>
       <line x1="89" y1="90" x2="91" y2="90" stroke="#333" stroke-width="2"/>
@@ -601,16 +846,23 @@
 
 <!-- Progress tracker -->
 <div class="progress-wrap">
-  <div class="progress-label">📊 Your Progress: <span id="progress-text">0 of 35 lines reviewed</span></div>
+  <div class="progress-label">📊 Your Progress: <span id="progress-text">0 of 41 lines reviewed</span></div>
   <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
 </div>
 
+<!-- ==================== PART 1 ==================== -->
+<div id="part1-anchor" class="part-divider" style="margin-top:20px;">
+  <div class="part-divider-inner">
+    <span>📋</span>
+    <h3>PART 1 — Your Personal Information</h3>
+  </div>
+</div>
+
 <div class="section-header">
-  <h2>📋 PART 1 — Your Personal Information</h2>
+  <h2>📋 Personal Information</h2>
   <button class="expand-all-btn" onclick="expandSection('part1')">Expand All ↓</button>
 </div>
 
-<!-- ===== LINES CONTAINER ===== -->
 <div class="lines-container" id="part1">
 
   <div class="line-card green-accent" data-line="1">
@@ -621,6 +873,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">The very top of Form 1040 asks for your full legal name (first, middle initial, last), your current home address, city, state, and ZIP code. This is also where you enter your <strong>Social Security Number (SSN)</strong> — or Individual Taxpayer Identification Number (ITIN) if you don't have an SSN.</p>
       <div class="what-you-need">
         <h4>What You Need</h4>
@@ -637,6 +890,7 @@
         </div>
       </div>
       <div class="warning-tip">If your name doesn't exactly match what's on file with the Social Security Administration (SSA), your return could be delayed!</div>
+      </div>
     </div>
   </div>
 
@@ -648,6 +902,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">You must choose ONE filing status. This affects your tax rates and deductions — so pick carefully!</p>
       <div class="what-you-need">
         <h4>The 5 Filing Statuses</h4>
@@ -665,6 +920,7 @@
           <div class="owl-tip-text">"Most first-timers are Single — just check that box! If you're married, Married Filing Jointly almost always gives you a bigger refund. Head of Household is great for single parents — don't miss it if you qualify!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -676,7 +932,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">A <strong>dependent</strong> is someone who relies on you financially — usually a child under 19 (or under 24 if a full-time student), or a qualifying relative you support. For each dependent you list: their name, SSN, relationship to you, and check the correct box.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">A <strong>dependent</strong> is someone who relies on you financially — usually a child under 19 (or under 24 if a full-time student), or a qualifying relative you support.</p>
       <div class="what-you-need">
         <h4>What You Need</h4>
         <ul>
@@ -692,13 +949,14 @@
         </div>
       </div>
       <div class="pro-tip">Only one parent can claim a child per year. If you're divorced or separated, make sure you and your ex agree on who claims the kids!</div>
+      </div>
     </div>
   </div>
 
 </div><!-- end part1 -->
 
-<!-- PART 2 -->
-<div class="part-divider">
+<!-- ==================== PART 2 ==================== -->
+<div id="part2-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>💰</span>
     <h3>PART 2 — Income: Everything You Earned This Year</h3>
@@ -720,7 +978,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">This is the most common line — it's the total money you earned from <strong>regular jobs</strong>. Look at your W-2 form (your employer sends this by January 31). Find <strong>Box 1</strong> on your W-2 — that number goes here on Line 1a. If you had multiple jobs, add all Box 1 amounts together.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">This is the most common line — it's the total money you earned from <strong>regular jobs</strong>. Look at your W-2 form (your employer sends this by January 31). Find <strong>Box 1</strong> on your W-2 — that number goes here on Line 1a.</p>
       <div class="what-you-need">
         <h4>What You Need</h4>
         <ul>
@@ -737,6 +996,7 @@
         </div>
       </div>
       <div class="warning-tip">Don't confuse Box 1 with Box 3 (Social Security wages) or Box 5 (Medicare wages) — they're different numbers!</div>
+      </div>
     </div>
   </div>
 
@@ -748,16 +1008,17 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">These lines cover special types of wages that need to be reported separately:</p>
       <div class="what-you-need">
         <h4>Each Sub-Line</h4>
         <ul>
           <li><strong>1b</strong> — Household employee wages (nannies, housekeepers paid $2,600+)</li>
-          <li><strong>1c</strong> — Tips not reported on W-2 (cash tips you received but employer didn't include)</li>
-          <li><strong>1d</strong> — Medicaid waiver payments (if you care for a family member at home)</li>
+          <li><strong>1c</strong> — Tips not reported on W-2 (cash tips you received)</li>
+          <li><strong>1d</strong> — Medicaid waiver payments</li>
           <li><strong>1e</strong> — Taxable dependent care benefits from Form 2441</li>
           <li><strong>1f</strong> — Employer adoption benefits from Form 8839</li>
-          <li><strong>1g</strong> — Wages from Form 8919 (uncollected SS/Medicare tax)</li>
+          <li><strong>1g</strong> — Wages from Form 8919</li>
           <li><strong>1h</strong> — Other earned income (prizes, awards, taxable scholarships)</li>
           <li><strong>1z</strong> — Add all lines 1a–1h for your total wages</li>
         </ul>
@@ -767,6 +1028,7 @@
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Most first-time filers only fill in 1a and skip to 1z. Only fill the sub-lines that apply to your situation!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -779,12 +1041,13 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Did your bank pay you interest on your savings account? That counts as income! Your bank will send you a <strong>1099-INT</strong> form if you earned $10 or more in interest.</p>
       <div class="what-you-need">
         <h4>The Two Interest Lines</h4>
         <ul>
-          <li><strong>Line 2a</strong> — Tax-EXEMPT interest (like interest from municipal bonds — you report it but don't pay tax on it)</li>
-          <li><strong>Line 2b</strong> — TAXABLE interest (regular bank savings interest — you pay tax on this)</li>
+          <li><strong>Line 2a</strong> — Tax-EXEMPT interest (like interest from municipal bonds)</li>
+          <li><strong>Line 2b</strong> — TAXABLE interest (regular bank savings interest)</li>
         </ul>
       </div>
       <div class="highlight-box">📄 <strong>Example:</strong> Your bank sends you a 1099-INT showing $85 in interest. Write $85 on Line 2b.</div>
@@ -793,6 +1056,7 @@
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Even a tiny $10 of bank interest must be reported! If you earned more than $1,500 total in interest, you'll also need to fill out Schedule B."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -805,6 +1069,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If you own stocks, mutual funds, or ETFs that paid you dividends, report them here. You'll get a <strong>1099-DIV</strong> from your brokerage.</p>
       <div class="what-you-need">
         <h4>The Two Dividend Lines</h4>
@@ -819,6 +1084,7 @@
           <div class="owl-tip-text">"Qualified dividends are taxed at 0%, 15%, or 20% — much lower than regular income! Always make sure you fill in Line 3a correctly so you don't overpay."</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -830,20 +1096,22 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Did you take money OUT of a traditional IRA or other retirement account this year? That's called a <strong>distribution</strong>. You'll receive a <strong>1099-R</strong> form showing the amount.</p>
       <div class="what-you-need">
         <h4>The Two Lines</h4>
         <ul>
           <li><strong>Line 4a</strong> — Total IRA distributions you received</li>
-          <li><strong>Line 4b</strong> — The TAXABLE portion (usually the same unless you made nondeductible contributions)</li>
+          <li><strong>Line 4b</strong> — The TAXABLE portion</li>
         </ul>
       </div>
-      <div class="warning-tip">If you're under age 59½ and withdrew from an IRA, you'll likely owe a 10% penalty PLUS regular income tax on that amount. Ouch! 🦉 Only take retirement money early if you truly need it.</div>
+      <div class="warning-tip">If you're under age 59½ and withdrew from an IRA, you'll likely owe a 10% penalty PLUS regular income tax on that amount. Ouch!</div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"First-time filers usually leave these blank. Only fill them in if you actually took money from a retirement account this year."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -856,7 +1124,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">If you receive a pension from a former employer or annuity payments, report them here. You'll get a <strong>1099-R</strong> form (same form used for IRA distributions).</p>
+      <div class="line-body-inner">
+      <p class="line-explain">If you receive a pension from a former employer or annuity payments, report them here. You'll get a <strong>1099-R</strong> form.</p>
       <div class="what-you-need">
         <h4>The Two Lines</h4>
         <ul>
@@ -870,6 +1139,7 @@
           <div class="owl-tip-text">"If you contributed after-tax money to your pension, part of your payments may NOT be taxable — that's the difference between 5a and 5b!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -881,6 +1151,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If you received Social Security benefits, the SSA sends you a <strong>Form SSA-1099</strong> each January. Not all of your Social Security is taxable — it depends on your total income.</p>
       <div class="what-you-need">
         <h4>The Two Lines</h4>
@@ -892,8 +1163,9 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"If Social Security is your only income, you likely owe ZERO tax! But if you have other income too, up to 85% of your benefits could be taxable. Tax software will calculate this for you automatically."</div>
+          <div class="owl-tip-text">"If Social Security is your only income, you likely owe ZERO tax! But if you have other income too, up to 85% of your benefits could be taxable."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -906,6 +1178,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If you sold stocks, bonds, real estate, crypto, or other investments during the year, you have a <strong>capital gain or loss</strong>. You'll need to complete <strong>Schedule D</strong> first, then the total flows to Line 7.</p>
       <div class="what-you-need">
         <h4>Key Concepts</h4>
@@ -922,6 +1195,7 @@
           <div class="owl-tip-text">"Didn't sell any investments this year? Leave Line 7 blank! This only applies if you actually sold something."</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -933,6 +1207,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">This catch-all line captures income that doesn't fit anywhere else. You'll use <strong>Schedule 1</strong> to list it all, and the total flows here to Line 8.</p>
       <div class="what-you-need">
         <h4>Common "Other Income" Sources</h4>
@@ -953,6 +1228,7 @@
           <div class="owl-tip-text">"The IRS gets copies of your 1099s automatically. If you leave income off your return and the IRS has a 1099 on file, you'll get a letter — and possibly a penalty. When in doubt, report it!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -964,6 +1240,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">This is simply the sum of all your income lines (Lines 1z through 8). Add them all together. This is your <strong>gross income before any deductions</strong>.</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 1z + Line 2b + Line 3b + Line 4b + Line 5b + Line 6b + Line 7 + Line 8 = <strong>Line 9 (Total Income)</strong></div>
       <div class="owl-tip">
@@ -972,13 +1249,14 @@
           <div class="owl-tip-text">"Tax software does this math automatically. If you're doing it by hand, double-check your addition — adding mistakes here will throw off your ENTIRE return!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
 </div><!-- end part2 -->
 
-<!-- PART 3 -->
-<div class="part-divider">
+<!-- ==================== PART 3 ==================== -->
+<div id="part3-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>📉</span>
     <h3>PART 3 — Adjustments That Lower Your Income</h3>
@@ -1000,7 +1278,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">These are called "<strong>above-the-line</strong>" deductions because you get them even if you DON'T itemize. They come from <strong>Schedule 1, Part II</strong>. Common ones include:</p>
+      <div class="line-body-inner">
+      <p class="line-explain">These are called "<strong>above-the-line</strong>" deductions because you get them even if you DON'T itemize. They come from <strong>Schedule 1, Part II</strong>.</p>
       <div class="what-you-need">
         <h4>Common Adjustments</h4>
         <ul>
@@ -1019,6 +1298,7 @@
           <div class="owl-tip-text">"Student loan interest is the big one for young filers! If you paid interest on your student loans this year, your lender sends you Form 1098-E. Up to $2,500 can come right off your income — no itemizing needed!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -1030,6 +1310,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Your <strong>AGI</strong> is one of the most important numbers on your return. The IRS uses it to determine if you qualify for many deductions and credits.</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 9 (Total Income) − Line 10 (Adjustments) = <strong>Line 11 (AGI)</strong></div>
       <div class="what-you-need">
@@ -1047,6 +1328,7 @@
           <div class="owl-tip-text">"Save your AGI! Next year when you file, the IRS will ask for this year's AGI to verify it's really you. Write it down somewhere safe!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -1058,6 +1340,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">This is where you reduce your AGI by either taking the <strong>Standard Deduction</strong> (a flat amount based on filing status) OR listing your actual deductions on <strong>Schedule A</strong> (Itemized). You pick whichever is LARGER.</p>
       <div class="what-you-need">
         <h4>2024 Standard Deduction Amounts</h4>
@@ -1083,6 +1366,7 @@
           <div class="owl-tip-text">"About 90% of filers take the Standard Deduction — it's simple and usually bigger! Only itemize if your mortgage interest + donations + state taxes add up to MORE than your standard deduction amount."</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -1094,7 +1378,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">If you're self-employed, a freelancer, or own a small business (as a sole proprietor, partnership, or S-corp), you may deduct up to <strong>20% of your qualified business income</strong>. Use <strong>Form 8995</strong> to calculate this amount.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">If you're self-employed, a freelancer, or own a small business, you may deduct up to <strong>20% of your qualified business income</strong>. Use <strong>Form 8995</strong> to calculate this amount.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
@@ -1102,6 +1387,7 @@
         </div>
       </div>
       <div class="pro-tip">If you're an employee (have a W-2) and NOT self-employed, leave Line 13 blank.</div>
+      </div>
     </div>
   </div>
 
@@ -1113,6 +1399,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">This is the final income number after all deductions. This is what the IRS uses to calculate your actual tax bill.</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 11 (AGI) − Line 12 (Standard/Itemized Deduction) − Line 13 (QBI) = <strong>Line 14 (Taxable Income)</strong></div>
       <div class="owl-tip">
@@ -1122,6 +1409,7 @@
         </div>
       </div>
       <div class="warning-tip">If Line 14 comes out to zero or less, you owe NO federal income tax! Many low-income and part-time workers end up here.</div>
+      </div>
     </div>
   </div>
 
@@ -1133,7 +1421,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">The IRS uses your Taxable Income (Line 14) and your filing status to determine how much tax you owe. You look this up in the IRS <strong>Tax Tables</strong> (in the Form 1040 instructions) OR let tax software do it instantly.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">The IRS uses your Taxable Income (Line 14) and your filing status to determine how much tax you owe using the IRS <strong>Tax Tables</strong> or tax software.</p>
       <div class="what-you-need">
         <h4>2024 Tax Brackets (Single Filer)</h4>
         <ul>
@@ -1149,24 +1438,25 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"The US has a PROGRESSIVE tax system — you don't pay your top rate on ALL your income! If you're in the 22% bracket, you still pay 10% on the first $11,600 and 12% on the next chunk. Tax software handles this automatically!"</div>
+          <div class="owl-tip-text">"The US has a PROGRESSIVE tax system — you don't pay your top rate on ALL your income! If you're in the 22% bracket, you still pay 10% on the first $11,600 and 12% on the next chunk."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
 
 </div><!-- end part3 -->
 
-<!-- PART 4 -->
-<div class="part-divider">
+<!-- ==================== PART 4 ==================== -->
+<div id="part4-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>🎁</span>
-    <h3>PART 4 — Credits & Other Taxes</h3>
+    <h3>PART 4 — Credits &amp; Other Taxes</h3>
   </div>
 </div>
 
 <div class="section-header">
-  <h2>💳 Lines 16–24: Credits, Other Taxes & Total Tax</h2>
+  <h2>💳 Lines 16–24: Credits, Other Taxes &amp; Total Tax</h2>
   <button class="expand-all-btn" onclick="expandSection('part4')">Expand All ↓</button>
 </div>
 
@@ -1180,12 +1470,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">If you had capital gains and completed Schedule D, a portion of your tax may be calculated using the <strong>Qualified Dividends and Capital Gain Tax Worksheet</strong> instead of the regular tax tables. Your tax software handles this automatically.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">If you had capital gains and completed Schedule D, a portion of your tax may be calculated using the <strong>Qualified Dividends and Capital Gain Tax Worksheet</strong>. Your tax software handles this automatically.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Don't be intimidated! If you use e-file.com or any tax software, it automatically picks the right worksheet. You just enter your 1099-DIV and 1099-B numbers and the software does the rest."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1198,12 +1490,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">The AMT is a parallel tax system designed to make sure high-income filers pay a minimum amount. For most people earning under $100,000, this is $0.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"If you're a first-time filer earning a regular salary, you almost certainly don't owe AMT. Tax software will check automatically. Don't lose sleep over this one!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1216,12 +1510,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Simply add Line 16 + Line 17. This is your total tax before any credits are applied. Now comes the good part — reducing this number with credits!</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Think of Line 18 as the 'before discount' price. The next few lines are your coupons! Credits can dramatically reduce this number — sometimes to zero!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1234,7 +1530,8 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">This is one of the most valuable credits available! For each qualifying child under 17, you can get up to <strong>$2,000</strong> in credit. For other qualifying dependents (like elderly parents), you can get <strong>$500</strong>.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">This is one of the most valuable credits available! For each qualifying child under 17, you can get up to <strong>$2,000</strong> in credit. For other qualifying dependents, you can get <strong>$500</strong>.</p>
       <div class="what-you-need">
         <h4>To Qualify for Child Tax Credit:</h4>
         <ul>
@@ -1247,8 +1544,9 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Two kids? That's potentially $4,000 in credits right there! This is why listing dependents on the first page is SO important. Use Schedule 8812 to calculate the exact credit."</div>
+          <div class="owl-tip-text">"Two kids? That's potentially $4,000 in credits right there! Use Schedule 8812 to calculate the exact credit."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1256,12 +1554,13 @@
   <div class="line-card amber-accent" data-line="24">
     <div class="line-header" onclick="toggleCard(this)">
       <span class="line-num">Line 20</span>
-      <span class="line-title">Schedule 3 Credits — Education, Child Care, Foreign Tax & More</span>
+      <span class="line-title">Schedule 3 Credits — Education, Child Care, Foreign Tax &amp; More</span>
       <span class="line-emoji">🎓</span>
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">Schedule 3 is where additional credits live. The total from Schedule 3 Line 8 flows to Line 20 here. Important credits on Schedule 3 include:</p>
+      <div class="line-body-inner">
+      <p class="line-explain">Schedule 3 is where additional credits live. Important credits on Schedule 3 include:</p>
       <div class="what-you-need">
         <h4>Key Schedule 3 Credits</h4>
         <ul>
@@ -1275,8 +1574,9 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"The American Opportunity Credit is GOLD for college students! Up to $2,500 per student per year for the first 4 years of college, AND up to 40% is refundable — meaning you can get money back even if you owe nothing!"</div>
+          <div class="owl-tip-text">"The American Opportunity Credit is GOLD for college students! Up to $2,500 per student per year for the first 4 years of college, AND up to 40% is refundable!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1289,13 +1589,15 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">Subtract your credits from your tax. If the result is zero or below, you owe no income tax! (It won't go below zero here — refundable credits are handled later.)</p>
+      <div class="line-body-inner">
+      <p class="line-explain">Subtract your credits from your tax. If the result is zero or below, you owe no income tax!</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 18 − Line 19 − Line 20 = <strong>Line 21 (Tax After Credits)</strong></div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"If Line 21 is zero, hoot-hoot! You've eliminated your entire income tax liability with credits! But keep going — you may still be owed a refund if you had withholding."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1308,22 +1610,24 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Some people owe taxes beyond regular income tax. These come from <strong>Schedule 2, Part II</strong>. Common ones:</p>
       <div class="what-you-need">
         <h4>Common Other Taxes</h4>
         <ul>
-          <li><strong>Self-employment tax</strong> — 15.3% on net self-employment income (covers Social Security & Medicare). Use Schedule SE.</li>
+          <li><strong>Self-employment tax</strong> — 15.3% on net self-employment income. Use Schedule SE.</li>
           <li><strong>Additional Medicare tax</strong> — Extra 0.9% if you earn over $200,000 (single)</li>
           <li><strong>Net Investment Income Tax</strong> — Extra 3.8% on investment income over threshold</li>
-          <li><strong>Early retirement distribution penalty</strong> — 10% extra if you withdrew from retirement before age 59½</li>
+          <li><strong>Early retirement distribution penalty</strong> — 10% extra if you withdrew before age 59½</li>
         </ul>
       </div>
-      <div class="warning-tip">Self-employed filers pay BOTH the employee AND employer portions of Social Security and Medicare — that's 15.3% on top of income tax! BUT you get to deduct half of it on Schedule 1 (Line 10).</div>
+      <div class="warning-tip">Self-employed filers pay BOTH the employee AND employer portions of Social Security and Medicare — that's 15.3% on top of income tax!</div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"If you freelanced or did gig work and earned more than $400, you must pay self-employment tax. Many first-timers are shocked by this — set aside 25-30% of your freelance income throughout the year to avoid a surprise bill!"</div>
+          <div class="owl-tip-text">"If you freelanced and earned more than $400, you must pay self-employment tax. Set aside 25-30% of your freelance income throughout the year to avoid a surprise bill!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1336,6 +1640,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">This is the final tax amount you owe before considering what you've already paid. Add Line 21 + Line 22 + Line 23.</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 21 + Line 22 + Line 23 = <strong>Line 24 (Total Tax)</strong></div>
       <div class="owl-tip">
@@ -1344,13 +1649,14 @@
           <div class="owl-tip-text">"Line 24 is what you owe the government in TOTAL. Now we'll subtract what you've ALREADY paid — and find out if you get a refund or still owe money!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
 </div><!-- end part4 -->
 
-<!-- PART 5 -->
-<div class="part-divider">
+<!-- ==================== PART 5 ==================== -->
+<div id="part5-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>💵</span>
     <h3>PART 5 — Payments You've Already Made</h3>
@@ -1372,6 +1678,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Every paycheck, your employer withholds federal income tax and sends it to the IRS. This is YOUR money that's already been paid! You find this on your <strong>W-2 Box 2</strong> and any <strong>1099 forms</strong>.</p>
       <div class="what-you-need">
         <h4>Where to Find These Numbers</h4>
@@ -1385,8 +1692,9 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"This is like finding money you forgot you had! Most people get a refund because their employer withheld MORE than they actually owe. The bigger Line 25 is, the bigger your refund!"</div>
+          <div class="owl-tip-text">"This is like finding money you forgot you had! Most people get a refund because their employer withheld MORE than they actually owe."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1399,12 +1707,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">If you're self-employed, a freelancer, or had income with no withholding, you may have made quarterly estimated tax payments to the IRS using <strong>Form 1040-ES</strong>. Enter the total of all payments you made during the year.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">If you're self-employed or had income with no withholding, you may have made quarterly estimated tax payments to the IRS using <strong>Form 1040-ES</strong>. Enter the total of all payments you made during the year.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Regular employees: leave this blank! Self-employed folks: add up all 4 quarterly payments you made. You can verify your payments at IRS.gov or on your bank statements."</div>
+          <div class="owl-tip-text">"Regular employees: leave this blank! Self-employed folks: add up all 4 quarterly payments you made. You can verify your payments at IRS.gov."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1417,6 +1727,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">The <strong>Earned Income Tax Credit (EITC)</strong> is one of the most valuable credits for low-to-moderate income workers. It is <strong>refundable</strong> — meaning even if you owe ZERO tax, you still get this money as a refund!</p>
       <div class="what-you-need">
         <h4>2024 Maximum EITC Amounts</h4>
@@ -1430,10 +1741,11 @@
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"The EITC is worth THOUSANDS and millions of eligible people miss it every year! If you worked and earned under about $63,398, check if you qualify. Use the IRS EITC Assistant tool online or just use e-file.com and it'll check automatically!"</div>
+          <div class="owl-tip-text">"The EITC is worth THOUSANDS and millions of eligible people miss it every year! If you worked and earned under about $63,398, check if you qualify."</div>
         </div>
       </div>
       <div class="warning-tip">You MUST have earned income (wages, self-employment) to claim the EITC. Investment income cannot exceed $11,600 for 2024.</div>
+      </div>
     </div>
   </div>
 
@@ -1445,12 +1757,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If the Child Tax Credit (Line 19) was more than your tax liability, you may receive the excess as a <strong>refundable</strong> Additional Child Tax Credit — up to $1,700 per qualifying child. Calculate using <strong>Schedule 8812</strong>.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Even if you owe zero tax, you can still GET money from the Additional Child Tax Credit. It's like the government writing you a check for having kids! Always fill out Schedule 8812 if you have qualifying children."</div>
+          <div class="owl-tip-text">"Even if you owe zero tax, you can still GET money from the Additional Child Tax Credit. Always fill out Schedule 8812 if you have qualifying children."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1463,12 +1777,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">40% of the American Opportunity Credit is refundable (up to $1,000). This amount from <strong>Form 8863</strong> goes here. The other 60% was already counted as a nonrefundable credit on Line 20.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"College student with no tax liability? You can still receive up to $1,000 BACK from this credit. Always file a return if you're in college — even if you think you owe nothing!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1481,12 +1797,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">These lines capture additional payments and credits from <strong>Schedule 3, Part II</strong>. This includes credits like net premium tax credits (health insurance marketplace credits) and other refundable credits.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">These lines capture additional payments and credits from <strong>Schedule 3, Part II</strong>. This includes net premium tax credits (health insurance marketplace credits) and other refundable credits.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"If you bought health insurance through HealthCare.gov and received a premium tax credit advance, report it on Form 8962 and it'll flow here. Most first-timers can skip this!"</div>
+          <div class="owl-tip-text">"If you bought health insurance through HealthCare.gov and received a premium tax credit advance, report it on Form 8962. Most first-timers can skip this!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1499,6 +1817,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Add together Lines 25 through 32. This is the total of all your withholding, estimated payments, and refundable credits combined.</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Lines 25 + 26 + 27 + 28 + 29 + 31 + 32 = <strong>Line 33 (Total Payments)</strong></div>
       <div class="owl-tip">
@@ -1507,16 +1826,54 @@
           <div class="owl-tip-text">"The moment of truth is coming! Compare Line 33 to Line 24 and you'll know if you're getting money BACK or need to pay MORE. Let's find out!"</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
 </div><!-- end part5 -->
 
-<!-- PART 6 -->
-<div class="part-divider">
+<!-- ==================== PART 6 ==================== -->
+<div id="part6-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>🎉</span>
     <h3>PART 6 — The Big Moment: Refund or Amount Owed?</h3>
+  </div>
+</div>
+
+<!-- REFUND vs OWE INFOGRAPHIC -->
+<div class="infographic-wrap">
+  <div class="infographic">
+    <h3>🧮 How the IRS Determines Your Outcome</h3>
+    <div class="flow-row">
+      <div class="flow-box">
+        <div class="fb-icon">💵</div>
+        <div class="fb-label">Total Tax<br>(Line 24)</div>
+        <div class="fb-val">What you owe</div>
+      </div>
+      <div class="flow-arrow">vs</div>
+      <div class="flow-box">
+        <div class="fb-icon">💳</div>
+        <div class="fb-label">Total Payments<br>(Line 33)</div>
+        <div class="fb-val">What you paid</div>
+      </div>
+    </div>
+    <div class="flow-compare">
+      <div class="compare-chip green-chip">Line 33 &gt; Line 24</div>
+      <div class="compare-vs">or</div>
+      <div class="compare-chip red-chip">Line 24 &gt; Line 33</div>
+    </div>
+    <div class="flow-split">
+      <div class="flow-outcome refund">
+        <div class="fo-icon">🎉</div>
+        <div class="fo-title">You Get a REFUND!</div>
+        <div class="fo-desc">You overpaid. The IRS sends you the difference — choose direct deposit for funds in ~21 days.</div>
+      </div>
+      <div class="flow-outcome owe">
+        <div class="fo-icon">💳</div>
+        <div class="fo-title">You OWE the IRS</div>
+        <div class="fo-desc">You underpaid. Pay by the deadline to avoid penalties. Always FILE on time even if you can't pay!</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1530,18 +1887,20 @@
   <div class="line-card green-accent" data-line="35">
     <div class="line-header" onclick="toggleCard(this)">
       <span class="line-num">Line 34</span>
-      <span class="line-title">IF Line 33 > Line 24: You Have an Overpayment!</span>
+      <span class="line-title">IF Line 33 &gt; Line 24: You Have an Overpayment!</span>
       <span class="line-emoji">🎉</span>
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">If your total payments (Line 33) are MORE than your total tax (Line 24), you overpaid the IRS — and they owe YOU money! Subtract Line 24 from Line 33 to find your overpayment amount.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">If your total payments (Line 33) are MORE than your total tax (Line 24), you overpaid the IRS — and they owe YOU money!</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 33 − Line 24 = <strong>Line 34 (Amount Overpaid)</strong></div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Hoot hoot! Overpaid means you're getting a refund! The IRS will return this money to you. On Line 35a you'll tell them HOW you want it — direct deposit is fastest (usually within 21 days)!"</div>
+          <div class="owl-tip-text">"Hoot hoot! Overpaid means you're getting a refund! The IRS will return this money. On Line 35a you'll tell them HOW you want it — direct deposit is fastest (usually within 21 days)!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1554,6 +1913,7 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">Tell the IRS how to send your refund. Direct deposit is the fastest and safest option!</p>
       <div class="what-you-need">
         <h4>Your Refund Options</h4>
@@ -1564,12 +1924,13 @@
           <li><strong>Line 35d</strong> — Bank account number</li>
         </ul>
       </div>
-      <div class="pro-tip">Direct deposit gets your refund in about 21 days with e-filing! Paper check can take 6-8 weeks. And you can split your refund into up to 3 different accounts using Form 8888.</div>
+      <div class="pro-tip">Direct deposit gets your refund in about 21 days with e-filing! Paper check can take 6-8 weeks. You can split your refund into up to 3 different accounts using Form 8888.</div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Double-check your routing number and account number! A wrong digit sends your refund to a stranger's account — and getting it back is a nightmare. Find your routing number on the bottom left of a check."</div>
+          <div class="owl-tip-text">"Double-check your routing number and account number! A wrong digit sends your refund to a stranger's account — and getting it back is a nightmare."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1582,12 +1943,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
-      <p class="line-explain">Instead of receiving your full refund, you can apply some (or all) of your overpayment toward your <em>next year's</em> estimated taxes. Most first-time filers just take the full refund (Line 35a) and leave Line 36 blank.</p>
+      <div class="line-body-inner">
+      <p class="line-explain">Instead of receiving your full refund, you can apply some (or all) of your overpayment toward your <em>next year's</em> estimated taxes. Most first-time filers just take the full refund and leave Line 36 blank.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Unless you're self-employed and need to pre-pay next year's taxes, just skip Line 36 and take your full refund in Line 35a. Get your money back now!"</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1595,11 +1958,12 @@
   <div class="line-card red-accent" data-line="38">
     <div class="line-header" onclick="toggleCard(this)">
       <span class="line-num">Line 37</span>
-      <span class="line-title">IF Line 24 > Line 33: Amount You OWE the IRS</span>
+      <span class="line-title">IF Line 24 &gt; Line 33: Amount You OWE the IRS</span>
       <span class="line-emoji">💳</span>
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If your total tax (Line 24) is MORE than what you already paid (Line 33), you owe the difference. Don't panic — you have options!</p>
       <div class="highlight-box">🧮 <strong>Formula:</strong> Line 24 − Line 33 = <strong>Line 37 (Amount You Owe)</strong></div>
       <div class="what-you-need">
@@ -1617,6 +1981,7 @@
           <div class="owl-tip-text">"Always FILE your return on time even if you can't pay! The penalty for not filing is 10x worse than the penalty for not paying. File first, pay what you can, then set up a payment plan for the rest."</div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -1628,23 +1993,25 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If you didn't pay enough tax during the year (through withholding or estimated payments), the IRS may charge an <strong>underpayment penalty</strong>. Use Form 2210 to calculate it.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"Most employees with W-2s never owe this penalty because their withholding covers them. This mostly affects self-employed filers who forgot to make quarterly estimated payments. Tax software calculates this automatically!"</div>
+          <div class="owl-tip-text">"Most employees with W-2s never owe this penalty because their withholding covers them. This mostly affects self-employed filers who forgot to make quarterly estimated payments."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
 
 </div><!-- end part6 -->
 
-<!-- PART 7 -->
-<div class="part-divider">
+<!-- ==================== PART 7 ==================== -->
+<div id="part7-anchor" class="part-divider">
   <div class="part-divider-inner">
     <span>✍️</span>
-    <h3>PART 7 — Sign & Submit Your Return</h3>
+    <h3>PART 7 — Sign &amp; Submit Your Return</h3>
   </div>
 </div>
 
@@ -1663,24 +2030,26 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">You MUST sign and date your return. An unsigned return is automatically rejected by the IRS — it's as if you never filed!</p>
       <div class="what-you-need">
         <h4>What Goes in the Signature Area</h4>
         <ul>
-          <li>Your signature (and spouse's signature if Married Filing Jointly)</li>
+          <li>Your signature (and spouse's if Married Filing Jointly)</li>
           <li>Today's date</li>
           <li>Your daytime phone number</li>
-          <li>Your occupation (just write your job title: "Teacher," "Server," "Engineer," etc.)</li>
+          <li>Your occupation (just write your job title)</li>
           <li>Identity Protection PIN (if the IRS assigned you one)</li>
         </ul>
       </div>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
-          <div class="owl-tip-text">"When you e-file (online), your 'signature' is a 5-digit Self-Select PIN you create yourself, plus last year's AGI for verification. E-filing is WAY easier than paper! File at e-file.com and it guides you through everything."</div>
+          <div class="owl-tip-text">"When you e-file, your 'signature' is a 5-digit Self-Select PIN you create yourself, plus last year's AGI for verification. E-filing is WAY easier than paper!"</div>
         </div>
       </div>
       <div class="warning-tip">Filing jointly? BOTH spouses must sign. If either signature is missing, the IRS will reject the return!</div>
+      </div>
     </div>
   </div>
 
@@ -1692,12 +2061,14 @@
       <button class="toggle-btn">▼</button>
     </div>
     <div class="line-body">
+      <div class="line-body-inner">
       <p class="line-explain">If you paid someone (like an accountant or tax prep service) to do your taxes, they must sign here and include their PTIN (Preparer Tax Identification Number), firm name, and address.</p>
       <div class="owl-tip">
         <div class="owl-tip-content">
           <div class="owl-tip-label">Professor Owl Says:</div>
           <div class="owl-tip-text">"Filing yourself with e-file.com? Leave this section blank! It's only for paid professionals. Self-prepared returns leave the Paid Preparer section empty."</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1726,6 +2097,30 @@
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
+// ===== FACT TICKER =====
+const facts = [
+  { icon: "🦉", text: "Did you know? The IRS processes over 240 million tax returns every year!" },
+  { icon: "💡", text: "The average US tax refund is about $3,000 — that's money back in your pocket!" },
+  { icon: "📅", text: "The April 15 tax deadline has been in place since 1955." },
+  { icon: "🌟", text: "About 1 in 5 eligible taxpayers miss out on the Earned Income Tax Credit each year." },
+  { icon: "📱", text: "Over 90% of returns are now e-filed — it's faster, safer, and gets refunds quicker!" },
+  { icon: "🎓", text: "College students can claim up to $2,500/year with the American Opportunity Credit!" },
+  { icon: "🏠", text: "Homeowners: mortgage interest and property taxes are deductible on Schedule A." },
+  { icon: "🔒", text: "E-filed returns with direct deposit get refunds in as few as 8 days!" },
+  { icon: "💼", text: "Had a side hustle? You must report income over $400 from freelance work." },
+  { icon: "📊", text: "The US tax code has over 4 million words — longer than most novels!" },
+];
+
+function buildTicker() {
+  const track = document.getElementById('ticker-track');
+  // Duplicate for seamless loop
+  const all = [...facts, ...facts];
+  track.innerHTML = all.map(f =>
+    `<span class="ticker-item"><span>${f.icon}</span>${f.text}</span><span class="ticker-sep">✦</span>`
+  ).join('');
+}
+buildTicker();
+
 // ===== COUNTDOWN CLOCKS =====
 function pad(n) { return n < 10 ? '0' + n : n; }
 
@@ -1733,8 +2128,9 @@ function updateClocks() {
   const now = new Date();
   document.getElementById('today-date').textContent = now.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
 
-  const deadline = new Date(now.getFullYear() + (now > new Date(now.getFullYear(), 3, 15) ? 1 : 0), 3, 15, 23, 59, 59);
-  const extension = new Date(now.getFullYear() + (now > new Date(now.getFullYear(), 9, 15) ? 1 : 0), 9, 15, 23, 59, 59);
+  const thisYear = now.getFullYear();
+  const deadline  = new Date(thisYear + (now > new Date(thisYear, 3, 15, 23, 59, 59) ? 1 : 0), 3, 15, 23, 59, 59);
+  const extension = new Date(thisYear + (now > new Date(thisYear, 9, 15, 23, 59, 59) ? 1 : 0), 9, 15, 23, 59, 59);
 
   function fmtCountdown(target) {
     let ms = Math.max(0, target - now);
@@ -1752,14 +2148,26 @@ function updateClocks() {
 setInterval(updateClocks, 1000);
 updateClocks();
 
-// ===== TOGGLE CARDS =====
+// ===== STICKY NAV =====
+const quickNav = document.getElementById('quick-nav');
+window.addEventListener('scroll', () => {
+  quickNav.classList.toggle('visible', window.scrollY > 300);
+  document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+});
+
+function jumpTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ===== SMOOTH ACCORDION TOGGLE =====
 const TOTAL_LINES = 41;
 let openLines = new Set();
 
 function toggleCard(header) {
   const card = header.closest('.line-card');
   const body = card.querySelector('.line-body');
-  const btn = header.querySelector('.toggle-btn');
+  const btn  = header.querySelector('.toggle-btn');
   const lineNum = parseInt(card.dataset.line);
   const isOpen = body.classList.contains('open');
 
@@ -1777,15 +2185,33 @@ function toggleCard(header) {
 
 function expandSection(sectionId) {
   const section = document.getElementById(sectionId);
-  const cards = section.querySelectorAll('.line-card');
-  cards.forEach(card => {
-    const body = card.querySelector('.line-body');
-    const btn = card.querySelector('.toggle-btn');
-    const lineNum = parseInt(card.dataset.line);
-    body.classList.add('open');
-    btn.classList.add('open');
-    openLines.add(lineNum);
+  section.querySelectorAll('.line-card').forEach(card => {
+    card.querySelector('.line-body').classList.add('open');
+    card.querySelector('.toggle-btn').classList.add('open');
+    openLines.add(parseInt(card.dataset.line));
   });
+  updateProgress();
+}
+
+// ===== MASTER TOGGLE =====
+let allExpanded = false;
+function masterToggle() {
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.line-card').forEach(card => {
+    const body = card.querySelector('.line-body');
+    const btn  = card.querySelector('.toggle-btn');
+    const lineNum = parseInt(card.dataset.line);
+    if (allExpanded) {
+      body.classList.add('open');
+      btn.classList.add('open');
+      openLines.add(lineNum);
+    } else {
+      body.classList.remove('open');
+      btn.classList.remove('open');
+      openLines.delete(lineNum);
+    }
+  });
+  document.getElementById('master-btn').textContent = allExpanded ? '⊖ Collapse All Sections' : '⊕ Expand All Sections';
   updateProgress();
 }
 
@@ -1793,13 +2219,32 @@ function updateProgress() {
   const pct = Math.round((openLines.size / TOTAL_LINES) * 100);
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('progress-text').textContent = openLines.size + ' of ' + TOTAL_LINES + ' lines reviewed (' + pct + '%)';
+  // Sync master button state
+  if (openLines.size === TOTAL_LINES) {
+    allExpanded = true;
+    document.getElementById('master-btn').textContent = '⊖ Collapse All Sections';
+  } else if (openLines.size === 0) {
+    allExpanded = false;
+    document.getElementById('master-btn').textContent = '⊕ Expand All Sections';
+  }
 }
 
-// ===== BACK TO TOP =====
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('back-top');
-  btn.classList.toggle('show', window.scrollY > 400);
-});
+// ===== SCROLL-REVEAL for cards =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Stagger siblings slightly
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.line-card:not(.revealed)'));
+      const idx = siblings.indexOf(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('revealed');
+      }, Math.min(idx * 60, 240));
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.line-card').forEach(card => revealObserver.observe(card));
 </script>
 </body>
 </html>
