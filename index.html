@@ -3,391 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🦉 Professor Owl's Form 1040 Guide — File Your Taxes Like a Pro!</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+<title>🦉 Professor Owl's Masterclass: IRS Form 1040</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0d1b3e;
-    --blue: #1a3a6e;
     --gold: #f5c518;
     --amber: #e8a800;
     --green: #22c55e;
     --red: #ef4444;
-    --cream: #fffbeb;
     --light: #e0f0ff;
     --white: #ffffff;
     --owl-brown: #8b5e3c;
-    --owl-tan: #c9935a;
-    --feather: #d4a96a;
-    --shadow: rgba(0,0,0,0.35);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'Nunito', sans-serif;
     background: var(--navy);
     color: var(--white);
-    min-height: 100vh;
-    overflow-x: hidden;
     scroll-behavior: smooth;
+    padding-top: 60px;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse at 20% 20%, #1e3a7a 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, #0f2250 0%, transparent 50%),
-      var(--navy);
-    z-index: -2;
-  }
-
-  /* ===== STICKY NAV ===== */
+  /* STICKY NAV */
   #quick-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(13, 27, 62, 0.97);
+    background: rgba(13, 27, 62, 0.95);
     border-bottom: 2px solid var(--gold);
-    backdrop-filter: blur(10px);
-    transform: translateY(0);
-    padding: 8px 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    padding: 10px;
   }
   .nav-inner {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
     justify-content: center;
-  }
-  .nav-inner span {
-    font-family: 'Fredoka One', cursive;
-    color: var(--gold);
-    font-size: 0.85rem;
-    margin-right: 4px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
   .nav-jump {
-    background: rgba(245,197,24,0.12);
-    border: 1px solid rgba(245,197,24,0.35);
-    color: var(--light);
+    background: rgba(245,197,24,0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 5px 12px;
+    border-radius: 15px;
     font-size: 0.75rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.2s;
-  }
-  .nav-jump:hover {
-    background: var(--gold);
-    color: var(--navy);
-    transform: scale(1.05);
+    font-weight: 700;
   }
 
-  /* ===== HERO ===== */
-  .hero {
-    text-align: center;
-    padding: 100px 20px 40px; /* Offset for sticky nav */
-    position: relative;
-  }
+  /* HERO */
+  .hero { text-align: center; padding: 40px 20px; }
   .hero-title {
     font-family: 'Fredoka One', cursive;
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--gold);
-    text-shadow: 3px 3px 0 var(--navy), 0 0 30px rgba(245,197,24,0.4);
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-  .hero-sub {
-    font-family: 'Patrick Hand', cursive;
-    font-size: clamp(1.1rem, 2.8vw, 1.6rem);
-    color: var(--light);
-    max-width: 700px;
-    margin: 0 auto 24px;
+    text-shadow: 3px 3px 0px #000;
   }
 
-  /* ===== OWL SVG ANIMATION ===== */
-  .owl-container { display: flex; justify-content: center; margin-bottom: 20px; }
-  .owl-svg { width: 180px; height: 220px; animation: owlFloat 4s ease-in-out infinite; }
-  @keyframes owlFloat {
-    0%, 100% { transform: translateY(0) rotate(-1deg); }
-    50% { transform: translateY(-15px) rotate(1deg); }
+  /* OWL ILLUSTRATION */
+  .owl-stage {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
   }
-  .owl-eyelid { transform-origin: center top; transform-box: fill-box; animation: owlBlink 6s ease-in-out infinite; }
-  @keyframes owlBlink { 0%, 90%, 100% { transform: scaleY(0); } 93%, 97% { transform: scaleY(1); } }
-
-  /* ===== PROGRESS TRACKER ===== */
-  .progress-sticky {
-    position: sticky;
-    top: 60px;
-    z-index: 998;
-    background: rgba(13, 27, 62, 0.9);
-    padding: 10px 0;
-    backdrop-filter: blur(5px);
+  .owl-svg {
+    width: 240px;
+    height: 280px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
   }
-  .progress-wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
-  .progress-label { font-family: 'Patrick Hand', cursive; color: var(--light); margin-bottom: 5px; display: flex; justify-content: space-between; }
-  .progress-bar-bg { background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; }
-  .progress-bar-fill { background: linear-gradient(90deg, var(--gold), var(--green)); width: 0%; height: 100%; border-radius: 10px; transition: width 0.5s ease; }
+  .pointer {
+    transform-origin: 180px 150px;
+    animation: pointAction 4s ease-in-out infinite;
+  }
+  @keyframes pointAction {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-15deg); }
+  }
+  .blink {
+    animation: blinkEyes 5s infinite;
+    transform-origin: center;
+  }
+  @keyframes blinkEyes {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+  }
 
-  /* ===== SECTION STYLING ===== */
-  .section-header { max-width: 860px; margin: 40px auto 20px; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-  .section-header h2 { font-family: 'Fredoka One', cursive; color: var(--gold); border-bottom: 3px solid var(--gold); }
+  /* CARDS */
+  .lines-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+  .line-card {
+    background: #1a2a4e;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-left: 8px solid var(--gold);
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .line-header {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .line-header h3 { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--gold); }
+  .line-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .line-body.open { display: block; }
   
-  .part-divider { max-width: 860px; margin: 60px auto 20px; padding: 0 20px; }
-  .part-divider-inner { background: linear-gradient(90deg, var(--gold), var(--amber)); padding: 15px 25px; border-radius: 15px; color: var(--navy); display: flex; align-items: center; gap: 15px; }
-  .part-divider-inner h3 { font-family: 'Fredoka One', cursive; }
+  .owl-tip {
+    background: #0d2a1a;
+    border: 1px solid var(--green);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-style: italic;
+    color: #d1fae5;
+  }
 
-  .lines-container { max-width: 860px; margin: 0 auto; padding: 0 20px 40px; display: flex; flex-direction: column; gap: 15px; }
-
-  /* ===== LINE CARDS ===== */
-  .line-card { background: linear-gradient(135deg, #122b5e, #1a3a6e); border-radius: 15px; border-left: 6px solid var(--gold); overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s; }
-  .line-card.completed { border-left-color: var(--green); opacity: 0.9; }
-  .line-header { padding: 15px 20px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
-  .line-num { background: var(--gold); color: var(--navy); padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.75rem; }
-  .line-title { flex: 1; font-weight: 700; font-size: 1rem; }
-  .toggle-btn { transition: transform 0.3s; font-size: 1.2rem; }
-  .open .toggle-btn { transform: rotate(180deg); }
-
-  .line-body { display: none; padding: 0 20px 20px; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.1); }
-  .line-body.show { display: block; }
-  
-  .owl-tip { background: rgba(34, 197, 94, 0.1); border: 1px solid var(--green); border-radius: 12px; padding: 15px; margin-top: 15px; display: flex; gap: 12px; }
-  .what-you-need { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 15px 0; }
-  .what-you-need ul { list-style: none; margin-top: 8px; }
-  .what-you-need li::before { content: '✔️'; margin-right: 8px; font-size: 0.8rem; }
-
-  .cta-btn { background: var(--red); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-family: 'Fredoka One'; display: inline-block; margin-top: 20px; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4); }
-  
-  /* Color Variations */
-  .accent-blue { border-left-color: #60a5fa; }
-  .accent-purple { border-left-color: #a78bfa; }
-  .accent-green { border-left-color: var(--green); }
-
-  @media (max-width: 600px) { .nav-inner span { display: none; } .hero-title { font-size: 2rem; } }
+  .cta-btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Fredoka One';
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+  }
 </style>
 </head>
 <body>
 
 <nav id="quick-nav">
   <div class="nav-inner">
-    <span>🦉 Professor's Map:</span>
-    <button class="nav-jump" onclick="scrollToId('part1')">Personal</button>
-    <button class="nav-jump" onclick="scrollToId('part2')">Income</button>
-    <button class="nav-jump" onclick="scrollToId('part3')">Deductions</button>
-    <button class="nav-jump" onclick="scrollToId('part4')">Credits</button>
-    <button class="nav-jump" onclick="scrollToId('part5')">Refund</button>
+    <button class="nav-jump" onclick="document.getElementById('part-info').scrollIntoView()">Info</button>
+    <button class="nav-jump" onclick="document.getElementById('part-income').scrollIntoView()">Income</button>
+    <button class="nav-jump" onclick="document.getElementById('part-deduct').scrollIntoView()">Deductions</button>
+    <button class="nav-jump" onclick="document.getElementById('part-results').scrollIntoView()">Refund</button>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-title">Professor Owl's<br>1040 Tax Flight Manual</div>
-  <p class="hero-sub">Don't let tax season ruffle your feathers! We're breaking down the 1040 line-by-line with simple hoot-worthy explanations.</p>
+  <h1 class="hero-title">Professor Owl's 1040 Masterclass</h1>
   
-  <div class="owl-container">
-    <svg class="owl-svg" viewBox="0 0 180 220">
-      <ellipse cx="90" cy="148" rx="58" ry="70" fill="#8b5e3c"/>
-      <ellipse cx="90" cy="155" rx="36" ry="48" fill="#c9935a"/>
-      <circle cx="72" cy="90" r="17" fill="white"/>
-      <circle cx="108" cy="90" r="17" fill="white"/>
-      <circle cx="72" cy="90" r="12" fill="#f5c518"/>
-      <circle cx="108" cy="90" r="12" fill="#f5c518"/>
-      <circle cx="74" cy="90" r="7" fill="#111"/>
-      <circle cx="110" cy="90" r="7" fill="#111"/>
-      <rect class="owl-eyelid" x="55" y="73" width="34" height="18" rx="9" fill="#8b5e3c"/>
-      <rect class="owl-eyelid" x="91" y="73" width="34" height="18" rx="9" fill="#8b5e3c"/>
-      <polygon points="90,96 82,108 98,108" fill="#e8a800"/>
+  <div class="owl-stage">
+    <svg class="owl-svg" viewBox="0 0 200 240">
+      <!-- Body -->
+      <ellipse cx="100" cy="150" rx="60" ry="70" fill="#8b5e3c" />
+      <ellipse cx="100" cy="160" rx="40" ry="50" fill="#c9935a" />
+      
+      <!-- Head -->
+      <circle cx="100" cy="80" r="45" fill="#8b5e3c" />
+      
+      <!-- Graduation Cap -->
+      <path d="M50 60 L100 40 L150 60 L100 80 Z" fill="#111" />
+      <rect x="85" y="45" width="30" height="15" fill="#111" />
+      <path d="M150 60 L150 90" stroke="#f5c518" stroke-width="3" fill="none" />
+      <circle cx="150" cy="95" r="4" fill="#f5c518" />
+
+      <!-- Eyes & Glasses -->
+      <circle cx="75" cy="90" r="15" fill="white" />
+      <circle cx="125" cy="90" r="15" fill="white" />
+      <circle class="blink" cx="75" cy="90" r="8" fill="#111" />
+      <circle class="blink" cx="125" cy="90" r="8" fill="#111" />
+      
+      <!-- Spectacles -->
+      <circle cx="75" cy="90" r="18" fill="none" stroke="#333" stroke-width="3" />
+      <circle cx="125" cy="90" r="18" fill="none" stroke="#333" stroke-width="3" />
+      <line x1="93" y1="90" x2="107" y2="90" stroke="#333" stroke-width="3" />
+
+      <!-- Beak -->
+      <polygon points="100,105 92,115 108,115" fill="#e8a800" />
+
+      <!-- Pointer Stick -->
+      <g class="pointer">
+        <rect x="150" y="100" width="6" height="80" fill="#5d4037" transform="rotate(-45 150 100)" />
+        <!-- Wing holding it -->
+        <ellipse cx="140" cy="140" rx="15" ry="25" fill="#8b5e3c" transform="rotate(-20 140 140)" />
+      </g>
     </svg>
   </div>
 
-  <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" class="cta-btn" target="_blank">🚀 File Online & Save Time</a>
-</div>
-
-<div class="progress-sticky">
-  <div class="progress-wrap">
-    <div class="progress-label">
-      <span>Tax Knowledge Progress</span>
-      <span id="progress-percent">0%</span>
-    </div>
-    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-bar"></div></div>
-  </div>
-</div>
-
-<!-- SECTION 1 -->
-<div id="part1" class="part-divider">
-  <div class="part-divider-inner"><h3>📋 PART 1: The Basics</h3></div>
+  <p class="hero-sub">Class is in session! Let's examine your return line-by-line.</p>
+  <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=ProffessorOwlTaxGuide" class="cta-btn">Start Filing Now</a>
 </div>
 
 <div class="lines-container">
-  <div class="line-card" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L1</span>
-      <span class="line-title">Name, Address, and SSN</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>This is where the IRS gets to know you. Ensure your name matches your Social Security card exactly.</p>
-      <div class="owl-tip">🦉 <strong>Pro Tip:</strong> Even a small typo here can delay your refund by weeks!</div>
-    </div>
-  </div>
-
-  <div class="line-card" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L2</span>
-      <span class="line-title">Filing Status</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>Are you Single, Married, or Head of Household? This determines your tax rate and standard deduction.</p>
-    </div>
-  </div>
-</div>
-
-<!-- SECTION 2 -->
-<div id="part2" class="part-divider">
-  <div class="part-divider-inner"><h3>💰 PART 2: Income (Money In)</h3></div>
-</div>
-
-<div class="lines-container">
-  <div class="line-card accent-green" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L1z</span>
-      <span class="line-title">Wages from W-2s</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>The amount from Box 1 of all your W-2 forms. This is the "bread and butter" of most tax returns.</p>
-      <div class="what-you-need">
-        <strong>Gather these:</strong>
-        <ul><li>All W-2 forms from employers</li><li>Final paystubs (for verification)</li></ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="line-card accent-green" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L8</span>
-      <span class="line-title">Other Income (Gig Work, etc)</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>Did you drive for Uber, sell crafts, or do freelance web development? That goes here via Schedule 1.</p>
-    </div>
-  </div>
-</div>
-
-<!-- SECTION 3 -->
-<div id="part3" class="part-divider">
-  <div class="part-divider-inner"><h3>✂️ PART 3: Deductions (Lower Your Bill)</h3></div>
-</div>
-
-<div class="lines-container">
-  <div class="line-card accent-blue" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L12</span>
-      <span class="line-title">Standard vs. Itemized Deduction</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>Most people take the <strong>Standard Deduction</strong>. It's a flat amount the IRS lets you subtract from your income so you don't pay taxes on it.</p>
-      <div class="owl-tip">🦉 <strong>Professor's Wisdom:</strong> Think of this as a "discount code" the IRS gives everyone!</div>
-    </div>
-  </div>
-</div>
-
-<!-- SECTION 4 -->
-<div id="part4" class="part-divider">
-  <div class="part-divider-inner"><h3>🎁 PART 4: Credits & Payments</h3></div>
-</div>
-
-<div class="lines-container">
-  <div class="line-card accent-purple" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L19</span>
-      <span class="line-title">Child Tax Credit</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>If you have dependents under 17, you might get a significant credit here.</p>
-    </div>
-  </div>
-
-  <div class="line-card accent-purple" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L25</span>
-      <span class="line-title">Federal Income Tax Withheld</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>Look at your W-2 Box 2. This is money you ALREADY paid throughout the year. We want to make sure you get any extra back!</p>
-    </div>
-  </div>
-</div>
-
-<!-- SECTION 5 -->
-<div id="part5" class="part-divider">
-  <div class="part-divider-inner"><h3>🎉 PART 5: The Grand Finale</h3></div>
-</div>
-
-<div class="lines-container">
-  <div class="line-card accent-green" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L34</span>
-      <span class="line-title">Your Refund Amount</span>
-      <span class="toggle-btn">▼</span>
-    </div>
-    <div class="line-body">
-      <p>If L33 (Payments) is bigger than L24 (Total Tax), the IRS owes YOU money! 🥳</p>
-    </div>
-  </div>
   
-  <div class="line-card accent-red" style="border-left-color: var(--red);" onclick="toggleLine(this)">
-    <div class="line-header">
-      <span class="line-num">L37</span>
-      <span class="line-title">Amount You Owe</span>
-      <span class="toggle-btn">▼</span>
+  <h2 id="part-info" style="margin: 20px 0; font-family: 'Fredoka One';">Section 1: Who are you?</h2>
+  
+  <div class="line-card">
+    <div class="line-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Lines 1-7: Personal Details</h3>
+      <span>▼</span>
     </div>
     <div class="line-body">
-      <p>If your taxes were higher than what you paid, you'll need to settle up with the IRS. Pay by April 15th to avoid penalties!</p>
+      <p>This is basic data entry. Name, address, and your Social Security Number.</p>
+      <div class="owl-tip">"Pay attention! Your name must match your Social Security Card EXACTLY or the IRS will reject your return."</div>
     </div>
   </div>
+
+  <h2 id="part-income" style="margin: 20px 0; font-family: 'Fredoka One';">Section 2: The Money</h2>
+
+  <div class="line-card" style="border-left-color: var(--green);">
+    <div class="line-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Line 1a: Wages & Salaries (W-2)</h3>
+      <span>▼</span>
+    </div>
+    <div class="line-body">
+      <p>This is the total from Box 1 of all your W-2 forms.</p>
+      <div class="owl-tip">"If you had three jobs, you add all three Box 1 totals together. Simple math, students!"</div>
+    </div>
+  </div>
+
+  <h2 id="part-deduct" style="margin: 20px 0; font-family: 'Fredoka One';">Section 3: The Cuts</h2>
+
+  <div class="line-card" style="border-left-color: #60a5fa;">
+    <div class="line-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Line 12: Standard Deduction</h3>
+      <span>▼</span>
+    </div>
+    <div class="line-body">
+      <p>The "Free Pass" from the IRS. It lowers your taxable income automatically.</p>
+      <div class="owl-tip">"Most of you will take the Standard Deduction. It's the IRS saying, 'The first few thousand you made is on the house!'"</div>
+    </div>
+  </div>
+
+  <h2 id="part-results" style="margin: 20px 0; font-family: 'Fredoka One';">Section 4: The Result</h2>
+
+  <div class="line-card" style="border-left-color: var(--green);">
+    <div class="line-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Line 34: Your Refund</h3>
+      <span>▼</span>
+    </div>
+    <div class="line-body">
+      <p>If you paid more than you owed, this is the amount coming back to you.</p>
+      <div class="owl-tip">"The best part of class! Make sure your bank routing number is correct for Direct Deposit."</div>
+    </div>
+  </div>
+
 </div>
-
-<script>
-  function toggleLine(card) {
-    const body = card.querySelector('.line-body');
-    const isShowing = body.classList.contains('show');
-    
-    // Toggle current
-    body.classList.toggle('show');
-    card.classList.toggle('open');
-    
-    if (!isShowing) {
-      card.classList.add('completed');
-    }
-    updateProgress();
-  }
-
-  function updateProgress() {
-    const total = document.querySelectorAll('.line-card').length;
-    const completed = document.querySelectorAll('.line-card.completed').length;
-    const percent = Math.round((completed / total) * 100);
-    
-    document.getElementById('progress-bar').style.width = percent + '%';
-    document.getElementById('progress-percent').innerText = percent + '%';
-  }
-
-  function scrollToId(id) {
-    const el = document.getElementById(id);
-    window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
-  }
-</script>
 
 </body>
 </html>
