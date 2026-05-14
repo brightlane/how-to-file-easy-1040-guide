@@ -1,0 +1,42 @@
+/* ===== CROSS-LINK FOOTER ===== */
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 2px solid var(--gold);
+        }
+        .footer-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .footer-col h4 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover { color: var(--gold); padding-left: 5px; }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
