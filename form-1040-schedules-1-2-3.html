@@ -1,0 +1,90 @@
+<!-- ==================== UPGRADED SCHEDULE 3 PART II ==================== -->
+<div class="lines-container" id="schedule3-part2">
+  <div class="line-card blue-accent" data-line="S3-P2">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Sch 3: Part II</span>
+      <span class="line-title">Other Payments (The "Hidden" Money)</span>
+      <span class="line-emoji">💸</span>
+      <button class="toggle-btn">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">This is where you report payments you made that aren't on your W-2, like an extension payment you made back in April.</p>
+        <div class="what-you-need">
+          <ul>
+            <li><strong>Line 10:</strong> Amount paid with a request for an extension.</li>
+            <li><strong>Line 13:</strong> Health Coverage Tax Credit.</li>
+          </ul>
+        </div>
+        <div class="owl-tip">
+          <div class="owl-tip-content">
+            <div class="owl-tip-label">Professor Owl Says:</div>
+            <div class="owl-tip-text">"Did you file an extension in April and send the IRS $500 'just in case'? Make sure you claim it here on Line 10, or you're paying twice! Hoot!"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add a "Checklist" Mode toggle near your progress bar -->
+<div class="hero-controls" style="margin-top: 10px;">
+  <small style="color: var(--light); opacity: 0.8;">Progress is automatically saved to your browser! 💾</small>
+</div>
+
+<!-- ===== ENHANCED SCRIPT ===== -->
+<script>
+  // Add this to your existing script block
+  
+  // 1. Persistence: Save which cards are open
+  function toggleCard(header) {
+    const card = header.parentElement;
+    const body = header.nextElementSibling;
+    const btn = header.querySelector('.toggle-btn');
+    const lineId = card.getAttribute('data-line');
+    
+    const isOpen = body.classList.toggle('open');
+    btn.classList.toggle('open');
+    
+    // Save state
+    let progress = JSON.parse(localStorage.getItem('owlProgress') || '{}');
+    progress[lineId] = isOpen;
+    localStorage.setItem('owlProgress', JSON.stringify(progress));
+    
+    updateProgress();
+  }
+
+  // 2. Persistence: Load state on refresh
+  function loadSavedProgress() {
+    const progress = JSON.parse(localStorage.getItem('owlProgress') || '{}');
+    Object.keys(progress).forEach(lineId => {
+      if (progress[lineId]) {
+        const card = document.querySelector(`[data-line="${lineId}"]`);
+        if (card) {
+          const body = card.querySelector('.line-body');
+          const btn = card.querySelector('.toggle-btn');
+          body.classList.add('open');
+          btn.classList.add('open');
+        }
+      }
+    });
+    updateProgress();
+  }
+
+  // 3. Smart Search suggestion (Optional but cool)
+  function owlSearch(query) {
+    const cards = document.querySelectorAll('.line-card');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query.toLowerCase()) ? "block" : "none";
+    });
+  }
+
+  // Update window.onload
+  const originalOnLoad = window.onload;
+  window.onload = () => {
+    if (originalOnLoad) originalOnLoad();
+    updateTaxYear();
+    loadSavedProgress(); // Load the user's progress
+  };
+</script>
