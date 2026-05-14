@@ -1,0 +1,29 @@
+# Professor Owl's Form 1040 Guide
+
+A beginner-friendly, step-by-step guide to filing the IRS Form 1040 (U.S. Individual Income Tax Return). This guide simplifies tax terminology and explains specific line items for first-time filers.
+
+## Core Tax Concepts & Filing Basics
+- **Form 1040:** The primary form used by individuals to report annual income to the IRS.
+- **Tax Deadline:** Typically April 15th (Extension available until October 15th).
+- **Social Security Number (SSN):** Critical for identification; must match Social Security Administration records exactly to avoid processing delays.
+
+## Part 1: Personal Information
+- **Filing Statuses:**
+    - **Single:** Unmarried or legally separated.
+    - **Married Filing Jointly (MFJ):** Combined income; usually results in lower tax/higher refund.
+    - **Married Filing Separately (MFS):** Separate tax liability for spouses.
+    - **Head of Household (HOH):** For unmarried individuals paying >50% of household costs for a dependent.
+    - **Qualifying Surviving Spouse:** For recently widowed individuals with dependents.
+- **Dependents:** Individuals (usually children under 19, or students under 24) who rely on the filer financially. Claiming dependents can trigger the Child Tax Credit ($2,000 per child).
+
+## Part 2: Income (Lines 1–8)
+- **Line 1a (W-2 Income):** Total wages, salaries, and tips earned from employers.
+- **Documentation Needed:** Form W-2 (provided by employers in January).
+
+## Professor Owl's Key Tips
+- **Accuracy:** Triple-check SSNs and name spellings to prevent "Hoot-offs" (filing errors).
+- **Credits:** Never skip listing dependents; they are the primary path to significant tax credits.
+- **Electronic Filing:** Use online tools like e-file.com for faster processing and fewer errors.
+
+## Interactive Summary
+The full guide provides a progress tracker for 41 lines of the 1040 form and a "Refund vs. Owed" infographic to help users understand their final tax outcome.
