@@ -3,265 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professor Owl's Interactive Tax Academy</title>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Nunito:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<title>Professor Owl's Complete Tax Masterclass</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --irs-blue: #2c3e50;
-    --gold: #f5c518;
-    --paper: #ffffff;
-    --desk: #464a4d;
-    --safe-green: #27ae60;
+    --irs-blue: #1e3799;
+    --paper: #fffcf2;
+    --ink: #2c3e50;
+    --gold: #f39c12;
+    --desk: #3d2b1f;
+    --green: #27ae60;
   }
 
   body {
     background: var(--desk);
     margin: 0;
-    padding: 60px 0;
-    font-family: 'Crimson Pro', serif;
+    font-family: 'Nunito', sans-serif;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
+    justify-content: center;
+    padding: 40px 20px;
+    color: var(--ink);
   }
 
-  /* Progress Bar */
-  .progress-container {
-    width: 800px;
-    background: rgba(255,255,255,0.1);
-    height: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  #progress-fill {
-    width: 0%;
-    height: 100%;
-    background: var(--gold);
-    border-radius: 5px;
-    transition: 0.5s;
-  }
+  /* Desk Items */
+  body::before { content: '☕'; position: fixed; top: 20px; right: 50px; font-size: 4rem; opacity: 0.6; }
+  body::after { content: '🧮'; position: fixed; bottom: 20px; right: 50px; font-size: 3rem; opacity: 0.6; }
 
-  /* Form Styling */
-  .form-1040 {
+  .master-container {
+    width: 850px;
     background: var(--paper);
-    width: 800px;
-    padding: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    padding: 50px;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.4);
+    border: 1px solid #ddd;
     position: relative;
-    border-radius: 2px;
-  }
-
-  .irs-header {
-    border-bottom: 3px solid #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 30px;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 25px 25px;
   }
 
   /* Professor Owl */
-  #floating-owl {
+  #owl {
     position: fixed;
-    left: 50px;
-    top: 300px;
-    width: 160px;
-    transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s;
-    z-index: 1000;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    z-index: 100;
     pointer-events: none;
+    transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .speech-bubble {
+  .bubble {
     background: white;
     border: 3px solid var(--irs-blue);
+    padding: 15px;
     border-radius: 15px;
-    padding: 15px;
     font-family: 'Patrick Hand', cursive;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: absolute;
-    top: -90px;
-    left: 90px;
-    width: 220px;
-    box-shadow: 5px 5px 0px var(--gold);
+    top: -100px;
+    left: 80px;
+    width: 260px;
+    box-shadow: 6px 6px 0 var(--gold);
   }
 
-  /* Visual Hint Box */
-  #doc-hint {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: white;
-    border: 2px dashed #000;
-    padding: 15px;
-    width: 200px;
-    transform: rotate(-2deg);
-    display: none;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9rem;
-  }
-
-  /* Tax Lines */
-  .tax-line {
-    display: flex;
-    border-bottom: 1px solid #eee;
+  /* Lines */
+  .line {
+    display: grid;
+    grid-template-columns: 50px 1fr 180px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
   }
-  .tax-line.active { background: rgba(245, 197, 24, 0.1); border-left: 10px solid var(--irs-blue); }
-  
-  .line-label { width: 50px; background: #f9f9f9; padding: 20px 5px; font-weight: bold; text-align: center; border-right: 1px solid #000; }
-  .line-content { flex-grow: 1; padding: 15px; }
-  .line-input-sim { width: 150px; border-left: 1px solid #000; padding: 15px; background: #fcfcfc; }
-  .line-input-sim input { width: 100%; border: none; background: transparent; font-size: 1.2rem; text-align: right; font-weight: bold; }
 
-  /* The Bucket Visualizer */
-  .visualizer-area {
+  .line:hover { background: rgba(243, 156, 18, 0.05); }
+  .line.active { background: white; border-left: 8px solid var(--irs-blue); padding-left: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+  .num { font-weight: bold; color: #999; }
+  .label strong { display: block; font-size: 1.1rem; color: var(--irs-blue); }
+  .label span { font-size: 0.8rem; color: #777; }
+
+  .input-wrap {
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+  }
+
+  input { width: 100%; border: none; background: transparent; text-align: right; font-size: 1.1rem; outline: none; }
+
+  /* Affiliate Section */
+  .affiliate-box {
     margin-top: 30px;
-    display: flex;
-    gap: 20px;
-    background: #fdf9e1;
     padding: 20px;
-    border: 1px solid var(--gold);
-    border-radius: 8px;
+    background: #e8f4fd;
+    border: 2px dashed var(--irs-blue);
+    border-radius: 10px;
+    text-align: center;
   }
 
-  .bucket {
+  .btn-claim {
+    background: var(--irs-blue);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .btn-claim:hover { background: #000; }
+
+  /* Visual Lesson */
+  .visualizer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 3px solid var(--gold);
+    border-radius: 10px;
+  }
+
+  .beaker {
     width: 60px;
     height: 120px;
-    border: 3px solid #555;
+    border: 3px solid #333;
     border-top: none;
     border-radius: 0 0 10px 10px;
     position: relative;
-    overflow: hidden;
     background: #eee;
+    overflow: hidden;
   }
-  .bucket-fill {
+
+  .fluid {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: var(--safe-green);
     height: 0%;
-    transition: height 0.5s;
+    background: var(--green);
+    transition: height 0.5s ease;
   }
-
-  .owl-lean { transform: scale(1.1) rotate(-5deg); }
 </style>
 </head>
 <body>
 
-<div class="progress-container">
-  <div id="progress-fill"></div>
+<div id="owl">
+  <div class="bubble" id="speech">Hoot! Click a line to begin our 2026 Tax Journey!</div>
+  <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="130" r="70" fill="#8b5e3c" />
+    <circle cx="75" cy="110" r="18" fill="white" />
+    <circle cx="125" cy="110" r="18" fill="white" />
+    <circle cx="75" cy="110" r="7" fill="black" />
+    <circle cx="125" cy="110" r="7" fill="black" />
+    <path d="M90,140 L100,160 L110,140 Z" fill="#f39c12" />
+    <rect x="50" y="50" width="100" height="12" fill="#222" rx="4" />
+    <rect x="85" y="30" width="30" height="25" fill="#222" />
+  </svg>
 </div>
 
-<div id="floating-owl">
-    <div class="speech-bubble" id="owl-speech">Hoot! Ready to start? Click Line 1!</div>
-    <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="90" cy="160" rx="55" ry="65" fill="#8b5e3c"/>
-      <ellipse cx="90" cy="100" rx="45" ry="42" fill="#8b5e3c"/>
-      <circle cx="70" cy="100" r="15" fill="white" stroke="#333" />
-      <circle cx="110" cy="100" r="15" fill="white" stroke="#333" />
-      <circle cx="72" cy="100" r="6" fill="#000"/>
-      <circle cx="112" cy="100" r="6" fill="#000"/>
-      <path d="M30,40 L90,15 L150,40 L90,65 Z" fill="#222" />
-      <rect x="65" y="45" width="50" height="20" fill="#222" />
-    </svg>
-</div>
+<div class="master-container">
+  <h1 style="font-family: 'Patrick Hand'; font-size: 2.5rem; margin: 0;">🦉 Professor Owl's Complete Return</h1>
+  <p style="margin-bottom: 30px; border-bottom: 2px solid #000;">Mastering the 1040 | 2026 Edition</p>
 
-<div id="doc-hint"></div>
-
-<div class="form-1040">
-  <div class="irs-header">
-    <div class="form-title">Individual Income Tax Academy</div>
-    <div style="font-size: 2rem; font-weight: bold; color: var(--irs-blue)">2026</div>
+  <!-- LINE 1: WAGES -->
+  <div class="line" onclick="moveOwl(this, 'Line 1 is your Job Pay. Check Box 1 of your W-2!')">
+    <div class="num">1</div>
+    <div class="label"><strong>Wages & Salaries</strong><span>Total from your paychecks</span></div>
+    <div class="input-wrap">$<input type="number" id="in-wages" placeholder="0" oninput="update()"></div>
   </div>
 
-  <div class="tax-line" id="line1" onclick="step(this, 'Check your W-2 paper! Box 1 has your total wages.', 'w2')">
-    <div class="line-label">1z</div>
-    <div class="line-content"><strong>Wages, Salaries, Tips</strong><span>Money earned from your job</span></div>
-    <div class="line-input-sim">$<input type="number" id="val-wages" placeholder="0" oninput="calculate()"></div>
+  <!-- LINE 2: INTEREST -->
+  <div class="line" onclick="moveOwl(this, 'Line 2 is bank interest. It\'s like your savings gave you a gift!')">
+    <div class="num">2b</div>
+    <div class="label"><strong>Taxable Interest</strong><span>From Form 1099-INT</span></div>
+    <div class="input-wrap">$<input type="number" id="in-int" placeholder="0" oninput="update()"></div>
   </div>
 
-  <div class="tax-line" id="line2" onclick="step(this, 'Did your savings grow? Put bank interest here.', '1099')">
-    <div class="line-label">2b</div>
-    <div class="line-content"><strong>Taxable Interest</strong><span>Extra money your bank paid you</span></div>
-    <div class="line-input-sim">$<input type="number" id="val-interest" placeholder="0" oninput="calculate()"></div>
+  <!-- LINE 12: DEDUCTION -->
+  <div class="line" onclick="moveOwl(this, 'The Shield! This $14,600 is yours to keep, tax-free.')">
+    <div class="num">12</div>
+    <div class="label"><strong>Standard Deduction</strong><span>Your 2026 "Free Pass"</span></div>
+    <div class="input-wrap" style="color: var(--green);">-$14,600</div>
   </div>
 
-  <div class="tax-line" id="line12" onclick="step(this, 'The Standard Deduction is like a 14,600 gift from the IRS that you don\'t pay tax on!', 'none')">
-    <div class="line-label">12</div>
-    <div class="line-content"><strong>Standard Deduction</strong><span>Your tax-free "Free Pass"</span></div>
-    <div class="line-input-sim" style="color: var(--safe-green); font-weight: bold;">-$14,600</div>
+  <!-- LINE 15: TAXABLE INCOME -->
+  <div class="line" onclick="moveOwl(this, 'The Leftovers! Only the money that peeks over the Shield gets taxed.')">
+    <div class="num">15</div>
+    <div class="label"><strong>Taxable Income</strong><span>The amount the IRS actually looks at</span></div>
+    <div class="input-wrap" id="out-taxable" style="color: #e67e22;">$0</div>
   </div>
 
-  <div class="tax-line" id="line15" onclick="step(this, 'Subtract the Free Pass from your total income. This is the only part that gets taxed.', 'none')">
-    <div class="line-label">15</div>
-    <div class="line-content"><strong>Taxable Income</strong><span>The leftovers the IRS looks at</span></div>
-    <div class="line-input-sim" id="taxable-display" style="color: #e67e22; font-weight: bold;">$0</div>
+  <!-- LINE 25: WITHHOLDING -->
+  <div class="line" onclick="moveOwl(this, 'Payments! This is the money your boss already sent to the IRS for you.')">
+    <div class="num">25</div>
+    <div class="label"><strong>Federal Tax Withheld</strong><span>Check W-2, Box 2</span></div>
+    <div class="input-wrap">$<input type="number" id="in-held" placeholder="0" oninput="update()"></div>
   </div>
 
-  <div class="visualizer-area">
-    <div class="bucket"><div class="bucket-fill" id="bucket-fill"></div></div>
-    <div>
-      <p><strong>Professor's Bucket Lesson:</strong></p>
-      <span id="summary">The green water is your tax-free money. Once it overflows the bucket ($14,600), you start paying tax!</span>
-    </div>
+  <!-- LINE 34: REFUND -->
+  <div class="line" onclick="moveOwl(this, 'THE WIN! If your payments were higher than your tax, you get this back!')">
+    <div class="num">34</div>
+    <div class="label"><strong>Your Refund</strong><span>The money coming back home</span></div>
+    <div class="input-wrap" id="out-refund" style="color: var(--green); font-size: 1.3rem;">$0</div>
+  </div>
+
+  <div class="visualizer">
+    <div class="beaker"><div class="fluid" id="fluid"></div></div>
+    <div id="summary">Hoot! Start typing to see your tax beaker fill up!</div>
+  </div>
+
+  <!-- AFFILIATE PORTAL -->
+  <div class="affiliate-box">
+    <h3 style="margin:0; font-family: 'Patrick Hand'; font-size: 1.5rem;">🎓 Class Reward</h3>
+    <p style="font-size: 0.9rem; margin: 5px 0;">Use the Professor's link to get a bonus on your filing fees!</p>
+    <!-- YOUR AFFILIATE CODE REMAINS HERE -->
+    <a href="https://example.com/tax-pro?affiliate=PROF_OWL_2026" class="btn-claim">Claim Student Bonus (Code: PROF_OWL_2026)</a>
   </div>
 </div>
 
 <script>
-  let visited = new Set();
-
-  function calculate() {
-    const wages = parseFloat(document.getElementById('val-wages').value) || 0;
-    const interest = parseFloat(document.getElementById('val-interest').value) || 0;
-    const total = wages + interest;
-    const limit = 14600;
+  function update() {
+    const wages = parseFloat(document.getElementById('in-wages').value) || 0;
+    const interest = parseFloat(document.getElementById('in-int').value) || 0;
+    const withheld = parseFloat(document.getElementById('in-held').value) || 0;
+    const shield = 14600;
     
-    // Update Taxable
-    const taxable = Math.max(0, total - limit);
-    document.getElementById('taxable-display').innerText = '$' + taxable.toLocaleString();
+    const totalIncome = wages + interest;
+    const taxable = Math.max(0, totalIncome - shield);
+    
+    // Very simple 10% tax estimate for teaching
+    const taxOwed = taxable * 0.10;
+    const refund = Math.max(0, withheld - taxOwed);
 
-    // Update Bucket
-    const percent = Math.min(100, (total / limit) * 100);
-    const fill = document.getElementById('bucket-fill');
-    fill.style.height = percent + '%';
-    fill.style.background = total > limit ? '#e67e22' : '#27ae60';
+    document.getElementById('out-taxable').innerText = '$' + taxable.toLocaleString();
+    document.getElementById('out-refund').innerText = '$' + refund.toLocaleString();
 
-    document.getElementById('summary').innerText = total > limit 
-      ? `Hoot! You've overflowed the bucket by $${taxable.toLocaleString()}. Only that overflow is taxable!`
-      : `You're still in the safe zone! You have $${(limit - total).toLocaleString()} left of tax-free space.`;
+    // Visuals
+    const fluid = document.getElementById('fluid');
+    const percent = Math.min(100, (totalIncome / shield) * 80);
+    fluid.style.height = percent + '%';
+    fluid.style.background = totalIncome > shield ? '#e67e22' : '#27ae60';
+
+    const summary = document.getElementById('summary');
+    if (totalIncome > shield) {
+        summary.innerHTML = `🦉 <b>Overflow!</b> You have $${taxable.toLocaleString()} in taxable income. Your refund estimate is $${refund.toLocaleString()}!`;
+    } else {
+        summary.innerHTML = `🦉 <b>Safe!</b> You are within the Shield. All your withheld taxes ($${withheld}) should come back to you!`;
+    }
   }
 
-  function step(el, speech, docType) {
-    // UI Update
-    document.querySelectorAll('.tax-line').forEach(l => l.classList.remove('active'));
+  function moveOwl(el, txt) {
+    document.querySelectorAll('.line').forEach(l => l.classList.remove('active'));
     el.classList.add('active');
-
-    // Progress
-    visited.add(el.id);
-    document.getElementById('progress-fill').style.width = (visited.size / 4) * 100 + '%';
-
-    // Move Owl
-    const owl = document.getElementById('floating-owl');
-    const rect = el.getBoundingClientRect();
-    owl.style.top = (rect.top + window.scrollY - 30) + 'px';
-    document.getElementById('owl-speech').innerText = speech;
     
-    owl.classList.add('owl-lean');
-    setTimeout(() => owl.classList.remove('owl-lean'), 400);
-
-    // Show Hints
-    const hint = document.getElementById('doc-hint');
-    if (docType === 'w2') {
-        hint.style.display = 'block';
-        hint.innerHTML = "<strong>📎 Hint:</strong> Look for <b>Box 1</b> on your W-2 form!";
-    } else if (docType === '1099') {
-        hint.style.display = 'block';
-        hint.innerHTML = "<strong>📎 Hint:</strong> Look for a <b>1099-INT</b> from your bank!";
-    } else {
-        hint.style.display = 'none';
-    }
+    const owl = document.getElementById('owl');
+    const speech = document.getElementById('speech');
+    const rect = el.getBoundingClientRect();
+    
+    owl.style.top = (rect.top + (rect.height / 2)) + 'px';
+    speech.innerText = txt;
   }
 </script>
 </body>
